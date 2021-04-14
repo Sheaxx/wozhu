@@ -1,0 +1,13 @@
+<!--pages/mine/mine.wxml-->
+<view id="mine">
+  <view class="info">
+    <image mode="widthFix" class="infoBackGround" src="/images/mine/background.png"></image>
+    <image class="infoProfile" src="/images/mine/axu.jpg"></image>
+    <view class="infoUserName">{{userName}}</view>
+  </view>
+  <view class="function">
+    <navigator class="personal" url="./personal">个人信息</navigator>
+    <navigator class="order" url="./order">领养单</navigator>
+    <navigator class="postList">已发布</navigator>
+  </view>
+</view>

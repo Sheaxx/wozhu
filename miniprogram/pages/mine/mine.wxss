@@ -1,0 +1,53 @@
+/* pages/mine/mine.wxss */
+#mine {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.infoBackGround {
+  width: 100%;
+}
+ .infoProfile {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100%;
+  border: 5px solid #fff;
+  box-shadow:0 0 10px 0.5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.infoUserName {
+  color: #fff;
+  font-weight: 600;
+  font-size: 50rpx;
+  text-shadow:  0 0 15px rgb(0, 0, 0);
+  text-align: center;
+  text-shadow: 0 0 10px 0.5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.function {
+  height: 80%;
+  width: 100%;
+  background:#fff ;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  box-shadow:0 0 10px 0.5px rgba(0, 0, 0, 0.5);
+  border-top-left-radius:40px;
+  border-top-right-radius:40px;
+  padding-top: 10%;
+} 
+.function navigator {
+  padding:5%;
+  margin-left: 8%;
+  margin-right: 8%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.397);
+}

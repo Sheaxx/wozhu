@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classify/classify",
+    "pages/new/new",
+    "pages/wish/wish",
+    "pages/mine/mine",
+    "pages/mine/personal",
+    "pages/mine/order",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "窝筑",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath": "images/icon/index.png",
+        "selectedIconPath": "images/icon/index-active.png"
+      },
+      {
+        "pagePath":"pages/classify/classify",
+        "text":"分类",
+        "iconPath": "images/icon/classify.png",
+        "selectedIconPath": "images/icon/classify-active.png"
+      },
+      {
+        "pagePath":"pages/new/new",
+        "text":"发布",
+        "iconPath": "images/icon/new.png",
+        "selectedIconPath": "images/icon/new.png"
+      },
+      {
+        "pagePath": "pages/wish/wish",
+        "text":"愿望单",
+        "iconPath": "images/icon/wish.png",
+        "selectedIconPath": "images/icon/wish-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text":"我的",
+        "iconPath": "images/icon/mine.png",
+        "selectedIconPath": "images/icon/mine-active.png"
+      }
+    ]
+  }
+}

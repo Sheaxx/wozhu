@@ -1,0 +1,50 @@
+<view id="index">
+  <scroll-view scroll-y="true">
+    <view class="search">
+      <image mode="widthFix" src="/images/icon/search.png"></image>
+      <input type="text" placeholder='搜索你想要的内容' confirm-type="search"></input>
+    </view>
+    <view class="indexSwiper">
+      <swiper circular autoplay indicator-dots indicator-active-color="#F4EA2A" interval="3000" previous-margin="30rpx"
+        next-margin="30rpx">
+        <swiper-item>
+          <image src="/images/index/1.jpeg" mode="widthFix"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="/images/index/2.jpg" mode="widthFix"></image>
+        </swiper-item>
+        <swiper-item>
+          <image src="/images/index/3.jpg" mode="widthFix"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="classify">
+      <view class="strayAnimal">
+        <image src="/images/index/strayAnimal.png" mode="widthFix"></image>
+        <text>流浪宠物</text>
+      </view>
+      <view class="petFostering">
+        <image src="/images/index/petFostering.png" mode="widthFix"></image>
+        <text>宠物寄养</text>
+      </view>
+      <view class="PetTransfer">
+        <image src="/images/index/PetTransfer.png" mode="widthFix"></image>
+        <text>宠物领养</text>
+      </view>
+    </view>
+    <view class="indexList">
+      <view class="listTitle">
+        <image src="/images/index/title1.png" mode="widthFix"></image>
+        <text>最新发布</text>
+        <image src="/images/index/title2.png" mode="widthFix"></image>
+      </view>
+      <view class="list">
+        <view class="listMessage" wx:for="{{postList}}">
+          <image src="{{item.image}}" mode="widthFix"></image>
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="perch"></view>
+</view>

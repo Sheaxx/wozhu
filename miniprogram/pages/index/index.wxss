@@ -1,0 +1,83 @@
+#index {
+  position: relative;
+}
+.perch {
+  height: 80px;
+  width: 100%;
+}
+.search {
+  width: 80%;
+  height: 28px;
+  margin: 2% auto;
+  background: rgba(0, 0, 0, 0.048);
+  border-radius: 100px;
+  font-size: 16px;
+}
+.search input {
+  height: 28px;
+  float: left;
+  margin-left: 10px;
+}
+.search image {
+  float: left;
+  height: 16px;
+  width: 16px;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+.indexSwiper {
+  margin-top: 7%;
+}
+.indexSwiper swiper {
+  height: 200px;
+  width: 100%;
+}
+.indexSwiper swiper-item {
+  border-radius: 20px;
+}
+.indexSwiper image {
+  width: 690rpx;
+}
+.classify {
+  display: flex;
+  margin: 8% auto;
+  font-size: 14px;
+  height: 80px;
+  width: 80%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+}
+.classify view {
+  margin: 0 auto;
+}
+.classify image {
+  width: 100%;
+  margin-bottom: 3px;
+}
+.listTitle {
+  height: 50px;
+  width: 50%;
+  margin: 0 auto 25px auto;
+  display: flex;
+  line-height: 50px;
+}
+.listTitle image {
+  width: 100rpx;
+}
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.listMessage {
+  width: 310rpx;
+  padding: 2.5%;
+  margin-bottom: 5px;
+  font-size: 14px;
+  box-shadow: 0 0 10px 0.5px rgba(0, 0, 0, 0.5);
+}
+.listMessage image {
+  width: 310rpx;
+  overflow: hidden;
+}

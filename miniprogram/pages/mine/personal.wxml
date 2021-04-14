@@ -1,0 +1,44 @@
+<!--pages/mine/personal.wxml-->
+<view id="personal">
+  <view class="title">个人信息</view>
+  <view class="readOnly" wx:if="{{isReadOnly}}">
+    <view class="userProfile">
+      <text class="itemName">头像</text>
+      <image src="{{userProfile}}" mode="widthFix"></image>
+    </view>
+    <view class="userId">
+      <text class="itemName">id</text>
+      <text class="itemContent">{{userId}}</text>
+    </view>
+    <view class="userName">
+      <text class="itemName">用户名</text>
+      <text class="itemContent">{{userName}}</text>
+    </view>
+    <view class="address">
+      <text class="itemName">地址</text>
+      <text class="itemContent">{{address}}</text>
+    </view>
+    <button bindtap="toRevisability">修改个人信息</button>
+  </view>
+  <view class="revisability" wx:else>
+    <form>
+      <view class="userProfile" bindtap="chooseSource">
+        <text class="itemName">头像</text>
+        <image src="{{userProfile}}" mode="widthFix"></image>
+      </view>
+      <view>
+        <text class="itemName">id</text>
+        <input class="itemContent" disabled model:value="{{userId}}"></input>
+      </view>
+      <view class="userName">
+        <text class="itemName">用户名</text>
+        <input class="itemContent" model:value="{{userName}}" maxlength="6"></input>
+      </view>
+      <view class="address">
+        <text class="itemName">地址</text>
+        <textarea class="itemContent" model:value="{{address}}" maxlength="60"></textarea>
+      </view>
+      <button bindtap="toReadOnly">保存</button>
+    </form>
+  </view>
+</view>

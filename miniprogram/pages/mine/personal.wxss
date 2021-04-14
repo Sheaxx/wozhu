@@ -1,0 +1,53 @@
+/* pages/mine/personal.wxss */
+.title {
+  text-align: center;
+  color: rgb(97, 94, 94);
+  margin: 20rpx;
+  font-size: 34rpx;
+}
+.readOnly, .revisability {
+  width: 90%;
+  margin: 40rpx auto;
+  font-size: 32rpx
+}
+.readOnly view, .revisability view {
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+}
+.itemName {
+  color:rgb(97, 94, 94)
+}
+.itemContent {
+  float: right;
+}
+input{
+  height: 120rpx;
+  width: 500rpx;
+  text-align: right;
+}
+.userProfile {
+  height: 180rpx!important;
+  line-height: 180rpx!important;
+}
+.userProfile image {
+  float: right;
+  width: 160rpx;
+  height: 160rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.address {
+  height: 240rpx!important;
+}
+.address .itemContent {
+  height: 200rpx;
+  width: 500rpx;
+  text-align: right;
+  line-height: 40rpx;
+  margin-top: 40rpx;
+  white-space:pre-line
+}
+button {
+  margin-top: 60rpx;
+}

@@ -1,0 +1,29 @@
+<!--pages/new/new.wxml-->
+<view id="new">
+  <form>
+    <view class="title">发表新内容</view>
+    <input type="text" value="{{title}}" bindinput="titleInput" placeholder="请输入标题"/>
+    <textarea value="{{text}}" bindinput="textInput" placeholder="请输入内容"></textarea>
+    <radio-group class="classify">
+      <text>分类</text>
+      <radio>流浪动物</radio>
+      <radio>宠物寄养</radio>
+      <radio>宠物转赠</radio>
+    </radio-group>
+    <radio-group class="way">
+      <text>交接方式</text>
+      <radio>快递</radio>
+      <radio>自提</radio>
+    </radio-group>
+    <view class="imgList">
+      <view class="imgItem" wx:for="{{imgList}}" wx:key="index">
+      <image class="uploading" src="{{item}}" mode="widthFix" bindlongpress="deleteImg" bindtap="previewImg" data-index="{{index}}"></image>
+    </view>
+    <view class="imgItem imgNew" wx:if="{{imgList.length<=5}}" bindtap="chooseSource">
+      <image class="uploading" src="/images/icon/uploadImg.png" mode="widthFix"></image>
+    </view>
+    </view>
+    <button>发布</button>
+  </form>
+  <view class="perch"></view>
+</view>

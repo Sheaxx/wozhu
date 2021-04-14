@@ -1,0 +1,81 @@
+/* pages/new/new.wxss */
+.perch {
+  height: 100px;
+  width: 100%;
+}
+.title {
+  text-align: center;
+  color: rgb(97, 94, 94);
+  margin: 20rpx;
+}
+input {
+  height: 31px;
+  width: 85%;
+  margin: 10px auto;
+  padding: 0 30rpx;
+  background: rgba(0, 0, 0, 0.048);
+  border-radius: 100px;
+  font-size: 32rpx;
+}
+textarea {
+  height: 300px;
+  width: 85%;
+  margin: 10px auto;
+  padding: 10px 30rpx;
+  background: rgba(0, 0, 0, 0.048);
+  border-radius: 15px;
+  font-size: 32rpx;
+}
+radio-group {
+  width: 90%;
+  margin: 20px auto;
+  font-size: 30rpx;
+}
+radio-group text {
+  margin-right: 40rpx;
+  color: rgb(97, 94, 94);
+}
+radio {
+  margin-right: 20rpx;
+}
+radio .wx-radio-input {
+  width: 36rpx;
+  height: 36rpx;
+}
+radio .wx-radio-input.wx-radio-input-checked {
+  background: #fff!important;
+  border-color: #f4ea2a!important;
+}
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: ''; 
+  background: #fff;
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  background-color: #f4ea2a;
+  margin-top: 0rpx;
+  display: flex;
+  position: relative;
+ }
+.imgList {
+  width: 675rpx;
+  margin: 15px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.imgItem {
+  width: 202.5rpx;
+  height: 202.5rpx;
+  overflow: hidden;
+  margin: 20px 1.5%;
+  position: relative;
+}
+.imgItem image {
+  width: 100%;
+}
+.imgNew {
+  border: 1px dashed rgba(0, 0, 0, 0.575);
+}
+button {
+  border-radius: 20rpx!important;
+}
