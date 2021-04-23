@@ -19,15 +19,15 @@
       </swiper>
     </view>
     <view class="classify">
-      <view class="strayAnimal">
+      <view class="strayAnimal" bindtap="tostrayAnimal">
         <image src="/images/index/strayAnimal.png" mode="widthFix"></image>
         <text>流浪宠物</text>
       </view>
-      <view class="petFostering">
+      <view class="petFostering" bindtap="toPetFostering">
         <image src="/images/index/petFostering.png" mode="widthFix"></image>
         <text>宠物寄养</text>
       </view>
-      <view class="PetTransfer">
+      <view class="petTransfer" bindtap="toPetTransfer">
         <image src="/images/index/PetTransfer.png" mode="widthFix"></image>
         <text>宠物领养</text>
       </view>
@@ -39,7 +39,7 @@
         <image src="/images/index/title2.png" mode="widthFix"></image>
       </view>
       <view class="list">
-        <view class="listMessage" wx:for="{{postList}}">
+        <view class="listMessage" wx:for="{{postList}}" wx:key="index" bindtap="itemClick">
           <image src="{{item.image}}" mode="widthFix"></image>
           <text>{{item.title}}</text>
         </view>

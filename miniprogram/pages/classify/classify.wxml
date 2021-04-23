@@ -1,2 +1,18 @@
 <!--pages/classify/classify.wxml-->
-
+<view id="classify">
+  <view class="topBar">
+    <view id="strayAnimal" class="{{currentTab == 0 ? 'tab-active':''}}" bindtap="switchTopTab">流浪动物</view>
+    <view id="petFostering" class="{{currentTab == 1 ? 'tab-active':''}}" bindtap="switchTopTab">宠物寄养</view>
+    <view id="petTransfer" class="{{currentTab == 2 ? 'tab-active':''}}" bindtap="switchTopTab">宠物转养</view>
+  </view>
+  <view class="content" wx:if="{{currentTab == 0}}">111想写一段鸡汤放在这或者放别的</view>
+  <view class="content" wx:if="{{currentTab == 1}}">222想写一段鸡汤放在这或者放别的</view>
+  <view class="content" wx:if="{{currentTab == 2}}">333想写一段鸡汤放在这或者放别的</view>
+  <view class="list">
+    <view class="listMessage" wx:for="{{postList}}" wx:key="index" bindtap="itemClick">
+      <image src="{{item.image}}" mode="widthFix"></image>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+  <view class="perch"></view>
+</view>

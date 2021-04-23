@@ -1,1 +1,43 @@
 /* pages/classify/classify.wxss */
+.perch {
+  height: 80px;
+  width: 100%;
+}
+.topBar {
+  height: 100rpx;
+  width: 70%;
+  display: flex;
+  margin: 0 auto 30px auto;
+  line-height: 100rpx;
+}
+.topBar view {
+  width: 33%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+.tab-active {
+  border-bottom: 10rpx solid #f4ea2a;
+  border-radius: 10rpx;
+  color: #000!important;
+  font-weight: 600;
+}
+.content {
+  height: 200px;
+}
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.listMessage {
+  width: 310rpx;
+  padding: 2.5%;
+  margin-bottom: 5px;
+  font-size: 14px;
+  box-shadow: 0 0 10px 0.5px rgba(0, 0, 0, 0.5);
+}
+.listMessage image {
+  width: 310rpx;
+  overflow: hidden;
+}

@@ -1,0 +1,21 @@
+<!--pages/details/details.wxml-->
+<view id="details">
+  <view class="pageTitle">宠物详情</view>
+  <view class="datailsSwiper">
+    <swiper circular autoplay indicator-dots indicator-active-color="#F4EA2A" interval="3000">
+      <swiper-item wx:for="{{imgList}}" wx:key="index">
+        <image src="{{item}}" mode="widthFix" bindtap="previewImg" data-index="{{index}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="msgTitle">{{msgTitle}}</view>
+  <view class="userInfo">
+    <image class="userProfile" src="{{userProfile}}" mode="widthFix"></image>
+    <text class="userName">{{userName}}</text>
+  </view>
+  <view class="msgContent">{{msgContent}}</view>
+  <view class="classify">
+    <text class="itemName">分类</text>
+    <text class="itemContent">{{classify}}</text>
+  </view>
+</view>

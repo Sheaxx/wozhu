@@ -48,6 +48,14 @@ input{
   margin-top: 40rpx;
   white-space:pre-line
 }
-button {
+.toRevisability {
   margin-top: 60rpx;
+  border-radius: 20rpx!important;
+  background: #f6f6f6;
+}
+.toReadOnly {
+  margin-top: 60rpx;
+  border-radius: 20rpx!important;
+  background: #f4ea2a;
+  color: #fff;
 }

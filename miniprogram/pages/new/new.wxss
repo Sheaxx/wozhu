@@ -78,4 +78,5 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 }
 button {
   border-radius: 20rpx!important;
+  background: #f6f6f6;
 }
