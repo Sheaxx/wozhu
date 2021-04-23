@@ -5,26 +5,25 @@
   margin: 20rpx;
   font-size: 34rpx;
 }
-.readOnly, .revisability {
+.infoList {
   width: 90%;
   margin: 40rpx auto;
   font-size: 32rpx
 }
-.readOnly view, .revisability view {
+.infoList view {
+  position: relative;
   height: 120rpx;
+  width: 100%;
   line-height: 120rpx;
   border-bottom: 1px solid rgba(0, 0, 0, 0.151);
 }
 .itemName {
-  color:rgb(97, 94, 94)
+  color:rgb(97, 94, 94);
+  margin-left: 20rpx;
 }
 .itemContent {
   float: right;
-}
-input{
-  height: 120rpx;
-  width: 500rpx;
-  text-align: right;
+  margin-right: 50rpx;
 }
 .userProfile {
   height: 180rpx!important;
@@ -37,25 +36,9 @@ input{
   overflow: hidden;
   border-radius: 10rpx;
 }
-.address {
-  height: 240rpx!important;
-}
-.address .itemContent {
-  height: 200rpx;
-  width: 500rpx;
-  text-align: right;
-  line-height: 40rpx;
-  margin-top: 40rpx;
-  white-space:pre-line
-}
-.toRevisability {
-  margin-top: 60rpx;
-  border-radius: 20rpx!important;
-  background: #f6f6f6;
-}
-.toReadOnly {
-  margin-top: 60rpx;
-  border-radius: 20rpx!important;
-  background: #f4ea2a;
-  color: #fff;
+.rightArrow {
+  position: absolute;
+  width: 50rpx;
+  top: 38rpx;
+  right: 0;
 }

@@ -1,0 +1,25 @@
+<!--pages/mine/personal/addressList/address/address.wxml-->
+<view id="address">
+  <view class="title">收货地址</view>
+  <view class="table">
+    <label class="name">
+      <view class="itemTitle">收货人</view>
+      <input class="itemContent" type="text" />
+    </label>
+    <label class="telNumber">
+      <view class="itemTitle">手机号</view>
+      <input class="itemContent" type="text" />
+    </label>
+    <label>
+      <view class="itemTitle">地区</view>
+      <picker mode="region" value="{{region}}">
+        <view class="picker">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+      </picker>
+    </label>
+    <label>
+      <view class="itemTitle">详细地址</view>
+      <input class="itemContent" type="text"/>
+    </label>
+  </view>
+  <button>保存</button>
+</view>

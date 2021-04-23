@@ -18,4 +18,8 @@
     <text class="itemName">分类</text>
     <text class="itemContent">{{classify}}</text>
   </view>
+  <view class="way">
+    <text class="itemName">交接方式</text>
+    <text class="itemContent">{{way}}</text>
+  </view>
 </view>

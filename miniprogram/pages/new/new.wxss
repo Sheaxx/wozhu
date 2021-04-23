@@ -9,7 +9,7 @@
   margin: 20rpx;
 }
 input {
-  height: 31px;
+  height: 62rpx;
   width: 85%;
   margin: 10px auto;
   padding: 0 30rpx;

@@ -1,0 +1,5 @@
+<!--pages/mine/personal/userName/userName.wxml-->
+<view id="userName">
+  <view class="title">用户名</view>
+  <input type="text"/>
+</view>

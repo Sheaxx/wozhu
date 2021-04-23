@@ -9,8 +9,6 @@ Page({
     userId:"123456",
     userName:"阿絮",
     address:"四季山庄",
-
-    isReadOnly:true
   },
 
   //点击修改个人信息
@@ -73,11 +71,17 @@ Page({
     })
   },
 
+  //跳转设置用户名
+  setUserName:function(){
+    wx.navigateTo({
+      url: './userName/userName',
+    })
+  },
+
+  //跳转到地址设置
   setAdress:function(){
-    wx.chooseAddress({
-      success: (result) => {
-        console.log(result)
-      },
+    wx.navigateTo({
+      url: './addressList/addressList',
     })
   },
 
@@ -113,7 +117,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log("关闭")
   },
 
   /**

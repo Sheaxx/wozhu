@@ -1,0 +1,22 @@
+/* pages/mine/personal/addressList/address/address.wxss */
+.title {
+  text-align: center;
+  color: rgb(97, 94, 94);
+  margin: 20rpx;
+  font-size: 34rpx;
+}
+.table {
+  width: 90%!important;
+  margin: 40rpx auto;
+  font-size: 32rpx;
+}
+label {
+  width: 100%!important;
+}
+.itemTitle {
+  float: left;
+}
+.table input {
+  width: 80%;
+  float: left;
+}

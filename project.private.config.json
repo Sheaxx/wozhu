@@ -37,8 +37,15 @@
           "scene": null
         },
         {
-          "name": "个人信息",
-          "pathName": "pages/mine/personal/personal",
+          "name": "地址列表",
+          "pathName": "pages/mine/personal/addressList/addressList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "地址",
+          "pathName": "pages/mine/personal/addressList/address/address",
+          "query": "",
           "scene": null
         }
       ]

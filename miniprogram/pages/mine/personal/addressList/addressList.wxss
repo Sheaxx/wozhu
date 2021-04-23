@@ -1,0 +1,5 @@
+/* pages/mine/personal/address/address.wxss */
+button {
+  background: #f4ea2a;
+  color:#fff;
+}

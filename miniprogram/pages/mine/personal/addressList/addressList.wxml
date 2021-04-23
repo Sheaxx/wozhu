@@ -1,0 +1,9 @@
+<!--pages/mine/personal/address/address.wxml-->
+<view id="address">
+  <view class="item" wx:for="{{addressList}}" wx:key="index">
+    <text class="name">{{item.name}}</text>>
+    <text class="telNumber">{{item.telNumber}}</text>
+    <view class="address">{{item.address}}</view>
+  </view>
+  <button class="addAddress" bindtap="addAddress">新增地址</button>
+</view>
