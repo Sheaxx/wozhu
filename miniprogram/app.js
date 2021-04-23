@@ -13,7 +13,12 @@ App({
         traceUser: true,
       })
     }
+    
 
     this.globalData = {}
+  },
+  globalData: {
+    user:{}, //后台返回的信息
+    userInfo: {}  //微信获取的用户信息
   }
 })
