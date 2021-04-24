@@ -1,4 +1,47 @@
 /* pages/mine/personal/address/address.wxss */
+#addressList {
+  width: 90%;
+  margin: 0 auto;
+}
+.title {
+  text-align: center;
+  color: rgb(97, 94, 94);
+  margin: 20rpx;
+  font-size: 34rpx;
+}
+.item {
+  width: 100%;
+  height: 180rpx;
+  position: relative;
+  margin: 10rpx 0;
+  padding-top: 20rpx;
+}
+.name {
+  font-size: 32rpx;
+  display: inline-block;
+  margin-right: 30rpx;
+}
+.telNumber {
+  font-size: 26rpx;
+  color: rgb(54, 51, 51);
+}
+.address {
+  width: 83%;
+  margin: 10rpx 0;
+  font-size: 30rpx;
+}
+.delete {
+  font-size: 28rpx;
+  height: 90rpx;
+  width: 15%;
+  position: absolute;
+  right: 0;
+  top: 45rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: rgba(54, 51, 51, 0.685);
+  border-left: 1px solid rgba(54, 51, 51, 0.603);
+}
 button {
   background: #f4ea2a;
   color:#fff;

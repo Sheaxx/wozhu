@@ -5,6 +5,7 @@
     "pages/new/new",
     "pages/wish/wish",
     "pages/mine/mine",
+    "pages/load/load",
     "pages/mine/personal/personal",
     "pages/mine/order/order",
     "pages/mine/personal/userName/userName",

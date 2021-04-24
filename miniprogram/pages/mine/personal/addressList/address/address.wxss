@@ -3,20 +3,61 @@
   text-align: center;
   color: rgb(97, 94, 94);
   margin: 20rpx;
+  /* padding-bottom: 40rpx; */
   font-size: 34rpx;
+  /* border-bottom: solid 1px rgba(97, 94, 94, 0.253); */
 }
 .table {
-  width: 90%!important;
-  margin: 40rpx auto;
+  width: 90%;
+  margin: 20rpx auto;
   font-size: 32rpx;
 }
-label {
-  width: 100%!important;
+.item {
+  position: relative;
+  width: 100%;
+  height: 120rpx;
 }
 .itemTitle {
-  float: left;
+  position: absolute;
+  height: 120rpx;
+  line-height: 120rpx;
+  color: rgb(97, 94, 94);
+}
+picker {
+  position: absolute;
+  left: 120rpx;
+  width: 100%;
+  line-height: 120rpx;
 }
 .table input {
-  width: 80%;
-  float: left;
+  position: absolute;
+  left: 120rpx;
+  height: 38rpx;
+  width: 75%;
+  background: rgba(0, 0, 0, 0.048);
+  border-radius: 100px;
+  padding:10rpx 25rpx;
+  margin: 31rpx 0;
+}
+/* .detailAddress .itemTitle{
+  clear:both
+} */
+.table textarea {
+  position: absolute;
+  top: 120rpx;
+  height: 120rpx;
+  width: 92%;
+  background: rgba(0, 0, 0, 0.048);
+  border-radius: 15px;
+  padding:25rpx 25rpx;
+  line-height: 50rpx;
+}
+button {
+  width: 350rpx!important;
+  margin: 280rpx auto;
+  background: #f4ea2a;
+}
+.buttonHover {
+  background: #dad023;
+  color: #fff;
 }

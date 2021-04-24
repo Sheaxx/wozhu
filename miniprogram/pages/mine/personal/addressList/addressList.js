@@ -5,7 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addressList: []
+    addressList: [{
+        name: "阿絮",
+        telNumber: "1134778941",
+        region: ["北京市", "北京市", "东城区"],
+        detailAddress: "四季山庄四季山庄四季山庄四季山庄四季山庄"
+      },
+      {
+        name: "阿絮",
+        telNumber: "1134778941",
+        region: ["北京市", "北京市", "东城区"],
+        detailAddress: "四季山庄"
+      }
+    ]
   },
 
   //增加地址
@@ -17,19 +29,31 @@ Page({
 
   //删除地址
   delAddress: function (e) {
-    this.data.addressList.splice(e.target.id.substring(3), 1);
-    // 更新data数据对象  
-    if (this.data.addressList.length > 0) {
-      this.setData({
-        addressList: this.data.addressList
-      })
-      wx.setStorageSync('addressList', this.data.addressList);
-    } else {
-      this.setData({
-        addressList: this.data.addressList
-      })
-      wx.setStorageSync('addressList', []);
-    }
+    let _this = this;
+    let index = e.target.dataset.index
+    let newList = _this.data.addressList
+    wx.showModal({
+      title: '提示',
+      content: '确认要删除该地址吗?',
+      success: function (res) {
+        if (res.confirm) {
+          newList.splice(index, 1);
+        } else if (res.cancel) {
+          return false
+        }
+        if (_this.data.addressList.length > 0) {
+          _this.setData({
+            addressList: _this.data.addressList
+          })
+          wx.setStorageSync('addressList', _this.data.addressList);
+        } else {
+          _this.setData({
+            addressList: _this.data.addressList
+          })
+          wx.setStorageSync('addressList', []);
+        }
+      }
+    })
   },
 
   /**
@@ -50,7 +74,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(this.data.addressList)
   },
 
   /**

@@ -47,6 +47,11 @@
           "pathName": "pages/mine/personal/addressList/address/address",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "page/load/load",
+          "pathName": "page/load/load",
+          "scene": null
         }
       ]
     }

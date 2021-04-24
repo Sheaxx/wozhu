@@ -1,25 +1,25 @@
 <!--pages/mine/personal/addressList/address/address.wxml-->
 <view id="address">
-  <view class="title">收货地址</view>
+  <view class="title">收货地址信息</view>
   <view class="table">
-    <label class="name">
+    <view class="item name">
       <view class="itemTitle">收货人</view>
-      <input class="itemContent" type="text" />
-    </label>
-    <label class="telNumber">
+      <input class="itemContent" type="text" model:value="{{name}}" placeholder="请输入收货人姓名"/>
+    </view>
+    <view class="item telNumber">
       <view class="itemTitle">手机号</view>
-      <input class="itemContent" type="text" />
-    </label>
-    <label>
+      <input class="itemContent" type="number" model:value="{{telNumber}}" placeholder="请输入收货人手机号"/>
+    </view>
+    <view class="item area">
       <view class="itemTitle">地区</view>
-      <picker mode="region" value="{{region}}">
-        <view class="picker">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+      <picker mode="region" value="{{region}}" bindchange="changeArea">
+        <view class="picker">{{region[0]}}  {{region[1]}}   {{region[2]}}</view>
       </picker>
-    </label>
-    <label>
+    </view>
+    <view class="item detailAddress">
       <view class="itemTitle">详细地址</view>
-      <input class="itemContent" type="text"/>
-    </label>
+      <textarea class="itemContent" wrap="virtual" maxlength="35" model:value="{{detailAddress}}" placeholder="请输入收货详细地址"></textarea>
+    </view>
   </view>
-  <button>保存</button>
+  <button hover-class="buttonHover" hover-stay-time="0" bindtap="saveAddress">保存</button>
 </view>

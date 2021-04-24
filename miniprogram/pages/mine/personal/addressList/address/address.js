@@ -5,7 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    region: ['广东省', '广州市', '海珠区']
+    name: "",
+    telNumber: "",
+    region: ["北京市","北京市","东城区"],
+    detailAddress: ""
+  },
+
+  //保存地址
+  saveAddress:function(e){
+    let _this = this;
+    let pages = getCurrentPages();//当前页面
+    let prevPage = pages[pages.length-2];//上一页面
+    let oldList = prevPage.data.addressList
+    let newList = oldList.concat(_this.data)
+    prevPage.setData({//直接给上移页面赋值
+      addressList: newList,
+      selAddress:'yes'
+    });
+    wx.navigateBack({
+      delta: 1
+    })
+  },
+
+  //改变地区
+  changeArea:function(e){
+    this.setData({
+      region: e.detail.value
+    })
   },
 
   /**
