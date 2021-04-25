@@ -32,6 +32,7 @@ radio-group {
   font-size: 30rpx;
 }
 radio-group text {
+  display: inline-block;
   margin-right: 40rpx;
   color: rgb(97, 94, 94);
 }

@@ -35,7 +35,7 @@ picker {
   height: 38rpx;
   width: 75%;
   background: rgba(0, 0, 0, 0.048);
-  border-radius: 100px;
+  border-radius: 200rpx;
   padding:10rpx 25rpx;
   margin: 31rpx 0;
 }
@@ -48,7 +48,7 @@ picker {
   height: 120rpx;
   width: 92%;
   background: rgba(0, 0, 0, 0.048);
-  border-radius: 15px;
+  border-radius: 30rpx;
   padding:25rpx 25rpx;
   line-height: 50rpx;
 }

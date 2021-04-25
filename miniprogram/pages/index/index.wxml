@@ -1,8 +1,11 @@
 <view id="index">
   <scroll-view scroll-y="true">
-    <view class="search">
-      <image mode="widthFix" src="/images/icon/search.png"></image>
-      <input type="text" placeholder='搜索你想要的内容' confirm-type="search"></input>
+    <view class="topbar">
+      <image class="logo" src="/images/icon/logo.jpg" mode="widthFix"></image>
+      <view class="search">
+        <image mode="widthFix" src="/images/icon/search.png"></image>
+        <input type="text" placeholder='搜索你想要的内容' confirm-type="search"></input>
+      </view>
     </view>
     <view class="indexSwiper">
       <swiper circular autoplay indicator-dots indicator-active-color="#F4EA2A" interval="3000" previous-margin="30rpx"
@@ -35,7 +38,7 @@
     <view class="indexList">
       <view class="listTitle">
         <image src="/images/index/title1.png" mode="widthFix"></image>
-        <text>最新发布</text>
+        <view>最新发布</view>
         <image src="/images/index/title2.png" mode="widthFix"></image>
       </view>
       <view class="list">

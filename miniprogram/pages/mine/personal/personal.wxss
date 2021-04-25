@@ -15,7 +15,7 @@
   height: 120rpx;
   width: 100%;
   line-height: 120rpx;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.151);
 }
 .itemName {
   color:rgb(97, 94, 94);
