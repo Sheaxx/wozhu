@@ -45,7 +45,7 @@
   border-top-right-radius:40px;
   padding-top: 10%;
 } 
-.function navigator {
+.function view {
   padding:5%;
   margin-left: 8%;
   margin-right: 8%;

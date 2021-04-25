@@ -14,7 +14,18 @@ Component({
    * 页面的初始数据
    */
   data: {
-    userName:'阿絮'
+    userProfile: "/images/mine/axu.jpg",
+    userId: "123456",
+    userName: '阿絮'
+  },
+
+  methods: {
+    //跳转到个人信息
+    toPersonal: function () {
+      wx.navigateTo({
+        url: './personal/personal?data=' + [this.data.userProfile, this.data.userId, this.data.userName]
+      })
+    },
   },
 
   /**

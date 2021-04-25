@@ -5,10 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userProfile:"/images/mine/axu.jpg",
-    userId:"123456",
-    userName:"阿絮",
-    address:"四季山庄",
+    userProfile:"",
+    userId:"",
+    userName:"",
   },
 
   //点击修改个人信息
@@ -74,7 +73,7 @@ Page({
   //跳转设置用户名
   setUserName:function(){
     wx.navigateTo({
-      url: './userName/userName',
+      url: './userName/userName?userName=' + this.data.userName
     })
   },
 
@@ -89,7 +88,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let dataArr = options.data.split(',');
+    this.setData({
+      userProfile: dataArr[0],
+      userId: dataArr[1],
+      userName: dataArr[2]
+    })
   },
 
   /**
@@ -117,7 +121,16 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    console.log("关闭")
+    let _this = this;
+    let pages = getCurrentPages();//当前页面
+    let prevPage = pages[pages.length-2];//上一页面
+    let newUserProfile = _this.data.userProfile
+    let newUserName = _this.data.userName
+    prevPage.setData({//直接给上移页面赋值
+      userProfile: newUserProfile,
+      userName: newUserName,
+      selAddress:'yes'
+    });
   },
 
   /**

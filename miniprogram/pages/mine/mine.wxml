@@ -2,12 +2,12 @@
 <view id="mine">
   <view class="info">
     <image mode="widthFix" class="infoBackGround" src="/images/mine/background.png"></image>
-    <image class="infoProfile" src="/images/mine/axu.jpg"></image>
+    <image class="infoProfile" src="{{userProfile}}"></image>
     <view class="infoUserName">{{userName}}</view>
   </view>
   <view class="function">
-    <navigator class="personal" url="./personal/personal">个人信息</navigator>
-    <navigator class="order" url="./order/order">领养单</navigator>
-    <navigator class="postList">已发布</navigator>
+    <view class="personal" bindtap="toPersonal">个人信息</view>
+    <view class="order">领养单</view>
+    <view class="postList">已发布</view>
   </view>
 </view>
