@@ -51,6 +51,12 @@
         {
           "name": "page/load/load",
           "pathName": "page/load/load",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "愿望单",
+          "pathName": "pages/wish/wish",
           "scene": null
         }
       ]

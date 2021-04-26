@@ -67,3 +67,39 @@ swiper image {
   color: rgb(97, 94, 94);
   width: 200rpx;
 }
+.perch {
+  height: 150rpx;
+}
+.button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 80%;
+  margin: 50rpx auto;
+  display: flex;
+  border-radius: 50rpx;
+  box-shadow: 0 0 30rpx 1.6rpx rgba(0, 0, 0, 0.2);
+}
+.button view {
+  flex: 1;
+  font-size: 36rpx;
+  text-align: center;
+}
+.addWish {
+  height: 68rpx;
+  line-height: 68rpx;
+  color: #f3e817;
+  background: #fff;
+  border: 6rpx solid #f3e817;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+}
+.adopt {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background: #f3e817;
+  border-top-right-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+}
