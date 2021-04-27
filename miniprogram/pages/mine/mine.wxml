@@ -7,7 +7,7 @@
   </view>
   <view class="function">
     <view class="personal" bindtap="toPersonal">个人信息</view>
-    <view class="order">领养单</view>
-    <view class="postList">已发布</view>
+    <view class="order" bindtap="toOrder">领养单</view>
+    <view class="released" bindtap="toReleased">已发布</view>
   </view>
 </view>

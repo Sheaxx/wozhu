@@ -49,14 +49,9 @@
           "scene": null
         },
         {
-          "name": "page/load/load",
-          "pathName": "page/load/load",
+          "name": "已发布",
+          "pathName": "pages/mine/released/released",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "愿望单",
-          "pathName": "pages/wish/wish",
           "scene": null
         }
       ]

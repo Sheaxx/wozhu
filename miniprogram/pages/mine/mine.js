@@ -26,6 +26,20 @@ Component({
         url: './personal/personal?data=' + [this.data.userProfile, this.data.userId, this.data.userName]
       })
     },
+
+    //跳转到领养单
+    toOrder: function(){
+      wx.navigateTo({
+        url: './order/order',
+      })
+    },
+
+    //跳转到已发布
+    toReleased: function(){
+      wx.navigateTo({
+        url: './released/released',
+      })
+    }
   },
 
   /**

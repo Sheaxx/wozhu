@@ -8,6 +8,7 @@
     "pages/load/load",
     "pages/mine/personal/personal",
     "pages/mine/order/order",
+    "pages/mine/released/released",
     "pages/mine/personal/userName/userName",
     "pages/mine/personal/addressList/addressList",
     "pages/mine/personal/addressList/address/address",
