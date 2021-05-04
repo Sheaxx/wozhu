@@ -12,10 +12,23 @@
   <view class="userInfo">
     <image class="userProfile" src="{{userProfile}}" mode="widthFix"></image>
     <text class="userName">{{userName}}</text>
+    <view class="area">
+      <image class="areaLogo" src="/images/icon/area.png" mode="widthFix"></image>
+      <view>{{area}}</view>
+    </view>
   </view>
   <view class="msgContent">{{msgContent}}</view>
   <view class="classify">
-    <text class="itemName">分类</text>
-    <text class="itemContent">{{classify}}</text>
+    <view class="itemName">分类</view>
+    <view class="itemContent">{{classify}}</view>
   </view>
+  <view class="way">
+    <view class="itemName">交接方式</view>
+    <view class="itemContent">{{way}}</view>
+  </view>
+  <view class="button">
+    <view class="addWish">添加到愿望单</view>
+    <view class="adopt">确认领养</view>
+  </view>
+  <view class="perch"></view>
 </view>

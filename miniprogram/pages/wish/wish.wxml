@@ -1,2 +1,25 @@
 <!--pages/wish/wish.wxml-->
-<text>pages/wish/wish.wxml</text>
+<view id="wish">
+  <view class="wishList">
+    <view class="item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}"
+      bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{wishList}}" wx:key="index">
+      <view class="content">
+        <view class="img">
+          <image src="{{item.image}}" mode="widthFix"></image>
+        </view>
+        <view class="msgTitle">{{item.msgTitle}}</view>
+        <view class="classify">{{item.classify}}</view>
+        <view class="way">{{item.way}}</view>
+        <view class="button">确认领养</view>
+      </view>
+      <view class="delete" bindtap="delete" data-index="index">
+        <image src="/images/icon/delete.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <view class="perch"></view>
+  <view class="empty" wx:if="{{wishList.length == 0}}">
+    <image src="/images/icon/wishCat.png" mode="widthFix"></image>
+    <view>愿望单还空空如也噢~</view>
+  </view>
+</view>
