@@ -5,24 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
+
+    test: [{
+      name:"lei",
+      age:12
+    },
+    
+  ],
     msgList: [{
-        time: "2021.5.11",
-        msgTitle: "一个长长长长长长长长长长长长长长长长标题",
-        msgContent: "宠物描述一段：天苍苍事了功成渡，寒江夜茫茫杯中月影笑荒唐，谁许我策马江湖闯四方，谁醉遍天涯 梦醒不见故乡。西陵下凄秋凉雨吻我窗，任人憎任人谤 未妨惆怅是清狂，春风吹得绿江南水岸，吹不暖人心霜，猝不及防 那是不是我们的光。",
-        classify: "流浪动物",
-        way: "自提",
+        time: "",
+        msgTitle: "",
+        msgContent: "",
+        classify: "",
+        way: "",
         imgList: [
-          "/images/index/1.jpeg", "/images/index/2.jpg", "/images/index/3.jpg"
+          "", "", ""
         ],
       },
       {
-        time: "2021.5.11",
-        msgTitle: "一个长长长长长长长长长长长长长长长长标题",
-        msgContent: "宠物描述一段：天苍苍事了功成渡，寒江夜茫茫杯中月影笑荒唐，谁许我策马江湖闯四方，谁醉遍天涯 梦醒不见故乡。西陵下凄秋凉雨吻我窗，任人憎任人谤 未妨惆怅是清狂，春风吹得绿江南水岸，吹不暖人心霜，猝不及防 那是不是我们的光。",
-        classify: "流浪动物",
-        way: "自提",
+        time: "",
+        msgTitle: "",
+        msgContent: "",
+        classify: "",
+        way: "",
         imgList: [
-          "/images/index/1.jpeg", "/images/index/2.jpg", "/images/index/3.jpg"
+          "", "", ""
+
         ],
       },
     ]
@@ -67,6 +75,51 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    
+    // console.log(getApp().globalData._id)
+    wx.cloud.callFunction({
+      name:'getReleased',
+      data:{
+        openId:getApp().globalData._id
+      }
+    }).then(res => {
+      console.log(res.result.data.length)
+      for(var i = 0;i<res.result.data.length;i++){
+        var utc_time = new Date(res.result.data[i].time)
+        res.result.data[i].time = utc_time.toLocaleString() 
+        var time = "msgList["+ i +"].time"
+        var msgTitle = "msgList["+ i +"].msgTitle"
+        var msgContent = "msgList["+ i +"].msgContent"
+        var classify = "msgList["+ i +"].classify"
+        var way = "msgList["+ 0 +"].way"
+        var imgList = "msgList["+ i +"].imgList"
+        this.setData({
+          //replace(/T/g,' ').replace(/\.[\d]{3}Z/,'')
+          [time]:res.result.data[i].time.replace(/T/g,' ').replace(/\.[\d]{3}Z/,''),
+          [msgTitle]:res.result.data[i].msgTitle,
+          [msgContent]:res.result.data[i].msgContent,
+          [classify]:res.result.data[i].classify,
+          [way]:res.result.data[i].way,
+          [imgList]:res.result.data[i].imgList
+          
+        })
+        console.log(this.data.msgList[0].time)
+        
+
+        
+        
+      }
+    }).catch(err => {
+      console.log(err)
+    })
+    
+    var t = "test["+ 0 +"].name"
+    this.setData({
+      [t]:"heiheihei"
+    })
+    
+    // console.log(this.data.msgList[0])
 
   },
 
