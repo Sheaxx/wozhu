@@ -12,8 +12,8 @@
   width: 200rpx;
   height: 200rpx;
   border-radius: 100%;
-  border: 5px solid #fff;
-  box-shadow:0 0 10px 0.5px rgba(0, 0, 0, 0.5);
+  border: 10rpx solid #fff;
+  box-shadow:0 0 20rpx 1rpx rgba(0, 0, 0, 0.5);
   position: absolute;
   z-index: 1;
   top: 25%;
@@ -24,9 +24,9 @@
   color: #fff;
   font-weight: 600;
   font-size: 50rpx;
-  text-shadow:  0 0 15px rgb(0, 0, 0);
+  text-shadow:  0 0 30rpx rgb(0, 0, 0);
   text-align: center;
-  text-shadow: 0 0 10px 0.5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 20rpx 1rpx rgba(0, 0, 0, 0.5);
   position: absolute;
   z-index: 1;
   top: 40%;
@@ -40,14 +40,14 @@
   position: absolute;
   z-index: 1;
   top: 50%;
-  box-shadow:0 0 10px 0.5px rgba(0, 0, 0, 0.5);
-  border-top-left-radius:40px;
-  border-top-right-radius:40px;
+  box-shadow:0 0 20rpx 1rpx rgba(0, 0, 0, 0.5);
+  border-top-left-radius:80rpx;
+  border-top-right-radius:80rpx;
   padding-top: 10%;
 } 
-.function navigator {
+.function view {
   padding:5%;
   margin-left: 8%;
   margin-right: 8%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.397);
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.397);
 }

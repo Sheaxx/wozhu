@@ -9,7 +9,7 @@
   margin: 20rpx;
 }
 input {
-  height: 31px;
+  height: 62rpx;
   width: 85%;
   margin: 10px auto;
   padding: 0 30rpx;
@@ -32,6 +32,7 @@ radio-group {
   font-size: 30rpx;
 }
 radio-group text {
+  display: inline-block;
   margin-right: 40rpx;
   color: rgb(97, 94, 94);
 }

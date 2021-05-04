@@ -2,38 +2,48 @@
   position: relative;
 }
 .perch {
-  height: 80px;
+  height: 160rpx;
   width: 100%;
+}
+.topbar {
+  height: 100rpx;
+}
+.logo {
+  width: 100rpx;
+  margin-left: 20rpx;
+  float: left;
 }
 .search {
   width: 80%;
-  height: 28px;
-  margin: 2% auto;
+  height: 56rpx;
+  float: left;
+  margin: 22rpx 20rpx 22rpx 10rpx;
   background: rgba(0, 0, 0, 0.048);
-  border-radius: 100px;
-  font-size: 16px;
+  border-radius: 200rpx;
+  font-size: 32rpx;
+  
 }
 .search input {
-  height: 28px;
+  height: 56rpx;
   float: left;
-  margin-left: 10px;
+  margin-left: 20rpx;
 }
 .search image {
   float: left;
-  height: 16px;
-  width: 16px;
-  margin-top: 6px;
-  margin-left: 10px;
+  height: 32rpx;
+  width: 32rpx;
+  margin-top: 12rpx;
+  margin-left: 20rpx;
 }
 .indexSwiper {
-  margin-top: 7%;
+  margin-top: 20rpx;
 }
 .indexSwiper swiper {
-  height: 200px;
+  height: 400rpx;
   width: 100%;
 }
 .indexSwiper swiper-item {
-  border-radius: 20px;
+  border-radius: 40rpx;
 }
 .indexSwiper image {
   width: 690rpx;
@@ -41,27 +51,32 @@
 .classify {
   display: flex;
   margin: 8% auto;
-  font-size: 14px;
-  height: 80px;
+  font-size: 28rpx;
+  height: 160rpx;
   width: 80%;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+  padding-bottom: 80rpx;
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.288);
 }
 .classify view {
   margin: 0 auto;
 }
 .classify image {
   width: 100%;
-  margin-bottom: 3px;
+  margin-bottom: 6rpx;
 }
 .listTitle {
-  height: 50px;
-  width: 50%;
-  margin: 0 auto 25px auto;
+  height: 100rpx;
+  width: 328rpx;
+  margin: 0 auto 50rpx auto;
   display: flex;
-  line-height: 50px;
+  line-height: 100rpx;
+  text-align: center;
+}
+.listTitle view {
+  font-size: 32rpx;
 }
 .listTitle image {
+  float: left;
   width: 100rpx;
 }
 .list {
@@ -73,9 +88,9 @@
 .listMessage {
   width: 310rpx;
   padding: 2.5%;
-  margin-bottom: 5px;
-  font-size: 14px;
-  box-shadow: 0 0 10px 0.5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  box-shadow: 0 0 20rpx 1rpx rgba(0, 0, 0, 0.5);
 }
 .listMessage image {
   width: 310rpx;

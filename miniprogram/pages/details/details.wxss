@@ -14,24 +14,92 @@ swiper image {
   height: 700rpx;
 }
 .msgTitle {
-  width: 95%;
-  margin: 20rpx auto;
+  width: 92%;
+  margin: 30rpx auto;
   font-size: 38rpx;
   font-weight: 600;
 }
 .msgContent {
-  width: 95%;
+  width: 92%;
   margin: 10rpx auto;
+  line-height: 54rpx;
 }
 .userInfo {
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
+  position: relative;
 }
 .userProfile {
   width: 100rpx;
   border-radius: 100%;
 }
 .userName {
-
+  font-size: 30rpx;
+  font-weight: 550;
+  position: absolute;
+  top: 0;
+  left: 120rpx;
 }
-
+.area {
+  position: absolute;
+  top: 50rpx;
+  left: 120rpx;
+  height: 50rpx;
+  width: 80%;
+}
+.areaLogo {
+  float: left;
+  width: 50rpx;
+  line-height: 50rpx;
+}
+.area view {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  margin-left: 30rpx;
+  color: rgb(97, 94, 94);
+}
+.classify, .way {
+  width: 92%;
+  margin:30rpx auto;
+}
+.itemName {
+  float: left;
+  color: rgb(97, 94, 94);
+  width: 200rpx;
+}
+.perch {
+  height: 150rpx;
+}
+.button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 80%;
+  margin: 50rpx auto;
+  display: flex;
+  border-radius: 50rpx;
+  box-shadow: 0 0 30rpx 1.6rpx rgba(0, 0, 0, 0.2);
+}
+.button view {
+  flex: 1;
+  font-size: 36rpx;
+  text-align: center;
+}
+.addWish {
+  height: 68rpx;
+  line-height: 68rpx;
+  color: #f3e817;
+  background: #fff;
+  border: 6rpx solid #f3e817;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+}
+.adopt {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background: #f3e817;
+  border-top-right-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+}

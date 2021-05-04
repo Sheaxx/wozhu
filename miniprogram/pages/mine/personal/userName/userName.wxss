@@ -1,0 +1,16 @@
+/* pages/mine/personal/userName/userName.wxss */
+.title {
+  text-align: center;
+  color: rgb(97, 94, 94);
+  margin: 20rpx;
+  font-size: 34rpx;
+}
+input {
+  height: 62rpx;
+  width: 85%;
+  margin: 20rpx auto;
+  padding: 0 30rpx;
+  background: rgba(0, 0, 0, 0.048);
+  border-radius: 200rpx;
+  font-size: 32rpx;
+}

@@ -1,0 +1,102 @@
+/* pages/mine/released/released.wxss */
+page {
+  background: rgba(126, 122, 122, 0.11);
+}
+.title {
+  text-align: center;
+  color: rgb(97, 94, 94);
+  background: #fff;
+  padding: 20rpx;
+  font-size: 34rpx;
+}
+.item {
+  background: #fff;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+}
+.content {
+  padding: 30rpx;
+}
+.time {
+  font-size: 38rpx;
+  font-weight: 600;
+}
+.msgTitle {
+  font-size: 34rpx;
+  margin: 10rpx;
+}
+.msgContent {
+  color: rgb(70, 64, 64);
+  font-size: 30rpx;
+  line-height: 45rpx;
+  height: 90rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 5px;
+}
+.classify, .way {
+  font-size: 28rpx;
+  color: rgb(97, 94, 94);
+  margin: 0 5px 10px 5px; 
+}
+.classify {
+  float: left;
+}
+.imgList{
+  height: 200rpx;
+  width: 680rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  
+}
+.imgList image {
+  float: left;
+  width: 200rpx;
+  margin: 10rpx;
+}
+.option {
+  border-top: 2rpx solid #F2F2F5;
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+}
+.edit, .adopted, .delete {
+  flex: 1;
+  line-height: 80rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.option image {
+  float: left;
+  width: 45rpx;
+}
+.optionName {
+  font-size: 28rpx;
+  float: left;
+  color: #808080;
+}
+.edit::after, .adopted::after {
+  content: "";
+  background: #D9D9D9;
+  width: 1rpx;
+  height: 45rpx;
+  position: absolute;
+  z-index: 1;
+  left: 250rpx;
+}
+.empty {
+  width: 100%;
+  text-align: center;
+}
+.empty image {
+  width: 280rpx;
+}
+.empty view {
+  color: rgb(97, 94, 94);
+}

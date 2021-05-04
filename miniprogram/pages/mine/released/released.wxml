@@ -1,0 +1,39 @@
+<!--pages/mine/released/released.wxml-->
+<view id="released">
+  <view class="title">已发布</view>
+  <view class="msgList">
+    <view class="item" wx:for="{{msgList}}" wx:key="index">
+      <view class="content" bindtap="toDetails">
+        <view class="time">{{item.time}}</view>
+        <view class="msgTitle">{{item.msgTitle}}</view>
+        <view class="msgContent">{{item.msgContent}}</view>
+        <view class="classify">{{item.classify}}</view>
+        <view class="way">{{item.way}}</view>
+        <view class="imgList">
+          <image src="{{item.imgList[0]}}" mode="widthFix"></image>
+          <image src="{{item.imgList[1]}}" mode="widthFix"></image>
+          <image src="{{item.imgList[2]}}" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="option">
+        <view class="edit" bindtap="edit">
+          <image src="/images/icon/edit.png" mode="widthFix"></image>
+          <view class="optionName">编辑</view>
+        </view>
+        <view class="adopted">
+          <image src="/images/icon/adopted.png" mode="widthFix"></image>
+          <view class="optionName">被领养</view>
+        </view>
+        <view class="delete" bindtap="delete" data-index="index">
+          <image src="/images/icon/deleteMsg.png" mode="widthFix"></image>
+          <view class="optionName">删除</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="empty" wx:if="{{msgList.length == 0}}">
+    <!-- 暂时用一下 以后换 -->
+    <image src="/images/icon/wishCat.png" mode="widthFix"></image>
+    <view>还没有发布过动态噢~</view>
+  </view>
+</view>
