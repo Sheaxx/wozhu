@@ -18,14 +18,17 @@ Component({
    * 页面的初始数据
    */
   data: {
+
     userProfile: "",
     userId: '',
     userName: ''
+
   },
 
   methods: {
     //跳转到个人信息
     toPersonal: function () {
+
       
       var that = this
       user.doc(globalData._id).
@@ -53,6 +56,7 @@ Component({
       
       // console.log(this.data.userId)
       
+
     },
 
     //跳转到领养单
