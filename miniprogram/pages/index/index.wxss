@@ -21,12 +21,13 @@
   background: rgba(0, 0, 0, 0.048);
   border-radius: 200rpx;
   font-size: 32rpx;
-  
 }
-.search input {
+.search view {
   height: 56rpx;
   float: left;
   margin-left: 20rpx;
+  line-height: 56rpx;
+  color: rgb(97, 94, 94);
 }
 .search image {
   float: left;

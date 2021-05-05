@@ -1,0 +1,8 @@
+<!--pages/index/search/search.wxml-->
+<view id="search">
+  <view class="title">搜索</view>
+  <view class="search" bindtap="toSearch">
+    <image mode="widthFix" src="/images/icon/search.png"></image>
+    <input type="text" focus confirm-type="search" model:value="{{content}}" />
+  </view>
+</view>

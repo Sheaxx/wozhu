@@ -39,6 +39,13 @@ Component({
     ]
   },
   methods: {
+    //跳转到搜索页
+    toSearch:function(){
+      wx.navigateTo({
+        url: './search/search',
+      })
+    },
+
     //跳转到流浪动物
     tostrayAnimal:function(){
       wx.reLaunch({
