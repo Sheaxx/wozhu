@@ -1,4 +1,7 @@
 // pages/mine/personal.js
+const db = wx.cloud.database()
+const user = db.collection('User')
+
 Page({
 
   /**

@@ -1,12 +1,13 @@
 {
 
   "pages": [
+    "pages/load/load",
     "pages/index/index",
     "pages/classify/classify",
     "pages/new/new",
     "pages/wish/wish",
     "pages/mine/mine",
-    "pages/load/load",
+    
     "pages/mine/personal/personal",
     "pages/mine/order/order",
     "pages/mine/released/released",
@@ -76,4 +77,4 @@
       }
     ]
   }
-
+}
