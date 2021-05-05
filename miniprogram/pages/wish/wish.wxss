@@ -1,1 +1,94 @@
 /* pages/wish/wish.wxss */
+.wishList {
+  width: 92%;
+  margin: 20rpx auto;
+}
+.item {
+  width: 100%;
+  height: 250rpx;
+  margin: 25rpx 0;
+  box-shadow: 0 2rpx 20rpx rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.content {
+  width: 100%;
+  transition: all 0.4s;
+  transform: translateX(120rpx);
+  margin-left: -120rpx;
+  background: #fff;
+}
+.img {
+  height: 200rpx;
+  margin: 25rpx 0 25rpx 20rpx;
+  overflow: hidden;
+  float: left;
+}
+.item image {
+  width: 200rpx;
+}
+.msgTitle {
+  float: left;
+  width: 420rpx;
+  margin: 35rpx 0 15rpx 30rpx;
+}
+.classify,
+.way {
+  float: left;
+  font-size: 28rpx;
+  color: rgb(97, 94, 94);
+  margin-top: 8rpx;
+}
+.classify {
+  margin-left: 30rpx;
+}
+.way {
+  margin-left: 10rpx;
+}
+.button {
+  width: 200rpx;
+  height: 60rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  right: 17rpx;
+  top: 170rpx;
+  background: #f4ea2a;
+  color: #fff;
+  border-radius: 20rpx;
+}
+.delete {
+  background: red;
+  width: 120rpx;
+  height: 100%;
+  transition: all 0.4s;
+  text-align: center;
+  
+}
+.delete image{
+  width: 60rpx;
+  margin-top: 95rpx;
+}
+.touch-move-active .content,
+.touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.empty {
+  width: 100%;
+  text-align: center;
+}
+.empty image {
+  width: 280rpx;
+}
+.empty view {
+  color: rgb(97, 94, 94);
+}
+.perch {
+  height: 160rpx;
+  width: 100%;
+}

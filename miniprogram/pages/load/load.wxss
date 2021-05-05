@@ -1,6 +1,7 @@
 /* pages/load/load.wxss */
 /**app.wxss**/
 .container {
+
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -45,3 +46,4 @@
 	margin-top: 10rpx;
 	margin: auto;
 }
+

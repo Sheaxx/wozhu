@@ -1,12 +1,33 @@
 // pages/new/new.js
+const postList = wx.cloud.database().collection('postList')
+const userInfo = getApp().globalData.userInfo
 Component({
+  
   /**
    * 页面的初始数据
    */
   data: {
     title:"",
     text: "",
-    imgList: []
+    imgList: [],
+    waychoices:[{
+      name:"快递",index:0
+    },
+    {
+      name:"自提",index:1
+    }],
+    way:"",
+    classifychoices:[{
+      name:"流浪动物",index:0
+    },
+    {
+      name:"宠物寄养",index:1
+    },
+    {
+      name:"宠物转赠",index:2
+    }],
+    classify:""
+    
   },
   methods: {
     titleInput: function (event) {
@@ -98,11 +119,48 @@ Component({
       })
     },
 
+    wayToString:function(event){
+      var _this = this
+      _this.setData({
+        way:event.detail
+      })
+      // console.log(event.detail)
+      console.log(_this.data.way)
+    },
+
+    classifyToString:function(event){
+      var _this = this
+      _this.setData({
+        classify:event.detail
+      })
+      // console.log(event.detail)
+      console.log(_this.data.classify)
+    },
+
+    submit:function(){
+      var _this = this
+      postList.add({
+        data:({
+          openId:getApp().globalData._id,
+          userName:getApp().globalData.userInfo.nickName,
+          title:_this.data.title,
+          content:_this.data.text,
+          way:_this.data.way,
+          classify:_this.data.classify,
+          imgList:_this.data.imgList
+        })
+      })
+      .then(res => {
+        console.log(res)
+      })
+      
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      console.log(getApp().globalData.userInfo)
     },
 
     /**
