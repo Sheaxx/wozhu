@@ -124,6 +124,11 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+
+    console.log(getApp().globalData.userInfo)
+    const userInfo = getApp().globalData.userInfo
+    
+
     let _this = this;
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length-2];//上一页面
@@ -134,6 +139,26 @@ Page({
       userName: newUserName,
       selAddress:'yes'
     });
+
+    userInfo.avatarUrl = newUserProfile
+    userInfo.nickName = newUserName
+    // console.log(getApp().globalData.userInfo.nickName)
+    
+    user.where({
+      _id:getApp().globalData._id
+    })
+    .update({
+      data:({
+        userName:userInfo.nickName,
+        avatarUrl:newUserProfile
+      })
+    })
+    .then(res => {
+      console.log(res)
+    })
+    console.log(userInfo)
+
+
   },
 
   /**

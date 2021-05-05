@@ -30,32 +30,16 @@ Component({
     toPersonal: function () {
 
 
-      var that = this
-      user.doc(globalData._id).
-      get()
-        .then(res => {
-          // console.log(res)
-          that.setData({
-            userId: globalData._id,
-            userProfile: res.data.avatarUrl,
-            userName: res.data.userName
-          })
-        }).catch(console.error)
-        .then(res => {
-
-          wx.navigateTo({
-
-            url: './personal/personal?data=' + [this.data.userProfile, this.data.userId, this.data.userName]
-
-          })
-        })
-
       // console.log(this.data.userId)
 
       // console.log(info)
 
       // console.log(this.data.userId)
+      wx.navigateTo({
 
+        url: './personal/personal?data=' + [this.data.userProfile, this.data.userId, this.data.userName]
+
+      })
 
     },
 
@@ -77,7 +61,19 @@ Component({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-      
+      var that = this
+      user.doc(globalData._id).
+      get()
+        .then(res => {
+          // console.log(res)
+          that.setData({
+            userId: globalData._id,
+            userProfile: res.data.avatarUrl,
+            userName: res.data.userName
+          })
+          console.log(res)
+        }).catch(console.error)
+        
     },
 
     /**
@@ -92,16 +88,22 @@ Component({
      */
     onShow: function () {
       var that = this
-      user.doc(globalData._id).
-      get()
-        .then(res => {
-          console.log(res)
-          that.setData({
-            userId: globalData._id,
-            userProfile: res.data.avatarUrl,
-            userName: res.data.userName
-          })
-        })
+      const userInfo = getApp().globalData.userInfo
+      // user.doc(globalData._id).
+      // get()
+      //   .then(res => {
+      //     console.log(res)
+      //     that.setData({
+      //       userId: globalData._id,
+      //       userProfile: res.data.avatarUrl,
+      //       userName: res.data.userName
+      //     })
+      //   })
+      that.setData({
+        userProfile: userInfo.avatarUrl,
+        userId: getApp().globalData._id,
+        userName: userInfo.nickName
+      })
     },
 
     /**
