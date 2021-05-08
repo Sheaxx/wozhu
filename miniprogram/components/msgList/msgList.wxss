@@ -1,0 +1,18 @@
+/* components/msgList.wxss */
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.listMessage {
+  width: 310rpx;
+  padding: 2.5%;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  box-shadow: 0 0 20rpx 1rpx rgba(0, 0, 0, 0.5);
+}
+.listMessage image {
+  width: 310rpx;
+  overflow: hidden;
+}

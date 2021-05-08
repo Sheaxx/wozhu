@@ -1,1 +1,18 @@
 <!--pages/mine/order.wxml-->
+<view id="order">
+  <view class="title">领养单</view>
+  <view class="topBar">
+    <view id="created" class="{{currentTab == 0 ? 'tab-active':''}}" bindtap="switchTopTab">已创建</view>
+    <view id="delivered" class="{{currentTab == 1 ? 'tab-active':''}}" bindtap="switchTopTab">已</view>
+    <view id="finished" class="{{currentTab == 2 ? 'tab-active':''}}" bindtap="switchTopTab">已完成</view>
+  </view>
+  <view class="content" wx:if="{{currentTab == 0}}">
+    <order-list orderList="{{orderList}}"></order-list>
+  </view>
+  <view class="content" wx:if="{{currentTab == 1}}">
+
+  </view>
+  <view class="content" wx:if="{{currentTab == 2}}">
+
+  </view>
+</view>

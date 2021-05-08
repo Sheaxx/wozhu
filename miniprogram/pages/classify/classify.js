@@ -15,7 +15,7 @@ Component({
    */
   data: {
     currentTab: 0,
-    postList: [{
+    msgList: [{
       image: "/images/index/1.jpeg",
       title: "一个很长很长很长很长很长很长很长很长很长很长很长的标题"
     },
