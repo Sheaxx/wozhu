@@ -151,6 +151,10 @@ Component({
         })
       })
       .then(res => {
+        wx.showToast({
+          title: '已发布',
+          icon:'success'
+        })
         console.log(res)
       })
       

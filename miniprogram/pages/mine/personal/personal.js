@@ -62,6 +62,18 @@ Page({
         _this.setData({
           userProfile: res.tempFilePaths
         })
+        wx.cloud.uploadFile({
+          cloudPath:'userImg/'+Math.floor(Math.random()*1000000),
+          filePath:res.tempFilePaths[0],
+          success(res){
+            console.log("成功",res)
+            if(res.fileID){
+              _this.setData({
+                userProfile:res.fileID
+              })
+            }
+          }
+        })
       },
       fail: function () {
         wx.showToast({
@@ -72,6 +84,8 @@ Page({
       }
     })
   },
+
+  
 
   //跳转设置用户名
   setUserName:function(){
@@ -125,7 +139,7 @@ Page({
    */
   onUnload: function () {
 
-    console.log(getApp().globalData.userInfo)
+  
     const userInfo = getApp().globalData.userInfo
     
 
