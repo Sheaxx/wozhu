@@ -2,9 +2,9 @@
   <scroll-view scroll-y="true">
     <view class="topbar">
       <image class="logo" src="/images/icon/logo.jpg" mode="widthFix"></image>
-      <view class="search">
+      <view class="search" bindtap="toSearch">
         <image mode="widthFix" src="/images/icon/search.png"></image>
-        <input type="text" placeholder='搜索你想要的内容' confirm-type="search"></input>
+        <view>搜索你想要的内容</view>
       </view>
     </view>
     <view class="indexSwiper">

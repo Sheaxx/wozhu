@@ -1,0 +1,29 @@
+/* pages/index/search/search.wxss */
+.title {
+  text-align: center;
+  color: rgb(97, 94, 94);
+  margin: 20rpx;
+  font-size: 34rpx;
+}
+.search {
+  width: 680rpx;
+  height: 56rpx;
+  margin: 0 35rpx;
+  background: rgba(0, 0, 0, 0.048);
+  border-radius: 200rpx;
+  font-size: 32rpx;
+}
+.search input {
+  height: 56rpx;
+  float: left;
+  margin-left: 20rpx;
+  line-height: 56rpx;
+  color: rgb(97, 94, 94);
+}
+.search image {
+  float: left;
+  height: 32rpx;
+  width: 32rpx;
+  margin-top: 12rpx;
+  margin-left: 20rpx;
+}
