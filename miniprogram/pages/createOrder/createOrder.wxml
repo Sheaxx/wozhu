@@ -1,0 +1,23 @@
+<!--pages/createOrder/createOrder.wxml-->
+<view id="createOrder">
+  <image class="background" src="/images/background/createOrder.jpg" mode="widthFix"></image>
+  <view class="topBar">
+    <view class="title">
+      <image class="icon" src="/images/icon/clock.png" mode="widthFix"></image>
+      <text>等待确认</text>
+    </view>
+    <view class="remainingTime">剩余：{{remainingTime}}</view>
+  </view>
+  <view class="info" bindtap="toAdressList">
+    <image src="/images/icon/location.png" mode="widthFix"></image>
+    <view class="content">
+      <view class="consigneeName">{{consigneeName}}</view>
+      <view class="telNumber">{{telNumber}}</view>
+      <view class="address">
+        <text wx:for="{{region}}" wx:key="index">{{item}}</text>
+        <text>{{detailAddress}}</text>
+      </view>
+    </view>
+  </view>
+  
+</view>

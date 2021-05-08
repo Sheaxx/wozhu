@@ -16,7 +16,7 @@
   margin: 10rpx 0;
   padding-top: 20rpx;
 }
-.name {
+.consigneeName {
   font-size: 32rpx;
   display: inline-block;
   margin-right: 30rpx;

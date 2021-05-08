@@ -2,7 +2,7 @@
 <view id="addressList">
   <view class="title">收货地址</view>
   <view class="item" wx:for="{{addressList}}" wx:key="index">
-    <text class="name">{{item.name}}</text>
+    <text class="consigneeName">{{item.consigneeName}}</text>
     <text class="telNumber">{{item.telNumber}}</text>
     <view class="address">
       <text wx:for="{{item.region}}" wx:key="index" wx:for-item="area">{{area}}</text>

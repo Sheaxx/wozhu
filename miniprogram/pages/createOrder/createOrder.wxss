@@ -1,0 +1,58 @@
+/* pages/createOrder/createOrder.wxss */
+page {
+  background: rgba(126, 122, 122, 0.11);
+}
+.background {
+  width: 750rpx;
+}
+.topBar {
+  width: 90%;
+  margin: -470rpx auto 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.icon {
+  float: left;
+  width: 70rpx;
+  margin-right: 15rpx;
+}
+.title {
+  color: #fff;
+  font-size: 40rpx;
+  line-height: 70rpx;
+}
+.remainingTime {
+  color: #fff;
+  font-size: 40rpx;
+  margin-top: 10rpx;
+}
+.info {
+  width: 660rpx;
+  height: 280rpx;
+  margin: 190rpx auto;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  border-radius: 25rpx;
+  box-shadow:0 0 30rpx 10rpx rgba(0, 0, 0, 0.5);
+}
+.info image {
+  width: 50rpx;
+  float: left;
+  margin: 40rpx 0 0 40rpx;
+}
+.content {
+  float: left;
+  width: 510rpx;
+  margin: 40rpx 40rpx 0 20rpx;
+}
+.consigneeName {
+  float: left;
+  font-size: 36rpx;
+}
+.telNumber {
+  float: right;
+}
+.address {
+  margin-top: 70rpx;
+}

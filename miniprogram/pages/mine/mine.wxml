@@ -1,7 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <view id="mine">
   <view class="info">
-    <image mode="widthFix" class="infoBackGround" src="/images/mine/background.png"></image>
+    <image mode="widthFix" class="infoBackGround" src="/images/background/mine.jpg"></image>
     <image class="infoProfile" src="{{userProfile}}"></image>
     <view class="infoUserName">{{userName}}</view>
   </view>

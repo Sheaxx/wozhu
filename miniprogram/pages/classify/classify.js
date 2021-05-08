@@ -64,7 +64,7 @@ Component({
     //跳转到详情页
     itemClick:function(){
       wx.navigateTo({
-        url: '../details/details',
+        
       })
     },
 
