@@ -5,17 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    remainingTime:"29分31秒",
+    remainingTime: "29分31秒",
     consigneeName: "阿絮",
     telNumber: "1134778941",
     region: ["北京市", "北京市", "东城区"],
-    detailAddress: "四季山庄四季山庄四季山庄四季山庄四季山庄"
+    detailAddress: "四季山庄四季山庄四季山庄四季山庄四季山庄",
+    image: "/images/index/1.jpeg",
+    msgTitle: "关于ljk要叫我爹这件事hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+    currentLocation:"广州",
+    classify: "流浪动物",
+    way: "自提"
   },
 
   //选择收货信息
-  toAdressList:function(){
+  toAdressList: function () {
     wx.navigateTo({
       url: '../mine/personal/addressList/addressList',
+    })
+  },
+
+  //取消领养
+  cancelCreate:function(){
+    wx.navigateBack({
+      delta: 1,
     })
   },
 

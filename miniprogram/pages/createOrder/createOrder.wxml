@@ -19,5 +19,27 @@
       </view>
     </view>
   </view>
-  
+  <view class="msg clearfix">
+    <view class="msgContent">
+      <view class="cover">
+        <image src="{{image}}" mode="widthFix"></image>
+      </view>
+      <view class="msgTitle">{{msgTitle}}</view>
+      <view class="currentLocation">{{currentLocation}}</view>
+    </view>
+  </view>
+  <view class="classify">
+    <text class="itemName">分类</text>
+    <image src="/images/icon/rightArrow.png" mode="widthFix"></image>  
+    <text>{{classify}}</text>
+  </view>
+  <view class="way">
+    <text class="itemName">交接方式</text>
+    <image src="/images/icon/rightArrow.png" mode="widthFix"></image>  
+    <text>{{way}}</text>
+  </view>
+  <view class="button">
+    <view class="confirm">确认领养</view>
+    <view class="cancel" bindtap="cancelCreate">取消领养</view>
+  </view>
 </view>
