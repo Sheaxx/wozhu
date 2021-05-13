@@ -7,21 +7,15 @@
     "pages/new/new",
     "pages/wish/wish",
     "pages/mine/mine",
-
-
-    
     "pages/index/search/search",
-
     "pages/mine/personal/personal",
     "pages/mine/order/order",
     "pages/mine/released/released",
     "pages/mine/personal/userName/userName",
     "pages/mine/personal/addressList/addressList",
     "pages/mine/personal/addressList/address/address",
-    "pages/classify/strayAnimal/strayAnimal",
-    "pages/classify/petFostering/petFostering",
-    "pages/classify/petTransfer/petTransfer",
-    "pages/details/details",
+    "pages/msgDetails/msgDetails",
+    "pages/createOrder/createOrder",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",

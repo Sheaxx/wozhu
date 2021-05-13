@@ -41,12 +41,7 @@
         <view>最新发布</view>
         <image src="/images/index/title2.png" mode="widthFix"></image>
       </view>
-      <view class="list">
-        <view class="listMessage" wx:for="{{postList}}" wx:key="index" bindtap="itemClick">
-          <image src="{{item.image}}" mode="widthFix"></image>
-          <text>{{item.title}}</text>
-        </view>
-      </view>
+      <msg-list msgList="{{msgList}}"></msg-list>
     </view>
   </scroll-view>
   <view class="perch"></view>

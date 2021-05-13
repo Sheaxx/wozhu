@@ -1,8 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "strayAnimal":"strayAnimal/strayAnimal",
-    "petFostering":"petFostering/petFostering",
-    "petTransfer":"petTransfer/petTransfer"
+    "msg-list":"/components/msgList/msgList"
   }
 }

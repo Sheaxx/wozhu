@@ -1,5 +1,5 @@
-<!--pages/details/details.wxml-->
-<view id="details">
+<!--pages/msgDetails/msgDetails.wxml-->
+<view id="msgDetails">
   <view class="pageTitle">宠物详情</view>
   <view class="datailsSwiper">
     <swiper circular autoplay indicator-dots indicator-active-color="#F4EA2A" interval="3000">

@@ -4,40 +4,22 @@
   width: 100%;
 }
 .topBar {
-  height: 100rpx;
-  width: 70%;
+  width: 80%;
+  margin: 0rpx auto 30rpx auto;
+  padding: 20rpx 10%;
   display: flex;
-  margin: 0 auto 60rpx auto;
-  line-height: 100rpx;
+  background: #fff;
+  box-shadow: 0 0 10rpx 2rpx rgba(97, 94, 94, 0.384);
 }
 .topBar view {
-  width: 33%;
+  flex: 1;
   text-align: center;
-  color: rgba(0, 0, 0, 0.7);
+  padding: 10rpx 0;
 }
 .tab-active {
-  border-bottom: 10rpx solid #f4ea2a;
-  border-radius: 10rpx;
-  color: #000!important;
+  background: #f4ea2a;
+  color: #fff;
   font-weight: 600;
-}
-.content {
-  height: 400rpx;
-}
-.list {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.listMessage {
-  width: 310rpx;
-  padding: 2.5%;
-  margin-bottom: 10rpx;
-  font-size: 28rpx;
-  box-shadow: 0 0 20rpx 1rpx rgba(0, 0, 0, 0.5);
-}
-.listMessage image {
-  width: 310rpx;
-  overflow: hidden;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 2rpx rgba(97, 94, 94, 0.384);
 }

@@ -39,7 +39,7 @@ Page({
   //跳转到详情页
   toDetails:function(){
     wx.navigateTo({
-      url: '../../details/details',
+      url: '../../msgDetails/msgDetails'
     })
   },
 

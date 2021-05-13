@@ -1,65 +1,77 @@
 {
-    "setting": {},
-    "condition": {
-        "plugin": {
-            "list": []
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
         },
-        "game": {
-            "list": []
+        {
+          "name": "我的",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
         },
-        "gamePlugin": {
-            "list": []
+        {
+          "name": "分类",
+          "pathName": "pages/classify/classify",
+          "query": "",
+          "scene": null
         },
-        "miniprogram": {
-            "list": [
-                {
-                    "id": -1,
-                    "name": "db guide",
-                    "pathName": "pages/databaseGuide/databaseGuide",
-                    "query": ""
-                },
-                {
-                    "name": "我的",
-                    "pathName": "pages/mine/mine",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "分类",
-                    "pathName": "pages/classify/classify",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "详情页",
-                    "pathName": "pages/details/details",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "地址列表",
-                    "pathName": "pages/mine/personal/addressList/addressList",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "地址",
-                    "pathName": "pages/mine/personal/addressList/address/address",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "已发布",
-                    "pathName": "pages/mine/released/released",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/new/new",
-                    "pathName": "pages/new/new",
-                    "scene": null
-                }
-            ]
+        {
+          "name": "详情页",
+          "pathName": "pages/msgDetails/msgDetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "地址列表",
+          "pathName": "pages/mine/personal/addressList/addressList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "地址",
+          "pathName": "pages/mine/personal/addressList/address/address",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "已发布",
+          "pathName": "pages/mine/released/released",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/new/new",
+          "pathName": "pages/new/new",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "领养单",
+          "pathName": "pages/mine/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "创建领养单",
+          "pathName": "pages/createOrder/createOrder",
+          "scene": null
         }
+      ]
     }
+  }
 }

@@ -2,9 +2,9 @@
 <view id="address">
   <view class="title">收货地址信息</view>
   <view class="table">
-    <view class="item name">
+    <view class="item consigneeName">
       <view class="itemTitle">收货人</view>
-      <input class="itemContent" type="text" model:value="{{name}}" placeholder="请输入收货人姓名"/>
+      <input class="itemContent" type="text" model:value="{{consigneeName}}" placeholder="请输入收货人姓名"/>
     </view>
     <view class="item telNumber">
       <view class="itemTitle">手机号</view>

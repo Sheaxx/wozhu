@@ -15,7 +15,7 @@ Component({
    */
   data: {
     currentTab: 0,
-    postList: [{
+    msgList: [{
       image: "/images/index/1.jpeg",
       title: "一个很长很长很长很长很长很长很长很长很长很长很长的标题"
     },
@@ -64,7 +64,7 @@ Component({
     //跳转到详情页
     itemClick:function(){
       wx.navigateTo({
-        url: '../details/details',
+        
       })
     },
 

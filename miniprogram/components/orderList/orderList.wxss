@@ -1,0 +1,65 @@
+/* components/orderList/orderList.wxss */
+.item {
+  width: 92%;
+  height: 350rpx;
+  margin: 10rpx auto 30rpx auto;
+  background: #fff;
+  position: relative;
+  border-radius: 16rpx;
+}
+.topContent {
+  height: 60rpx;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 25rpx;
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.144);
+  font-size: 26rpx;
+  color: rgba(97, 94, 94, 0.815);
+}
+.orderId {
+  float: left;
+}
+.orderTime {
+  float: right;
+}
+.orderId::before {
+  content:"";
+  background: #f4ea2a;
+  width: 16rpx;
+  height: 40rpx;
+  position: absolute;
+  left: -8rpx;
+}
+.cover {
+  width: 180rpx;
+  height: 180rpx;
+  overflow: hidden;
+  float: left;
+  margin-top: 35rpx;
+  margin-left: 50rpx;
+}
+.cover image{
+  width: 180rpx;
+}
+.itemTitle {
+  width: 400rpx;
+  height: 84rpx;
+  float: left;
+  margin: 50rpx 30rpx 15rpx 30rpx;
+  word-break: break-all;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.classify, .way {
+  float: left;
+  font-size: 28rpx;
+  color: rgb(97, 94, 94);
+  margin: 0 5px 10px 5px; 
+}
+.classify {
+  margin-left: 30rpx;
+}

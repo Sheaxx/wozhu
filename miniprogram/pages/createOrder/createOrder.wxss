@@ -1,0 +1,162 @@
+/* pages/createOrder/createOrder.wxss */
+page {
+  background: rgba(126, 122, 122, 0.11);
+}
+.clearfix:before, .clearfix:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.clearfix{
+  zoom: 1;
+}
+.background {
+  width: 750rpx;
+  height: 500rpx;
+  overflow: hidden;
+  position: relative;
+}
+.topBar {
+  width: 90%;
+  position: absolute;
+  z-index: 2;
+  top: 90rpx;
+  left: 60rpx;
+}
+.icon {
+  float: left;
+  width: 70rpx;
+  margin-right: 15rpx;
+}
+.title {
+  color: #fff;
+  font-size: 40rpx;
+  line-height: 70rpx;
+}
+.remainingTime {
+  color: #fff;
+  font-size: 40rpx;
+  margin-top: 10rpx;
+}
+.info {
+  width: 660rpx;
+  height: 280rpx;
+  background: #fff;
+  position: absolute;
+  z-index: 9;
+  top: 450rpx;
+  left: 45rpx;
+  border-radius: 25rpx;
+  box-shadow:0 0 30rpx 10rpx rgba(0, 0, 0, 0.5);
+}
+.info image {
+  width: 50rpx;
+  float: left;
+  margin: 40rpx 0 0 40rpx;
+}
+.content {
+  float: left;
+  width: 510rpx;
+  margin: 40rpx 40rpx 0 20rpx;
+}
+.consigneeName {
+  float: left;
+  font-size: 36rpx;
+}
+.telNumber {
+  float: right;
+  font-size: 32rpx;
+}
+.address {
+  margin-top: 70rpx;
+  font-size: 32rpx;
+}
+.msg {
+  width: 100%;
+  height: 440rpx;
+  background: #fff;
+  position: absolute;
+  top: 610rpx;
+}
+.msgContent {
+  margin-top: 200rpx;
+}
+.cover {
+  width: 180rpx;
+  height: 180rpx;
+  overflow: hidden;
+  float: left;
+  margin-left: 70rpx;
+  border-radius: 6rpx;
+}
+.cover image{
+  width: 180rpx;
+}
+.msgTitle {
+  width: 420rpx;
+  height: 84rpx;
+  float: left;
+  margin: 20rpx 50rpx 0 30rpx;
+  word-break: break-all;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.currentLocation {
+  float: left;
+  font-size: 28rpx;
+  color: rgb(97, 94, 94);
+  margin: 15rpx 5px 10px 15px; 
+}
+.classify, .way{
+  font-size: 32rpx;
+  position: absolute;
+  z-index: 1;
+  top: 1070rpx;
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  line-height: 100rpx;
+  padding-left: 70rpx;
+}
+.classify image,.way image {
+  width: 50rpx;
+  position: relative;
+  top: 15rpx;
+  margin: 0 15rpx;
+}
+.way {
+  top: 1190rpx;
+}
+.itemName {
+  color:rgb(97, 94, 94);
+}
+.button {
+  position: absolute;
+  top: 1310rpx;
+  width: 730rpx;
+  height: 140rpx;
+  padding-right: 20rpx;
+  background: #fff;
+}
+.button view {
+  font-size: 32rpx;
+  width: 200rpx;
+  height: 80rpx;
+  float: right;
+  margin: 30rpx 15rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 50rpx;
+}
+.cancel {
+  color: rgb(97, 94, 94);
+  border: 2rpx solid rgb(97, 94, 94);
+}
+.confirm {
+  color: #fff;
+  background: #ECBC28;
+}

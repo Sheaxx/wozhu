@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: "",
+    consigneeName: "",
     telNumber: "",
     region: ["北京市","北京市","东城区"],
     detailAddress: ""

@@ -1,1 +1,34 @@
 /* pages/mine/order.wxss */
+page {
+  background: rgba(126, 122, 122, 0.11);
+}
+.title {
+  text-align: center;
+  color: rgb(97, 94, 94);
+  background: #fff;
+  padding: 20rpx;
+  font-size: 34rpx;
+  position: relative;
+  z-index: 1;
+}
+.topBar {
+  height: 100rpx;
+  width: 70%;
+  display: flex;
+  margin: 0 auto 40rpx auto;
+  line-height: 100rpx;
+}
+.topBar view {
+  width: 33%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+.tab-active {
+  border-bottom: 10rpx solid #f4ea2a;
+  border-radius: 10rpx;
+  color: #000!important;
+  font-weight: 600;
+}
+.content {
+  height: 400rpx;
+}

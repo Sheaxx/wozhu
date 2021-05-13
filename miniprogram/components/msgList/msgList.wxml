@@ -1,0 +1,7 @@
+<!--components/msgList.wxml-->
+<view class="list">
+  <view class="listMessage" wx:for="{{msgList}}" wx:key="index">
+    <image src="{{item.image}}" mode="widthFix"></image>
+    <text>{{item.title}}</text>
+  </view>
+</view>

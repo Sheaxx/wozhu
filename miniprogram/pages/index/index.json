@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "msg-list":"/components/msgList/msgList"
+  }
 }

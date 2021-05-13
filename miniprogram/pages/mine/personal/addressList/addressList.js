@@ -6,13 +6,13 @@ Page({
    */
   data: {
     addressList: [{
-        name: "阿絮",
+      consigneeName: "阿絮",
         telNumber: "1134778941",
         region: ["北京市", "北京市", "东城区"],
         detailAddress: "四季山庄四季山庄四季山庄四季山庄四季山庄"
       },
       {
-        name: "阿絮",
+        consigneeName: "阿絮",
         telNumber: "1134778941",
         region: ["北京市", "北京市", "东城区"],
         detailAddress: "四季山庄"

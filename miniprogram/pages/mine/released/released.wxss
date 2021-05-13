@@ -29,7 +29,6 @@ page {
   color: rgb(70, 64, 64);
   font-size: 30rpx;
   line-height: 45rpx;
-  height: 90rpx;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

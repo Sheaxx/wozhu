@@ -113,7 +113,13 @@ Component({
         }
       })
     },
-    
+
+    //确认领养
+    toCreateOrder:function(){
+      wx.navigateTo({
+        url: '../createOrder/createOrder',
+      })
+    }
   },
 
   /**
