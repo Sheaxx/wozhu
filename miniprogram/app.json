@@ -15,6 +15,7 @@
     "pages/mine/personal/addressList/addressList",
     "pages/mine/personal/addressList/address/address",
     "pages/msgDetails/msgDetails",
+    "pages/orderDetails/orderDetails",
     "pages/createOrder/createOrder",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",

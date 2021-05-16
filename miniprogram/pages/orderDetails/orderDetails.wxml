@@ -1,0 +1,41 @@
+<!--pages/orderDetails/orderDetails.wxml-->
+<view id="orderDetails">
+  <view class="title">领养单详情</view>
+  <view class="topBar">
+    <view class="orderState">{{orderState}}</view>
+  </view>
+  <view class="consignee">
+    <view class="itemTitle">接宠人信息</view>
+    <view class="itemName">接宠人</view>
+    <view class="itemContent">{{consigneeName}}</view>
+    <view class="itemName">联系方式</view>
+    <view class="itemContent">{{telNumber}}</view>
+    <view class="itemName">接宠地址</view>
+    <view class="itemContent">
+      <text wx:for="{{region}}" wx:key="index">{{item}}</text>
+      <text>{{detailAddress}}</text>
+    </view>
+  </view>
+  <view class="msg">
+    <view class="itemTitle">宠物信息</view>
+    <view class="cover">
+      <image src="{{image}}" mode="widthFix"></image>
+    </view>
+    <view class="msgTitle">{{msgTitle}}</view>
+    <view class="currentLocation">{{currentLocation}}</view>
+  </view>
+  <view class="order">
+    <view class="itemTitle">领养单信息</view>
+    <view class="itemName">订单编号</view>
+    <view class="itemContent">{{orderId}}</view>
+    <view class="itemName">创建时间</view>
+    <view class="itemContent">{{createOrderTime}}</view>
+    <view class="itemName">分类</view>
+    <view class="itemContent">{{classify}}</view>
+    <view class="itemName">交接方式</view>
+    <view class="itemContent">{{way}}</view>
+  </view>
+  <view class="button" wx:if="{{orderState == '已创建'}}">
+    <view>完成领养</view>
+  </view>
+</view>

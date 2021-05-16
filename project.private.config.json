@@ -69,6 +69,12 @@
         {
           "name": "创建领养单",
           "pathName": "pages/createOrder/createOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "领养单详情",
+          "pathName": "pages/orderDetails/orderDetails",
           "scene": null
         }
       ]

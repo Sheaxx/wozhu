@@ -1,11 +1,11 @@
-// pages/createOrder/createOrder.js
+// pages/orderDetails/orderDetails.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    remainingTime: "29分31秒",
+    orderState:"已创建",
     consigneeName: "阿絮",
     telNumber: "11347789412",
     region: ["北京市", "北京市", "东城区"],
@@ -13,22 +13,10 @@ Page({
     image: "/images/index/1.jpeg",
     msgTitle: "广州某区某街一只流浪小猫待领养",
     currentLocation:"广州",
+    orderId:"1984518498652318897",
+    createOrderTime:"2021-5-11 11:29:00",
     classify: "流浪动物",
     way: "自提"
-  },
-
-  //选择收货信息
-  toAdressList: function () {
-    wx.navigateTo({
-      url: '../mine/personal/addressList/addressList',
-    })
-  },
-
-  //取消领养
-  cancelCreate:function(){
-    wx.navigateBack({
-      delta: 1,
-    })
   },
 
   /**

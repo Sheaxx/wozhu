@@ -96,6 +96,7 @@ page {
   width: 420rpx;
   height: 84rpx;
   float: left;
+  font-size: 32rpx;
   margin: 20rpx 50rpx 0 30rpx;
   word-break: break-all;
   white-space: normal;
