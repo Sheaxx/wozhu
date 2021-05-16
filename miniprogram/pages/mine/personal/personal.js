@@ -138,11 +138,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
-  
     const userInfo = getApp().globalData.userInfo
-    
-
     let _this = this;
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length-2];//上一页面
@@ -171,8 +167,6 @@ Page({
       console.log(res)
     })
     console.log(userInfo)
-
-
   },
 
   /**

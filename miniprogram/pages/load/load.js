@@ -115,10 +115,7 @@ Page({
             // console.log(getApp().globalData.userInfo)
             // console.log(res.data[0].userName)
           })
-
         })
-
-        
         
         getApp().globalData.userInfo = res.userInfo
         console.log(getApp().globalData.userInfo)
@@ -129,10 +126,7 @@ Page({
 
         })
       }
-      
     })
-
-   
   },
 
   /**
