@@ -1,17 +1,13 @@
 // pages/mine/released/released.js
+const db = wx.cloud.database()
+const postList = db.collection('postList')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-    test: [{
-      name:"lei",
-      age:12
-    },
-    
-  ],
     msgList: [{
         time: "",
         msgTitle: "",
@@ -39,7 +35,7 @@ Page({
   //跳转到详情页
   toDetails:function(){
     wx.navigateTo({
-      url: '../../details/details',
+      url: '../../msgDetails/msgDetails'
     })
   },
 
@@ -76,18 +72,17 @@ Page({
    */
   onLoad: function (options) {
 
-    
-    // console.log(getApp().globalData._id)
-    wx.cloud.callFunction({
-      name:'getReleased',
-      data:{
-        openId:getApp().globalData._id
-      }
-    }).then(res => {
-      console.log(res.result.data.length)
-      for(var i = 0;i<res.result.data.length;i++){
-        var utc_time = new Date(res.result.data[i].time)
-        res.result.data[i].time = utc_time.toLocaleString() 
+    console.log(getApp().globalData._id)
+    postList
+    .where({
+      openId:getApp().globalData._id
+    })
+    .get()
+    .then(res => {
+      console.log(res)
+      for(var i = 0;i<res.data.length;i++){
+        var utc_time = new Date(res.data[i].time)
+        res.data[i].time = utc_time.toLocaleString() 
         var time = "msgList["+ i +"].time"
         var msgTitle = "msgList["+ i +"].msgTitle"
         var msgContent = "msgList["+ i +"].msgContent"
@@ -96,12 +91,12 @@ Page({
         var imgList = "msgList["+ i +"].imgList"
         this.setData({
           //replace(/T/g,' ').replace(/\.[\d]{3}Z/,'')
-          [time]:res.result.data[i].time.replace(/T/g,' ').replace(/\.[\d]{3}Z/,''),
-          [msgTitle]:res.result.data[i].msgTitle,
-          [msgContent]:res.result.data[i].msgContent,
-          [classify]:res.result.data[i].classify,
-          [way]:res.result.data[i].way,
-          [imgList]:res.result.data[i].imgList
+          [time]:res.data[i].time.replace(/T/g,' ').replace(/\.[\d]{3}Z/,''),
+          [msgTitle]:res.data[i].msgTitle,
+          [msgContent]:res.data[i].msgContent,
+          [classify]:res.data[i].classify,
+          [way]:res.data[i].way,
+          [imgList]:res.data[i].imgList
           
         })
         console.log(this.data.msgList[0].time)

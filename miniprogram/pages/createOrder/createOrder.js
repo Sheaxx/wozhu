@@ -1,36 +1,33 @@
-// pages/mine/personal/addressList/address/address.js
+// pages/createOrder/createOrder.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    consigneeName: "",
-    telNumber: "",
-    region: ["北京市","北京市","东城区"],
-    detailAddress: ""
+    remainingTime: "29分31秒",
+    consigneeName: "阿絮",
+    telNumber: "11347789412",
+    region: ["北京市", "北京市", "东城区"],
+    detailAddress: "四季山庄四季山庄四季山庄四季山庄四季山庄",
+    image: "/images/index/1.jpeg",
+    msgTitle: "广州某区某街一只流浪小猫待领养",
+    currentLocation:"广州",
+    classify: "流浪动物",
+    way: "自提"
   },
 
-  //保存地址
-  saveAddress:function(e){
-    let _this = this;
-    let pages = getCurrentPages();//当前页面
-    let prevPage = pages[pages.length-2];//上一页面
-    let oldList = prevPage.data.addressList
-    let newList = oldList.concat(_this.data)
-    prevPage.setData({//直接给上移页面赋值
-      addressList: newList,
-      selAddress:'yes'
-    });
-    wx.navigateBack({
-      delta: 1
+  //选择收货信息
+  toAdressList: function () {
+    wx.navigateTo({
+      url: '../mine/personal/addressList/addressList',
     })
   },
 
-  //改变地区
-  changeArea:function(e){
-    this.setData({
-      region: e.detail.value
+  //取消领养
+  cancelCreate:function(){
+    wx.navigateBack({
+      delta: 1,
     })
   },
 

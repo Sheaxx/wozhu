@@ -5,6 +5,7 @@
 const db = wx.cloud.database()
 const _ = db.command
 const user = db.collection('User')
+const postList = db.collection('postList')
 let result = {}
 
 Page({
@@ -38,6 +39,21 @@ Page({
     var that = this
     // wx.showLoading({
     //   title: '加载中',
+    // })
+
+    // postList
+    // .field({
+    //   _id:false,
+    //   title:true,
+    //   imgList:true
+    // })
+    // .get()
+    // .then(res => {
+    //   // console.log(res)
+      
+    //   getApp().globalData.msgList = res.data
+      
+    //   // console.log(getApp().globalData.msgList)
     // })
 
 
@@ -77,7 +93,7 @@ Page({
     wx.getUserProfile({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        console.log(res.rawData)
+        console.log(res.userInfo)
         
         that.setData({
           userName: res.userInfo.nickName,
@@ -87,11 +103,9 @@ Page({
         wx.cloud.callFunction({
           name: 'openId'
         }).then(res => {
-          // that.setData({
-          //   openid:res.result.openid
-          // })
+          
           getApp().globalData._id = res.result.openid
-          // console.log(getApp().globalData._id)
+          
           user.add({
             data: {
               _id: res.result.openid,
@@ -104,7 +118,7 @@ Page({
             
           }).catch(console.error)
 
-          console.log(getApp().globalData._id)
+          
           user.where({
             _id:getApp().globalData._id
           })
@@ -112,16 +126,13 @@ Page({
           .then(res => {
             getApp().globalData.userInfo.nickName = res.data[0].userName,
             getApp().globalData.userInfo.avatarUrl = res.data[0].avatarUrl
-            // console.log(getApp().globalData.userInfo)
-            // console.log(res.data[0].userName)
+            
           })
-
         })
-
-        
         
         getApp().globalData.userInfo = res.userInfo
-        console.log(getApp().globalData.userInfo)
+        getApp().globalData.isAll = true
+        
         this.next()
         this.setData({
           userInfo: res.userInfo,
@@ -129,10 +140,7 @@ Page({
 
         })
       }
-      
     })
-
-   
   },
 
   /**
