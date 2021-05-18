@@ -1,4 +1,10 @@
 // pages/new/new.js
+var COS = require('../../js/cos-wx-sdk-v5')
+var config = require('../../js/config');
+var cos = new COS({
+  SecretId: config.SecretId,
+  SecretKey: config.SecretKey,
+});
 const postList = wx.cloud.database().collection('postList')
 const userInfo = getApp().globalData.userInfo
 Component({
@@ -9,6 +15,7 @@ Component({
   data: {
     title:"",
     text: "",
+    tempList:"",
     imgList: [],
     waychoices:[{
       name:"快递",index:0
@@ -74,13 +81,38 @@ Component({
           // 返回选定照片的本地文件路径列表,tempFilePaths可以作为img标签的scr属性显示图片
           var imgList = res.tempFilePaths
           
+          
           let tempFilePathsImg = _this.data.imgList
           // 获取当前已上传的图片的数组
           var tempFilePathsImgs = tempFilePathsImg.concat(imgList)
+          // console.log(tempFilePathsImgs)
+          var filePath = imgList[0];
+        
+        console.log(filePath)
+        var filename = filePath.substr(filePath.lastIndexOf('/') + 1);
+        cos.postObject({
+          Bucket: config.Bucket,
+          Region: config.Region,
+          Key: 'petImg/' + filename,
+          FilePath: filePath,
+          onProgress: function (info) {
+              console.log(JSON.stringify(info));
+          }
+      }, function (err, data) {
+        
+          // console.log( data.headers.location);
           _this.setData({
-            imgList: tempFilePathsImgs
-          })
-        },
+            ["imgList["+len+"]"]:data.headers.location
+          // console.log(_this.data.imgList)
+      })
+
+          // _this.setData({
+          //   imgList: tempFilePathsImgs
+          // })
+          
+          
+        
+        })},
         fail: function () {
           wx.showToast({
             title: '图片上传失败',
@@ -126,7 +158,7 @@ Component({
         way:event.detail.value
       })
       // console.log(event.detail)
-      console.log(_this.data.way)
+      // console.log(_this.data.way)
     },
 
     classifyToString:function(event){
@@ -134,12 +166,40 @@ Component({
       _this.setData({
         classify:event.detail.value
       })
-      console.log(event.detail.value)
-      console.log(_this.data.classify)
+      // console.log(event.detail.value)
+      // console.log(_this.data.classify)
     },
+
+  
 
     submit:function(){
       var _this = this
+      // for(var i = 0;i<_this.data.imgList.length;i++){
+      //   var filePath = _this.data.imgList[i];
+      //   console.log('5')
+      //   // console.log(filePath)
+      //   var filename = filePath.substr(filePath.lastIndexOf('/') + 1);
+      //   cos.postObject({
+      //     Bucket: config.Bucket,
+      //     Region: config.Region,
+      //     Key: 'petImg/' + filename,
+      //     FilePath: filePath,
+      //     onProgress: function (info) {
+      //         console.log(JSON.stringify(info));
+      //     }
+      // }, function (err, data) {
+        
+      //     // console.log( data.headers.location);
+      //     _this.setData({
+      //       ["imgList["+i+"]"]:data.headers.location
+      //     })
+          
+      //     // console.log(_this.data.imgList)
+          
+          
+      // });
+      // }
+
       postList.add({
         data:({
           openId:getApp().globalData._id,
@@ -148,7 +208,8 @@ Component({
           content:_this.data.text,
           way:_this.data.way,
           classify:_this.data.classify,
-          imgList:_this.data.imgList
+          imgList:_this.data.imgList,
+          time:new Date()
         })
       })
       .then(res => {
@@ -156,8 +217,11 @@ Component({
           title: '已发布',
           icon:'success'
         })
-        console.log(res)
+        
+        // console.log(res)
       })
+
+      
       
     },
 
@@ -166,6 +230,8 @@ Component({
      */
     onLoad: function (options) {
       console.log(getApp().globalData.userInfo)
+      console.log(getApp().globalData.isAll)
+      console.log(getApp().globalData._id)
     },
 
     /**

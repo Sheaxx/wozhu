@@ -15,13 +15,14 @@ Page({
 
   toSearch:function(e){
     var _this = this
-    // console.log(e.detail.value)
+    
     this.setData({
       content:e.detail.value
     })
-    console.log(this.data.content)
-
-    postList.where({
+    console.log(_this.data.content)
+    if(_this.data.content != ''){
+      getApp().globalData.isAll = false
+      postList.where({
       content:db.RegExp({
         regexp:_this.data.content,
         
@@ -34,13 +35,24 @@ Page({
     })
     .get()
     .then(res => {
-      // console.log(res)
-      _this.setData({
-        list:res.data
-      })
-      getApp().globalData.msgList = res.data
-      console.log(getApp().globalData.msgList)
+      // _this.setData({
+      //   list:res.data
+      // })
+      console.log(res.data)
+      for(var i =0;i<res.data.length;i++){
+        _this.setData({
+          ["list["+i+"].title"] : res.data[i].title,
+          ["list["+i+"].image"] : res.data[i].imgList[0]
+        })
+      }
+      
     })
+
+    getApp().globalData.msgList = _this.data.list
+    console.log(getApp().globalData.msgList)
+    console.log(getApp().globalData.isAll)
+    }
+    
   },
 
   /**
@@ -75,6 +87,38 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    
+    
+      var _this = this 
+      var pages = getCurrentPages();
+      var currPage = pages[pages.length - 1];   //当前页面
+      var prevPage = pages[pages.length - 2];  //上一个页面
+      // if(that.data.list.length == 0){
+      //   postList
+      //   .field({
+      //     _id:false,
+      //     title:true,
+      //     imgList:true
+      //   })
+      //   .get()
+      //   .then(res => {
+      //     // console.log(res)
+      //     for(var i = 0;i < res.data.length;i++){  
+      //       prevPage.setData({
+      //         ["msgList["+i+"].title"]:that.data.list[i].title,
+      //         ["msgList["+i+"].image"]:that.data.list[i].imgList[0]
+      //       })
+            
+      //     }
+      //   })
+      // }
+      if(_this.data.list.length == 0){
+        getApp().globalData.isAll = true
+      }
+      console.log(getApp().globalData.isAll)
+      
+  
+      ;
     
   },
 

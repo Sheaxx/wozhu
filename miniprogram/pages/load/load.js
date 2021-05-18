@@ -5,6 +5,7 @@
 const db = wx.cloud.database()
 const _ = db.command
 const user = db.collection('User')
+const postList = db.collection('postList')
 let result = {}
 
 Page({
@@ -38,6 +39,21 @@ Page({
     var that = this
     // wx.showLoading({
     //   title: '加载中',
+    // })
+
+    // postList
+    // .field({
+    //   _id:false,
+    //   title:true,
+    //   imgList:true
+    // })
+    // .get()
+    // .then(res => {
+    //   // console.log(res)
+      
+    //   getApp().globalData.msgList = res.data
+      
+    //   // console.log(getApp().globalData.msgList)
     // })
 
 
@@ -115,6 +131,7 @@ Page({
         })
         
         getApp().globalData.userInfo = res.userInfo
+        getApp().globalData.isAll = true
         
         this.next()
         this.setData({
