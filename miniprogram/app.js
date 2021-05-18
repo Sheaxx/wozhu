@@ -1,6 +1,8 @@
 //app.js
 App({
   onLaunch: function () {
+    
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -20,6 +22,9 @@ App({
   globalData: {
     user:{}, //后台返回的信息
     userInfo: {},  //微信获取的用户信息
-    _id:null
+    _id:2,
+    msgList:[],
+    isAll:true
+
   }
 })

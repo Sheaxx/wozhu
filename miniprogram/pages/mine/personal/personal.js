@@ -1,6 +1,16 @@
 // pages/mine/personal.js
+var config = require('../../../js/config')
+var COS = require('../../../js/cos-wx-sdk-v5');
+var cos = new COS({
+  SecretId: config.SecretId,
+  SecretKey: config.SecretKey,
+});
+
+
+
 const db = wx.cloud.database()
 const user = db.collection('User')
+
 
 Page({
 
@@ -52,6 +62,23 @@ Page({
       sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图,默认二者都有
       sourceType: [type], //可以指定来源是相册还是相机, 默认二者都有
       success: function (res) {
+        var filePath = res.tempFilePaths[0];
+        console.log(filePath)
+        var filename = filePath.substr(filePath.lastIndexOf('/') + 1);
+        cos.postObject({
+            Bucket: config.Bucket,
+            Region: config.Region,
+            Key: 'userImg/' + filename,
+            FilePath: filePath,
+            onProgress: function (info) {
+                console.log(JSON.stringify(info));
+            }
+        }, function (err, data) {
+            // console.log( data.headers.location);
+            _this.setData({
+              userProfile:data.headers.location
+            })
+        });
         wx.showToast({
           title: '正在上传...',
           icon: "loading",
@@ -59,21 +86,10 @@ Page({
           duration: 1000
         })
         // 返回选定照片的本地文件路径列表,tempFilePaths可以作为img标签的scr属性显示图片
-        _this.setData({
-          userProfile: res.tempFilePaths
-        })
-        wx.cloud.uploadFile({
-          cloudPath:'userImg/'+Math.floor(Math.random()*1000000),
-          filePath:res.tempFilePaths[0],
-          success(res){
-            console.log("成功",res)
-            if(res.fileID){
-              _this.setData({
-                userProfile:res.fileID
-              })
-            }
-          }
-        })
+        // _this.setData({
+        //   userProfile: res.tempFilePaths
+        // })
+        
       },
       fail: function () {
         wx.showToast({
@@ -111,6 +127,13 @@ Page({
       userId: dataArr[1],
       userName: dataArr[2]
     })
+
+    
+
+    // cos.getService(function(err,data){
+    //   console.log(data&&data.Buckets);
+    // });
+    
   },
 
   /**
@@ -152,8 +175,9 @@ Page({
 
     userInfo.avatarUrl = newUserProfile
     userInfo.nickName = newUserName
-    // console.log(getApp().globalData.userInfo.nickName)
     
+      
+  
     user.where({
       _id:getApp().globalData._id
     })
@@ -167,6 +191,8 @@ Page({
       console.log(res)
     })
     console.log(userInfo)
+
+    
   },
 
   /**

@@ -1,15 +1,52 @@
 // index.js
+
+
+
 // 获取应用实例
-const app = getApp()
+const db = wx.cloud.database()
+const postList = db.collection('postList')
 
 Component({
+
+  
+
   pageLifetimes: {
+    
     show() {
+      var _this = this
       if (typeof this.getTabBar === 'function' &&
         this.getTabBar()) {
         this.getTabBar().setData({
-          selected: 0
+          selected: 1
         })
+        
+        if(getApp().globalData.isAll == true){
+          postList.field({
+            _id:false,
+            title:true,
+            imgList:true
+          })
+          .get()
+          .then(res => {
+            console.log(res.data)
+            console.log(getApp().globalData.isAll)
+            for(var i =0;i<res.data.length;i++){
+              _this.setData({
+                ["msgList["+i+"].title"] : res.data[i].title,
+                ["msgList["+i+"].image"] : res.data[i].imgList[0]
+              })
+            }
+            
+          })
+        }else{
+          _this.setData({
+            msgList:getApp().globalData.msgList
+          })
+        }
+
+        
+        
+
       }
     }
   },
@@ -20,24 +57,9 @@ Component({
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
 
-    msgList: [{
-        image: "/images/index/1.jpeg",
-        title: "一个很长很长很长很长很长很长很长很长很长很长很长的标题"
-      },
-      {
-        image: "/images/index/2.jpg",
-        title: "另一个很长很长很长很长很长很长很长很长很长很长很长的标题"
-      },
-      {
-        image: "/images/index/2.jpg",
-        title: "另一个很长很长很长很长很长很长很长很长很长很长很长的标题"
-      },
-      {
-        image: "/images/index/1.jpeg",
-        title: "一个很长很长很长很长很长很长很长很长很长很长很长的标题"
-      },
-    ]
+    msgList: []
   },
+
   methods: {
     //跳转到搜索页
     toSearch:function(){
@@ -81,11 +103,27 @@ Component({
       })
     },
     onLoad() {
-      if (wx.getUserProfile) {
-        this.setData({
-          canIUseGetUserProfile: true
-        })
-      }
+      var _this = this
+      // if (wx.getUserProfile) {
+      //   this.setData({
+      //     canIUseGetUserProfile: true
+      //   })
+      // }
+      console.log(getApp().globalData.isAll)
+
+      // postList.field({
+      //   _id:false,
+      //   title:true,
+      //   imgList:true
+      // })
+      // .get()
+      // .then(res => {
+        
+      //   _this.setData({
+      //     msgList:res.data
+      //   })
+        
+      // })
     },
     getUserProfile(e) {
       // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -108,5 +146,6 @@ Component({
         hasUserInfo: true
       })
     }
+    
   }
 })
