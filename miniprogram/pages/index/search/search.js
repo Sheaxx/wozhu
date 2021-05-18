@@ -1,11 +1,46 @@
 // pages/index/search/search.js
+
+const db = wx.cloud.database()
+const postList = db.collection('postList')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    list:[],
     content:""
+  },
+
+  toSearch:function(e){
+    var _this = this
+    // console.log(e.detail.value)
+    this.setData({
+      content:e.detail.value
+    })
+    console.log(this.data.content)
+
+    postList.where({
+      content:db.RegExp({
+        regexp:_this.data.content,
+        
+      })
+    })
+    .field({
+      _id:false,
+      title:true,
+      imgList:true
+    })
+    .get()
+    .then(res => {
+      // console.log(res)
+      _this.setData({
+        list:res.data
+      })
+      getApp().globalData.msgList = res.data
+      console.log(getApp().globalData.msgList)
+    })
   },
 
   /**
@@ -40,7 +75,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**

@@ -73,6 +73,7 @@ Component({
           })
           // 返回选定照片的本地文件路径列表,tempFilePaths可以作为img标签的scr属性显示图片
           var imgList = res.tempFilePaths
+          
           let tempFilePathsImg = _this.data.imgList
           // 获取当前已上传的图片的数组
           var tempFilePathsImgs = tempFilePathsImg.concat(imgList)
@@ -122,7 +123,7 @@ Component({
     wayToString:function(event){
       var _this = this
       _this.setData({
-        way:event.detail
+        way:event.detail.value
       })
       // console.log(event.detail)
       console.log(_this.data.way)
@@ -131,9 +132,9 @@ Component({
     classifyToString:function(event){
       var _this = this
       _this.setData({
-        classify:event.detail
+        classify:event.detail.value
       })
-      // console.log(event.detail)
+      console.log(event.detail.value)
       console.log(_this.data.classify)
     },
 

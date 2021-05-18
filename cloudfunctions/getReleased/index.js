@@ -16,7 +16,9 @@ exports.main = async (event, context) => {
     // .get().then(res => {
     //     console.log(res)
     // })
-    return db.collection('released')
+    return db.collection('postList').where({
+        _id:event.openId
+    })
     .get()
     
 }
