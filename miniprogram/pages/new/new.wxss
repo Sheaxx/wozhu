@@ -7,6 +7,7 @@
   text-align: center;
   color: rgb(97, 94, 94);
   margin: 20rpx;
+  font-size: 34rpx;
 }
 input {
   height: 62rpx;
@@ -78,6 +79,7 @@ radio .wx-radio-input.wx-radio-input-checked::before {
   border: 1px dashed rgba(0, 0, 0, 0.575);
 }
 button {
+  font-size: 32rpx!important;
   border-radius: 20rpx!important;
   background: #f6f6f6;
 }

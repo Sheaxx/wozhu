@@ -3,9 +3,7 @@
   text-align: center;
   color: rgb(97, 94, 94);
   margin: 20rpx;
-  /* padding-bottom: 40rpx; */
   font-size: 34rpx;
-  /* border-bottom: solid 1px rgba(97, 94, 94, 0.253); */
 }
 .table {
   width: 90%;
@@ -39,9 +37,6 @@ picker {
   padding:10rpx 25rpx;
   margin: 31rpx 0;
 }
-/* .detailAddress .itemTitle{
-  clear:both
-} */
 .table textarea {
   position: absolute;
   top: 120rpx;

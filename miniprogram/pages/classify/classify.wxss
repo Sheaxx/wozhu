@@ -4,6 +4,7 @@
   width: 100%;
 }
 .topBar {
+  font-size: 32rpx;
   width: 80%;
   margin: 0rpx auto 30rpx auto;
   padding: 20rpx 10%;

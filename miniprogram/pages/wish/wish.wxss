@@ -30,6 +30,7 @@
   width: 200rpx;
 }
 .msgTitle {
+  font-size: 34rpx;
   float: left;
   width: 420rpx;
   margin: 35rpx 0 15rpx 30rpx;
