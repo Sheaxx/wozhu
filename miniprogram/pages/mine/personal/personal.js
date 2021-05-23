@@ -113,7 +113,7 @@ Page({
   //跳转到地址设置
   setAdress:function(){
     wx.navigateTo({
-      url: './addressList/addressList',
+      url: './addressList/addressList?fromCreateOrder=false',
     })
   },
 

@@ -33,6 +33,12 @@
         {
           "name": "pages/mine/personal/addressList/addressList",
           "pathName": "pages/mine/personal/addressList/addressList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/createOrder/createOrder",
+          "pathName": "pages/createOrder/createOrder",
           "scene": null
         }
       ]
