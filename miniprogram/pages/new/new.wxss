@@ -4,10 +4,16 @@
   width: 100%;
 }
 .title {
+  width: 100%;
+  height: 100rpx;
   text-align: center;
+  line-height: 100rpx;
   color: rgb(97, 94, 94);
-  margin: 20rpx;
+  background: #fff;
   font-size: 34rpx;
+  position: fixed;
+  z-index: 999;
+  border-bottom: 2rpx solid rgba(97, 94, 94, 0.137);
 }
 input {
   height: 62rpx;
@@ -44,21 +50,6 @@ radio .wx-radio-input {
   width: 36rpx;
   height: 36rpx;
 }
-radio .wx-radio-input.wx-radio-input-checked {
-  background: #fff!important;
-  border-color: #f4ea2a!important;
-}
-radio .wx-radio-input.wx-radio-input-checked::before {
-  content: ''; 
-  background: #fff;
-  width: 36rpx;
-  height: 36rpx;
-  border-radius: 50%;
-  background-color: #f4ea2a;
-  margin-top: 0rpx;
-  display: flex;
-  position: relative;
- }
 .imgList {
   width: 675rpx;
   margin: 15px auto;

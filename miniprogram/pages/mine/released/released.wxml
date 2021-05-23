@@ -17,15 +17,15 @@
       </view>
       <view class="option">
         <view class="edit" bindtap="edit">
-          <image src="/images/icon/edit.png" mode="widthFix"></image>
+          <image src="/images/icon/edit.svg" mode="widthFix"></image>
           <view class="optionName">编辑</view>
         </view>
         <view class="adopted">
-          <image src="/images/icon/adopted.png" mode="widthFix"></image>
+          <image src="/images/icon/adopted.svg" mode="widthFix"></image>
           <view class="optionName">被领养</view>
         </view>
-        <view class="delete" bindtap="delete" data-index="index">
-          <image src="/images/icon/deleteMsg.png" mode="widthFix"></image>
+        <view class="delete" bindtap="delete" data-index="{{index}}">
+          <image src="/images/icon/deleteMsg.svg" mode="widthFix"></image>
           <view class="optionName">删除</view>
         </view>
       </view>

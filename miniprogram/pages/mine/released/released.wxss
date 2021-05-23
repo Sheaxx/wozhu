@@ -3,11 +3,19 @@ page {
   background: rgba(126, 122, 122, 0.11);
 }
 .title {
+  width: 100%;
+  height: 100rpx;
   text-align: center;
+  line-height: 100rpx;
   color: rgb(97, 94, 94);
   background: #fff;
-  padding: 20rpx;
   font-size: 34rpx;
+  position: fixed;
+  z-index: 999;
+  border-bottom: 2rpx solid rgba(97, 94, 94, 0.137);
+}
+.msgList {
+  margin-top: 100rpx;
 }
 .item {
   background: #fff;

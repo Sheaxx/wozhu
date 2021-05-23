@@ -50,7 +50,7 @@ Page({
   delete: function (e) {
     var _this = this;
     var newList = _this.data.msgList;
-    var index = e.target.dataset.index; 
+    var index = e.currentTarget.dataset.index; 
     wx.showModal({
       title: '提示',
       content: '确认要删除该动态吗?',

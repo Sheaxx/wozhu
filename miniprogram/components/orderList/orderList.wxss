@@ -24,7 +24,7 @@
 }
 .orderId::before {
   content:"";
-  background: #f4ea2a;
+  background: #ECBC28;
   width: 16rpx;
   height: 40rpx;
   position: absolute;

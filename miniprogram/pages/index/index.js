@@ -96,6 +96,13 @@ Component({
       })
     },
 
+    //返回顶部
+    toTop:function(){
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    },
+
     // 事件处理函数
     bindViewTap() {
       wx.navigateTo({

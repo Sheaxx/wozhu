@@ -58,7 +58,7 @@
   position: absolute;
   right: 17rpx;
   top: 170rpx;
-  background: #f4ea2a;
+  background: #ECBC28;
   color: #fff;
   border-radius: 20rpx;
 }

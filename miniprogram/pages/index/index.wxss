@@ -37,17 +37,11 @@ page {
   margin-left: 20rpx;
 }
 .indexSwiper {
-  margin-top: 20rpx;
-}
-.indexSwiper swiper {
-  height: 400rpx;
-  width: 100%;
-}
-.indexSwiper swiper-item {
-  border-radius: 40rpx;
+  margin-top: 30rpx;
 }
 .indexSwiper image {
   width: 690rpx;
+  border-radius: 40rpx;
 }
 .classify {
   display: flex;
@@ -83,4 +77,19 @@ page {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.toTop {
+  width: 100rpx;
+  height: 100rpx;
+  background: #ECBC28;
+  position: fixed;
+  bottom: 180rpx;
+  right: 40rpx;
+  border-radius: 100%;
+  box-shadow: 0 0 20rpx 1rpx rgba(0, 0, 0, 0.411);
+  z-index: 999;
+}
+.toTop image {
+  width: 80rpx;
+  margin: 10rpx;
 }

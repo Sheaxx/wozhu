@@ -50,7 +50,7 @@ picker {
 button {
   width: 350rpx!important;
   margin: 280rpx auto;
-  background: #f4ea2a;
+  background: #ECBC28;
 }
 .buttonHover {
   background: #dad023;
