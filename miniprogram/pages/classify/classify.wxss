@@ -11,6 +11,8 @@
   display: flex;
   background: #fff;
   box-shadow: 0 0 10rpx 2rpx rgba(97, 94, 94, 0.384);
+  position: fixed;
+  z-index: 999;
 }
 .topBar view {
   flex: 1;
@@ -23,6 +25,9 @@
   font-weight: 600;
   border-radius: 20rpx;
   box-shadow: 0 0 10rpx 2rpx rgba(97, 94, 94, 0.384);
+}
+.content {
+  margin-top: 130rpx;
 }
 .toTop {
   width: 100rpx;
