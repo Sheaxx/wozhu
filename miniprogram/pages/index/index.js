@@ -57,7 +57,8 @@ Component({
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
 
-    msgList: []
+    msgList: [],
+    RmsgList:[]//倒序的列表
   },
 
   methods: {
@@ -100,6 +101,21 @@ Component({
     toTop:function(){
       wx.pageScrollTo({
         scrollTop: 0
+      })
+    },
+
+    /**
+   * 生命周期函数--监听页面显示
+   */
+    onShow: function () {
+      var RmsgList = this.data.msgList
+      RmsgList.reverse()
+      console.log("hhh")
+      console.log(msgList)
+      console.log(RmsgList)
+      console.log("hhh")
+      this.setData({
+        RmsgList:RmsgList
       })
     },
 

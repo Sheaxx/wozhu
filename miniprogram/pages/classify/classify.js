@@ -16,7 +16,8 @@ Component({
    */
   data: {
     currentTab: 0,
-    msgList:[]
+    msgList: [],
+    RmsgList: []
   },
   methods: {
     //顶部导航栏
@@ -25,61 +26,68 @@ Component({
       let tab = e.currentTarget.id
       console.log(tab)
       if (tab === 'strayAnimal') {
-        this.setData({ 
-          currentTab: 0 ,
+        this.setData({
+          currentTab: 0
         })
         _this.getList("流浪动物")
       } else if (tab === 'petFostering') {
-        this.setData({ currentTab: 1 })
+        this.setData({
+          currentTab: 1
+        })
         _this.getList("宠物寄养")
-      } else if (tab === 'petTransfer'){
-        this.setData({ currentTab: 2 })
+      } else if (tab === 'petTransfer') {
+        this.setData({
+          currentTab: 2
+        })
         _this.getList("宠物转赠")
       }
     },
 
     //跳转到详情页
-    itemClick:function(){
+    itemClick: function () {
       wx.navigateTo({
-        
+
       })
     },
 
-    getList:function(e){
+    //返回顶部
+    toTop:function(){
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    },
+
+    getList: function (e) {
       var _this = this
       this.setData({
-        msgList:null
+        msgList: null
       })
       wx.cloud.database().collection('postList').where({
-        classify:e
-      })
-      .field({
-        title:true,
-        imgList:true
-      })
-      .get()
-      .then(res => {
-        
-        console.log(res)
-        if(res.data == null){
-          _this.setData({
-            msgList:null
-          })
-        }
-        else{
-          for(var i =0;i<res.data.length;i++){
-            var img = res.data[i].imgList[0]
-            
-            _this.setData({
-              ["msgList["+i+"].image"]:img,
-              ["msgList["+i+"].title"]:res.data[i].title
-            })
-          }
-        }
-        
-        
+          classify: e
+        })
+        .field({
+          title: true,
+          imgList: true
+        })
+        .get()
+        .then(res => {
 
-      })
+          console.log(res)
+          if (res.data == null) {
+            _this.setData({
+              msgList: null
+            })
+          } else {
+            for (var i = 0; i < res.data.length; i++) {
+              var img = res.data[i].imgList[0]
+
+              _this.setData({
+                ["msgList[" + i + "].image"]: img,
+                ["msgList[" + i + "].title"]: res.data[i].title
+              })
+            }
+          }
+        })
     },
 
     /**
@@ -87,10 +95,15 @@ Component({
      */
     onLoad: function (options) {
       this.setData({
-        currentTab:options.tab
+        currentTab: options.tab
       })
-      console.log("#####################################3")
-      this.getList("流浪动物")
+      if (options.tab == 1) {
+        this.getList("宠物寄养")
+      } else if (options.tab == 2) {
+        this.getList("宠物转赠")
+      } else {
+        this.getList("流浪动物")
+      }
     },
 
     /**

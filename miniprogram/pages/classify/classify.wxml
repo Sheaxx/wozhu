@@ -3,7 +3,7 @@
   <view class="topBar">
     <view id="strayAnimal" class="{{currentTab == 0 ? 'tab-active':''}}" bindtap="switchTopTab">流浪动物</view>
     <view id="petFostering" class="{{currentTab == 1 ? 'tab-active':''}}" bindtap="switchTopTab">宠物寄养</view>
-    <view id="petTransfer" class="{{currentTab == 2 ? 'tab-active':''}}" bindtap="switchTopTab">宠物转养</view>
+    <view id="petTransfer" class="{{currentTab == 2 ? 'tab-active':''}}" bindtap="switchTopTab">宠物转赠</view>
   </view>
   <view class="content" wx:if="{{currentTab == 0}}">
     <msg-list msgList="{{msgList}}"></msg-list>
@@ -13,6 +13,9 @@
   </view>
   <view class="content" wx:if="{{currentTab == 2}}">
     <msg-list msgList="{{msgList}}"></msg-list>
+  </view>
+  <view class="toTop" bindtap="toTop">
+    <image src="/images/icon/toTop.svg" mode="widthFix" />
   </view>
   <view class="perch"></view>
 </view>

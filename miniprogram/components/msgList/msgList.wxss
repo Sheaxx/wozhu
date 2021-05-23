@@ -8,9 +8,9 @@
 .listMessage {
   width: 310rpx;
   padding: 2.5%;
-  margin-bottom: 10rpx;
+  margin-bottom: 15rpx;
   font-size: 28rpx;
-  box-shadow: 0 0 20rpx 1rpx rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10rpx 1rpx rgba(0, 0, 0, 0.4);
 }
 .listMessage image {
   width: 310rpx;

@@ -31,7 +31,7 @@
     </view>
     <view class="petTransfer" bindtap="toPetTransfer">
       <image src="/images/index/PetTransfer.png" mode="widthFix"></image>
-      <text>宠物领养</text>
+      <text>宠物转赠</text>
     </view>
   </view>
   <view class="indexList" bindscroll="scroll">

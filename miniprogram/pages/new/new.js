@@ -16,7 +16,6 @@ Component({
     form: {
       title: "",
       text: "",
-      tempList: "",
       imgList: [],
       way: "",
       classify: "",
@@ -46,6 +45,38 @@ Component({
 
   },
   methods: {
+    //标题输入
+    titleInput: function (e) {
+      var _this = this
+      _this.setData({
+        ['form.title']: e.detail.value
+      })
+    },
+
+    //内容输入
+    titleInput: function (e) {
+      var _this = this
+      _this.setData({
+        ['form.text']: e.detail.value
+      })
+    },
+
+    //分类
+    classifyToString: function (event) {
+      var _this = this
+      _this.setData({
+        ['form.classify']: event.detail.value
+      })
+    },
+
+    //交接方式
+    wayToString: function (event) {
+      var _this = this
+      _this.setData({
+        ['form.way']: event.detail.value
+      })
+    },
+
     //点击添加选择
     chooseSource: function () {
       var _this = this;
@@ -67,7 +98,7 @@ Component({
     imgWShow: function (type) {
       var _this = this;
       let len = 0;
-      if (_this.data.imgList != null) {
+      if (_this.data.form.imgList != null) {
         len = _this.data.form.imgList.length
       } //获取当前已有的图片
       wx.chooseImage({
@@ -99,10 +130,8 @@ Component({
               console.log(JSON.stringify(info));
             }
           }, function (err, data) {
-            console.log(data)
-            var item = 'form.imgList[len]'
             _this.setData({
-              [item]: data.headers.location
+              ['form.imgList[' + len + ']']: data.headers.location
             })
           })
         },
@@ -139,23 +168,9 @@ Component({
             return false
           }
           _this.setData({
-            imgList
+            ['form.imgList']: imgList
           })
         }
-      })
-    },
-
-    wayToString: function (event) {
-      var _this = this
-      _this.setData({
-        way: event.detail.value
-      })
-    },
-
-    classifyToString: function (event) {
-      var _this = this
-      _this.setData({
-        classify: event.detail.value
       })
     },
 
@@ -183,6 +198,7 @@ Component({
       //     // console.log(_this.data.imgList)
       // });
       // }
+
       var form = _this.data.form
       for (var item in form) {
         if (!form[item]) { //验证form表单是否填写完整
@@ -194,15 +210,16 @@ Component({
           return;
         }
       }
+
       postList.add({
           data: ({
             openId: getApp().globalData._id,
             userName: getApp().globalData.userInfo.nickName,
             title: _this.data.form.title,
-            content: _this.data.from.text,
-            way: _this.data.from.way,
-            classify: _this.data.from.classify,
-            imgList: _this.data.from.imgList,
+            content: _this.data.form.text,
+            way: _this.data.form.way,
+            classify: _this.data.form.classify,
+            imgList: _this.data.form.imgList,
             time: new Date()
           })
         })
@@ -213,12 +230,6 @@ Component({
           })
           // console.log(res)
         })
-      for (var item in form) { //表单提交成功后清空form表单数据
-        form[item] = ''
-      }
-      that.setData({
-        form: form
-      })
     },
 
     /**

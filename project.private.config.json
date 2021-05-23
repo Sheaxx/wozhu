@@ -39,6 +39,12 @@
         {
           "name": "pages/createOrder/createOrder",
           "pathName": "pages/createOrder/createOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/classify/classify",
+          "pathName": "pages/classify/classify",
           "scene": null
         }
       ]
