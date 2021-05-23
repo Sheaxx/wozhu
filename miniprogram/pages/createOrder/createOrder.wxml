@@ -10,7 +10,7 @@
   </view>
   <view class="info" bindtap="toAdressList">
     <image src="/images/icon/location.png" mode="widthFix"></image>
-    <view class="content">
+    <view class="content" wx:if="{{consigneeName&&telNumber&&region&&detailAddress}}">
       <view class="consigneeName">{{consigneeName}}</view>
       <view class="telNumber">{{telNumber}}</view>
       <view class="address">
@@ -18,6 +18,7 @@
         <text>{{detailAddress}}</text>
       </view>
     </view>
+    <view class="emptyAddress" wx:else>点击选择地址</view>
   </view>
   <view class="msg clearfix">
     <view class="msgContent">

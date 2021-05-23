@@ -3,6 +3,7 @@
   "pages": [
     "pages/load/load",
     "pages/index/index",
+    
     "pages/classify/classify",
     "pages/new/new",
     "pages/wish/wish",

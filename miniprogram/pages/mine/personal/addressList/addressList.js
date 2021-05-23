@@ -5,11 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    fromCreateOrder:false,
     addressList: [{
       consigneeName: "阿絮",
-        telNumber: "1134778941",
-        region: ["北京市", "北京市", "东城区"],
-        detailAddress: "四季山庄四季山庄四季山庄四季山庄四季山庄"
+      telNumber: "1134778941",
+      region: ["北京市", "北京市", "东城区"],
+      detailAddress: "四季山庄四季山庄四季山庄四季山庄四季山庄"
       },
       {
         consigneeName: "阿絮",
@@ -56,11 +57,38 @@ Page({
     })
   },
 
+  //选择地址
+  selectAddress:function(e){
+    if(this.data.fromCreateOrder){
+      let index = e.currentTarget.dataset.index;
+      let _this = this;
+      let pages = getCurrentPages();//当前页面
+      let prevPage = pages[pages.length-2];//上一页面
+      let consigneeName = _this.data.addressList[index].consigneeName;
+      let telNumber = _this.data.addressList[index].telNumber;
+      let region = _this.data.addressList[index].region;
+      let detailAddress = _this.data.addressList[index].detailAddress;
+      prevPage.setData({//直接给上移页面赋值
+        consigneeName:consigneeName,
+        telNumber:telNumber,
+        region:region,
+        detailAddress:detailAddress,
+        selAddress:'yes'
+      });
+      wx.navigateBack({
+        delta: 1,
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      fromCreateOrder:options.fromCreateOrder
+    })
+    console.log(this.data.fromCreateOrder)
   },
 
   /**
@@ -88,7 +116,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**

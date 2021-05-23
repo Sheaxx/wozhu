@@ -1,14 +1,16 @@
 <!--pages/mine/personal/address/address.wxml-->
 <view id="addressList">
   <view class="title">收货地址</view>
-  <view class="item" wx:for="{{addressList}}" wx:key="index">
-    <text class="consigneeName">{{item.consigneeName}}</text>
-    <text class="telNumber">{{item.telNumber}}</text>
-    <view class="address">
-      <text wx:for="{{item.region}}" wx:key="index" wx:for-item="area">{{area}}</text>
-      <text>{{item.detailAddress}}</text>
+  <view class="list">
+    <view class="item" wx:for="{{addressList}}" wx:key="index" bindtap="selectAddress" data-index="{{index}}">
+      <text class="consigneeName">{{item.consigneeName}}</text>
+      <text class="telNumber">{{item.telNumber}}</text>
+      <view class="address">
+        <text wx:for="{{item.region}}" wx:key="index" wx:for-item="area">{{area}}</text>
+        <text>{{item.detailAddress}}</text>
+      </view>
+      <view class="delete" catchtap="delAddress" data-index="{{index}}">删除</view>
     </view>
-    <view class="delete" bindtap="delAddress" data-index="{{index}}">删除</view>
   </view>
   <button class="addAddress" bindtap="addAddress">新增地址</button>
 </view>

@@ -6,10 +6,10 @@ Page({
    */
   data: {
     remainingTime: "29分31秒",
-    consigneeName: "阿絮",
-    telNumber: "11347789412",
-    region: ["北京市", "北京市", "东城区"],
-    detailAddress: "四季山庄四季山庄四季山庄四季山庄四季山庄",
+    consigneeName: "",
+    telNumber: "",
+    region: [],
+    detailAddress: "",
     image: "/images/index/1.jpeg",
     msgTitle: "广州某区某街一只流浪小猫待领养",
     currentLocation:"广州",
@@ -20,7 +20,7 @@ Page({
   //选择收货信息
   toAdressList: function () {
     wx.navigateTo({
-      url: '../mine/personal/addressList/addressList',
+      url: '../mine/personal/addressList/addressList?fromCreateOrder=true',
     })
   },
 

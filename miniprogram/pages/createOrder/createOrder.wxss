@@ -71,6 +71,11 @@ page {
   margin-top: 70rpx;
   font-size: 32rpx;
 }
+.emptyAddress {
+  margin-top: 40rpx;
+  margin-left: 110rpx;
+  font-size: 36rpx;
+}
 .msg {
   width: 100%;
   height: 440rpx;

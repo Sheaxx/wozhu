@@ -1,8 +1,5 @@
 // pages/classify/classify.js
 
-
-
-
 Component({
   pageLifetimes: {
     show() {
@@ -20,24 +17,8 @@ Component({
   data: {
     currentTab: 0,
     msgList:[]
-    
   },
   methods: {
-    //底部导航栏
-    switchTab(e) {
-      console.log(e)
-      let tab = e.currentTarget.id
-      if (tab === 'tableft') {
-        this.setData({
-          currentTab: 0
-        })
-      } else if (tab === 'tabright') {
-        this.setData({
-          currentTab: 1
-        })
-      }
-    },
-
     //顶部导航栏
     switchTopTab(e) {
       var _this = this
@@ -46,10 +27,8 @@ Component({
       if (tab === 'strayAnimal') {
         this.setData({ 
           currentTab: 0 ,
-          
         })
         _this.getList("流浪动物")
-        
       } else if (tab === 'petFostering') {
         this.setData({ currentTab: 1 })
         _this.getList("宠物寄养")
@@ -107,8 +86,6 @@ Component({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-      
-      
       this.setData({
         currentTab:options.tab
       })

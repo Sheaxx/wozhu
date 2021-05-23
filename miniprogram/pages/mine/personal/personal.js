@@ -42,7 +42,7 @@ Page({
     var _this = this;
     wx.showActionSheet({
       itemList: ["拍照", "从相册中选择"],
-      itemColor: "#f4ea2a",
+      itemColor: "#ECBC28",
       success: function (res) {
         if (!res.cancel) {
           if (res.tapIndex == 0) {
@@ -113,7 +113,7 @@ Page({
   //跳转到地址设置
   setAdress:function(){
     wx.navigateTo({
-      url: './addressList/addressList',
+      url: './addressList/addressList?fromCreateOrder=false',
     })
   },
 

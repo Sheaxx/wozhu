@@ -8,47 +8,50 @@ var cos = new COS({
 const postList = wx.cloud.database().collection('postList')
 const userInfo = getApp().globalData.userInfo
 Component({
-  
+
   /**
    * 页面的初始数据
    */
   data: {
-    title:"",
-    text: "",
-    tempList:"",
-    imgList: [],
-    waychoices:[{
-      name:"快递",index:0
+    form: {
+      title: "",
+      text: "",
+      tempList: "",
+      imgList: [],
+      way: "",
+      classify: "",
     },
-    {
-      name:"自提",index:1
-    }],
-    way:"",
-    classifychoices:[{
-      name:"流浪动物",index:0
-    },
-    {
-      name:"宠物寄养",index:1
-    },
-    {
-      name:"宠物转赠",index:2
-    }],
-    classify:""
-    
+    waychoices: [{
+        name: "快递",
+        index: 0
+      },
+      {
+        name: "自提",
+        index: 1
+      }
+    ],
+    classifychoices: [{
+        name: "流浪动物",
+        index: 0,
+      },
+      {
+        name: "宠物寄养",
+        index: 1,
+      },
+      {
+        name: "宠物转赠",
+        index: 2,
+      }
+    ],
+
   },
   methods: {
-    titleInput: function (event) {
-      this.data.title = event.detail.value
-    },
-    textInput: function (event) {
-      this.data.text = event.detail.value
-    },
     //点击添加选择
     chooseSource: function () {
       var _this = this;
       wx.showActionSheet({
         itemList: ["拍照", "从相册中选择"],
-        itemColor: "#f4ea2a",
+        itemColor: "#ECBC28",
         success: function (res) {
           if (!res.cancel) {
             if (res.tapIndex == 0) {
@@ -65,7 +68,7 @@ Component({
       var _this = this;
       let len = 0;
       if (_this.data.imgList != null) {
-        len = _this.data.imgList.length
+        len = _this.data.form.imgList.length
       } //获取当前已有的图片
       wx.chooseImage({
         count: 6 - len, //最多还能上传的图片数,这里最多可以上传6张
@@ -80,39 +83,29 @@ Component({
           })
           // 返回选定照片的本地文件路径列表,tempFilePaths可以作为img标签的scr属性显示图片
           var imgList = res.tempFilePaths
-          
-          
-          let tempFilePathsImg = _this.data.imgList
+          let tempFilePathsImg = _this.data.form.imgList
           // 获取当前已上传的图片的数组
           var tempFilePathsImgs = tempFilePathsImg.concat(imgList)
           // console.log(tempFilePathsImgs)
           var filePath = imgList[0];
-        
-        console.log(filePath)
-        var filename = filePath.substr(filePath.lastIndexOf('/') + 1);
-        cos.postObject({
-          Bucket: config.Bucket,
-          Region: config.Region,
-          Key: 'petImg/' + filename,
-          FilePath: filePath,
-          onProgress: function (info) {
-              console.log(JSON.stringify(info));
-          }
-      }, function (err, data) {
-        
-          // console.log( data.headers.location);
-          _this.setData({
-            ["imgList["+len+"]"]:data.headers.location
-          // console.log(_this.data.imgList)
-      })
 
-          // _this.setData({
-          //   imgList: tempFilePathsImgs
-          // })
-          
-          
-        
-        })},
+          var filename = filePath.substr(filePath.lastIndexOf('/') + 1);
+          cos.postObject({
+            Bucket: config.Bucket,
+            Region: config.Region,
+            Key: 'petImg/' + filename,
+            FilePath: filePath,
+            onProgress: function (info) {
+              console.log(JSON.stringify(info));
+            }
+          }, function (err, data) {
+            console.log(data)
+            var item = 'form.imgList[len]'
+            _this.setData({
+              [item]: data.headers.location
+            })
+          })
+        },
         fail: function () {
           wx.showToast({
             title: '图片上传失败',
@@ -127,14 +120,14 @@ Component({
       let index = e.target.dataset.index;
       let _this = this;
       wx.previewImage({
-        current: _this.data.imgList[index],
-        urls: _this.data.imgList
+        current: _this.data.form.imgList[index],
+        urls: _this.data.form.imgList
       })
     },
     // 长按删除
     deleteImg: function (e) {
       var _this = this;
-      var imgList = _this.data.imgList;
+      var imgList = _this.data.form.imgList;
       var index = e.target.dataset.index; //获取当前点击图片下标
       wx.showModal({
         title: '提示',
@@ -152,27 +145,22 @@ Component({
       })
     },
 
-    wayToString:function(event){
+    wayToString: function (event) {
       var _this = this
       _this.setData({
-        way:event.detail.value
+        way: event.detail.value
       })
-      // console.log(event.detail)
-      // console.log(_this.data.way)
     },
 
-    classifyToString:function(event){
+    classifyToString: function (event) {
       var _this = this
       _this.setData({
-        classify:event.detail.value
+        classify: event.detail.value
       })
-      // console.log(event.detail.value)
-      // console.log(_this.data.classify)
     },
 
-  
-
-    submit:function(){
+    //发布动态
+    submit: function () {
       var _this = this
       // for(var i = 0;i<_this.data.imgList.length;i++){
       //   var filePath = _this.data.imgList[i];
@@ -188,41 +176,49 @@ Component({
       //         console.log(JSON.stringify(info));
       //     }
       // }, function (err, data) {
-        
       //     // console.log( data.headers.location);
       //     _this.setData({
       //       ["imgList["+i+"]"]:data.headers.location
       //     })
-          
       //     // console.log(_this.data.imgList)
-          
-          
       // });
       // }
-
+      var form = _this.data.form
+      for (var item in form) {
+        if (!form[item]) { //验证form表单是否填写完整
+          wx.showToast({
+            title: '请将信息填写完整',
+            icon: 'none',
+            duration: 1500
+          })
+          return;
+        }
+      }
       postList.add({
-        data:({
-          openId:getApp().globalData._id,
-          userName:getApp().globalData.userInfo.nickName,
-          title:_this.data.title,
-          content:_this.data.text,
-          way:_this.data.way,
-          classify:_this.data.classify,
-          imgList:_this.data.imgList,
-          time:new Date()
+          data: ({
+            openId: getApp().globalData._id,
+            userName: getApp().globalData.userInfo.nickName,
+            title: _this.data.form.title,
+            content: _this.data.from.text,
+            way: _this.data.from.way,
+            classify: _this.data.from.classify,
+            imgList: _this.data.from.imgList,
+            time: new Date()
+          })
         })
-      })
-      .then(res => {
-        wx.showToast({
-          title: '已发布',
-          icon:'success'
+        .then(res => {
+          wx.showToast({
+            title: '已发布',
+            icon: 'success'
+          })
+          // console.log(res)
         })
-        
-        // console.log(res)
+      for (var item in form) { //表单提交成功后清空form表单数据
+        form[item] = ''
+      }
+      that.setData({
+        form: form
       })
-
-      
-      
     },
 
     /**

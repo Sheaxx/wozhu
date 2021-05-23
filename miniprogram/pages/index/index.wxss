@@ -1,4 +1,4 @@
-#index {
+page {
   position: relative;
 }
 .perch {
@@ -37,17 +37,11 @@
   margin-left: 20rpx;
 }
 .indexSwiper {
-  margin-top: 20rpx;
-}
-.indexSwiper swiper {
-  height: 400rpx;
-  width: 100%;
-}
-.indexSwiper swiper-item {
-  border-radius: 40rpx;
+  margin-top: 30rpx;
 }
 .indexSwiper image {
   width: 690rpx;
+  border-radius: 40rpx;
 }
 .classify {
   display: flex;
@@ -72,8 +66,6 @@
   display: flex;
   line-height: 100rpx;
   text-align: center;
-}
-.listTitle view {
   font-size: 32rpx;
 }
 .listTitle image {
@@ -86,14 +78,18 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.listMessage {
-  width: 310rpx;
-  padding: 2.5%;
-  margin-bottom: 10rpx;
-  font-size: 28rpx;
-  box-shadow: 0 0 20rpx 1rpx rgba(0, 0, 0, 0.5);
+.toTop {
+  width: 100rpx;
+  height: 100rpx;
+  background: #ECBC28;
+  position: fixed;
+  bottom: 180rpx;
+  right: 40rpx;
+  border-radius: 100%;
+  box-shadow: 0 0 20rpx 1rpx rgba(0, 0, 0, 0.411);
+  z-index: 999;
 }
-.listMessage image {
-  width: 310rpx;
-  overflow: hidden;
+.toTop image {
+  width: 80rpx;
+  margin: 10rpx;
 }
