@@ -18,7 +18,8 @@ Component({
    */
   data: {
     currentTab: 0,
-    msgList:[]
+    msgList: [],
+    RmsgList: []
   },
   methods: {
     //顶部导航栏
@@ -27,20 +28,35 @@ Component({
       let tab = e.currentTarget.id
       console.log(tab)
       if (tab === 'strayAnimal') {
-        this.setData({ 
-          currentTab: 0 ,
+        this.setData({
+          currentTab: 0
         })
         _this.getList("流浪动物")
       } else if (tab === 'petFostering') {
-        this.setData({ currentTab: 1 })
+        this.setData({
+          currentTab: 1
+        })
         _this.getList("宠物寄养")
-      } else if (tab === 'petTransfer'){
-        this.setData({ currentTab: 2 })
+      } else if (tab === 'petTransfer') {
+        this.setData({
+          currentTab: 2
+        })
         _this.getList("宠物转赠")
       }
     },
 
     //跳转到详情页
+
+  
+    //返回顶部
+    toTop:function(){
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    },
+
+    
+
     itemClick:function(event){
 
       console.log(event)
@@ -51,12 +67,15 @@ Component({
     },
 
     getList:function(e){
-      
+     
       var _this = this
       this.setData({
-        msgList:null
+        msgList: null
       })
       wx.cloud.database().collection('postList').where({
+
+         
+
         classify:e
       })
       .get()
@@ -78,14 +97,9 @@ Component({
                   ["msgList["+i+"].openId"] : res.data[i].openId,
                   ["msgList["+i+"]._id"] : res.data[i]._id
                 
-              
             })
-          }
-        }
-        
-        
-
-      })
+          } 
+        })
     },
 
     /**
@@ -93,10 +107,15 @@ Component({
      */
     onLoad: function (options) {
       this.setData({
-        currentTab:options.tab
+        currentTab: options.tab
       })
-      console.log("#####################################3")
-      this.getList("流浪动物")
+      if (options.tab == 1) {
+        this.getList("宠物寄养")
+      } else if (options.tab == 2) {
+        this.getList("宠物转赠")
+      } else {
+        this.getList("流浪动物")
+      }
     },
 
     /**

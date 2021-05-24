@@ -55,12 +55,10 @@ Component({
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
 
-    msgList: [{
-      title:'123',
-      image:'http://userbucket-1302232477.cos.ap-guangzhou.myqcloud.com/petImg/dQfcfCper3OU94a98509452375f9df927d39a00a3ccb.jpg',
-      openId:'oH4Ji5R4IsJWopnGwa2ht8_aueyU',
-      _id:'cbddf0af60a7b4bb0a3b8f506ab5f0c3'
-    }]
+
+    msgList: [],
+    
+
   },
 
   methods: {
@@ -107,6 +105,21 @@ Component({
     toTop:function(){
       wx.pageScrollTo({
         scrollTop: 0
+      })
+    },
+
+    /**
+   * 生命周期函数--监听页面显示
+   */
+    onShow: function () {
+      var RmsgList = this.data.msgList
+      RmsgList.reverse()
+      console.log("hhh")
+      console.log(msgList)
+      console.log(RmsgList)
+      console.log("hhh")
+      this.setData({
+        RmsgList:RmsgList
       })
     },
 

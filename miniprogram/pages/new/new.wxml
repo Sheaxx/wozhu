@@ -1,20 +1,19 @@
 <!--pages/new/new.wxml-->
 <view id="new">
-  <form>
-    <view class="title">发表新内容</view>
-    <input type="text" value="{{form.title}}" bindinput="titleInput" placeholder="请输入标题" />
-    <textarea model:value="{{form.text}}" bindinput="textInput" placeholder="请输入内容"></textarea>
+  <view class="title">发表新内容</view>
+  <view class="form">
+    <input type="text" placeholder="请输入标题" bindinput="titleInput"/>
+    <textarea placeholder="请输入内容" bindinput="textInput"></textarea>
     <radio-group class="classify" bindchange="classifyToString">
       <text>分类</text>
       <label wx:for="{{classifychoices}}" wx:key="key">
-        <radio model:value="{{item.name}}" color="#ECBC28">{{item.name}}</radio>
+        <radio value="{{item.name}}" color="#ECBC28">{{item.name}}</radio>
       </label>
 
       <!-- <radio>宠物寄养</radio>
       <radio>宠物转赠</radio> -->
     </radio-group>
     <radio-group class="way" bindchange="wayToString">
-
       <text>交接方式</text>
       <label wx:for="{{waychoices}}" wx:key="key">
         <radio value="{{item.name}}" color="#ECBC28">{{item.name}}</radio>
@@ -26,13 +25,13 @@
     <view class="imgList">
       <view class="imgItem" wx:for="{{form.imgList}}" wx:key="index">
         <image class="uploading" src="{{item}}" mode="widthFix" bindlongpress="deleteImg" bindtap="previewImg"
-          data-index="{{index}}"/>
+          data-index="{{index}}" />
       </view>
       <view class="imgItem imgNew" wx:if="{{form.imgList.length<=5}}" bindtap="chooseSource">
-        <image class="uploading" src="/images/icon/uploadImg.png" mode="widthFix"/>
+        <image class="uploading" src="/images/icon/uploadImg.svg" mode="widthFix" />
       </view>
     </view>
     <button bindtap="submit">发布</button>
-  </form>
+  </view>
   <view class="perch"></view>
 </view>

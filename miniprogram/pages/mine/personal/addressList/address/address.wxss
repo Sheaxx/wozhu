@@ -51,8 +51,9 @@ button {
   width: 350rpx!important;
   margin: 280rpx auto;
   background: #ECBC28;
+  color: #fff;
 }
 .buttonHover {
-  background: #dad023;
+  background: #BF9411;
   color: #fff;
 }
