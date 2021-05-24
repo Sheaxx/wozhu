@@ -27,8 +27,8 @@
     <view class="itemContent">{{way}}</view>
   </view>
   <view class="button">
-    <view class="addWish">添加到愿望单</view>
-    <view class="adopt">确认领养</view>
+    <view class="addToWishes" bindtap="addToWishes">添加到愿望单</view>
+    <view class="adopt" bindtap="adopt" >确认领养</view>
   </view>
   <view class="perch"></view>
 </view>
