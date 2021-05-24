@@ -112,15 +112,7 @@ Component({
    * 生命周期函数--监听页面显示
    */
     onShow: function () {
-      var RmsgList = this.data.msgList
-      RmsgList.reverse()
-      console.log("hhh")
-      console.log(msgList)
-      console.log(RmsgList)
-      console.log("hhh")
-      this.setData({
-        RmsgList:RmsgList
-      })
+      
     },
 
     // 事件处理函数
