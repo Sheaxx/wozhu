@@ -13,7 +13,7 @@
     <image class="userProfile" src="{{userProfile}}" mode="widthFix"></image>
     <text class="userName">{{userName}}</text>
     <view class="area">
-      <image class="areaLogo" src="/images/icon/area.png" mode="widthFix"></image>
+      <image class="areaLogo" src="/images/icon/area.svg" mode="widthFix"></image>
       <view>{{area}}</view>
     </view>
   </view>
@@ -27,8 +27,8 @@
     <view class="itemContent">{{way}}</view>
   </view>
   <view class="button">
-    <view class="addWish">添加到愿望单</view>
-    <view class="adopt">确认领养</view>
+    <view class="addToWishes" bindtap="addToWishes">添加到愿望单</view>
+    <view class="adopt" bindtap="adopt" >确认领养</view>
   </view>
   <view class="perch"></view>
 </view>

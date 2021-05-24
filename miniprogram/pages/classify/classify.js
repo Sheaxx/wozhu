@@ -1,5 +1,7 @@
 // pages/classify/classify.js
 
+const postList = wx.cloud.database().collection('postList')
+
 Component({
   pageLifetimes: {
     show() {
@@ -44,12 +46,8 @@ Component({
     },
 
     //跳转到详情页
-    itemClick: function () {
-      wx.navigateTo({
 
-      })
-    },
-
+  
     //返回顶部
     toTop:function(){
       wx.pageScrollTo({
@@ -57,37 +55,52 @@ Component({
       })
     },
 
-    getList: function (e) {
+    
+
+    itemClick:function(event){
+
+      console.log(event)
+      wx.navigateTo({
+        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.index[0]._id
+        
+      })
+    },
+
+    getList:function(e){
+     
       var _this = this
       this.setData({
         msgList: null
       })
       wx.cloud.database().collection('postList').where({
-          classify: e
-        })
-        .field({
-          title: true,
-          imgList: true
-        })
-        .get()
-        .then(res => {
 
-          console.log(res)
-          if (res.data == null) {
+         
+
+        classify:e
+      })
+      .get()
+      .then(res => {
+        if(res.data == null){
+          _this.setData({
+            msgList:null
+          })
+        }
+        else{
+          for(var i =0;i<res.data.length;i++){
+            // var img = res.data[i].imgList[0]
+            
             _this.setData({
-              msgList: null
+              // ["msgList["+i+"].image"]:img,
+              // ["msgList["+i+"].title"]:res.data[i].title,
+                  ["msgList["+i+"].title"] : res.data[i].title,
+                  ["msgList["+i+"].image"] : res.data[i].imgList[0],
+                  ["msgList["+i+"].openId"] : res.data[i].openId,
+                  ["msgList["+i+"]._id"] : res.data[i]._id
+                
             })
-          } else {
-            for (var i = 0; i < res.data.length; i++) {
-              var img = res.data[i].imgList[0]
-
-              _this.setData({
-                ["msgList[" + i + "].image"]: img,
-                ["msgList[" + i + "].title"]: res.data[i].title
-              })
-            }
-          }
-        })
+          } 
+        }
+      })
     },
 
     /**

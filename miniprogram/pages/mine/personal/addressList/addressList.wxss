@@ -52,3 +52,7 @@ button {
   background: #ECBC28;
   color:#fff;
 }
+.buttonHover {
+  background: #BF9411;
+  color: #fff;
+}

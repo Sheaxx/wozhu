@@ -68,10 +68,9 @@
   height: 100%;
   transition: all 0.4s;
   text-align: center;
-  
 }
 .delete image{
-  width: 60rpx;
+  width: 64rpx;
   margin-top: 95rpx;
 }
 .touch-move-active .content,

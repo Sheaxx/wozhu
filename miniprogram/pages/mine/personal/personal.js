@@ -8,8 +8,11 @@ var cos = new COS({
 
 
 
+
+
 const db = wx.cloud.database()
 const user = db.collection('User')
+const postList = db.collection('postList')
 
 
 Page({
@@ -128,7 +131,15 @@ Page({
       userName: dataArr[2]
     })
 
-    
+    postList.field({
+        _id:false,
+        openId:true,
+        userName:true
+    })
+    .get()
+    .then(res => {
+      console.log(res.data)
+    })
 
     // cos.getService(function(err,data){
     //   console.log(data&&data.Buckets);
@@ -161,6 +172,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    
     const userInfo = getApp().globalData.userInfo
     let _this = this;
     let pages = getCurrentPages();//当前页面

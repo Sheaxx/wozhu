@@ -18,17 +18,7 @@ Page({
           "", "", ""
         ],
       },
-      {
-        time: "",
-        msgTitle: "",
-        msgContent: "",
-        classify: "",
-        way: "",
-        imgList: [
-          "", "", ""
-
-        ],
-      },
+      
     ]
   },
 

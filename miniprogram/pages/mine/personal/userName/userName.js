@@ -43,6 +43,15 @@ Page({
    */
   onUnload: function () {
     let _this = this;
+    let userName = _this.data.userName;
+    if(!userName){
+      wx.showToast({
+        title: '用户名不能为空,请重新填写',
+        icon:'none',
+        duration:1500
+      })
+      return;
+    }
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length-2];//上一页面
     let newUserName = _this.data.userName

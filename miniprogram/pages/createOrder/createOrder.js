@@ -1,4 +1,9 @@
 // pages/createOrder/createOrder.js
+
+const db = wx.cloud.database()
+const adopt = db.collection('adopt')
+const postList = db.collection('postList')
+
 Page({
 
   /**
@@ -30,12 +35,51 @@ Page({
       delta: 1,
     })
   },
+  confirmCreate:function(){
+    var _this = this
+    adopt.add({
+      data:({
+        classify:_this.data.classify,
+        imgList:_this.data.image,
+        msgTitle:_this.data.msgTitle,
+        consigneeName:_this.data.consigneeName,
+        way:_this.data.way,
+        telNumber:_this.data.telNumber,
+        region:_this.data.region,
+        detailAddress:_this.data.detailAddress,
+        orderTime:new Date()
+      })
+    })
+    .then(res => {
+      wx.showToast({
+        title: '已添加',
+        icon: 'success'
+      })
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var _this = this
+      _this.setData({
+        _id:options._id
+      })
+      console.log(options._id)
+      postList.where({
+          _id:options._id
+      })
+      .get()
+      .then(res => {
+        console.log(res.data)
+        _this.setData({
+          image:res.data[0].imgList[0],
+          msgTitle:res.data[0].title,
+          classify:res.data[0].classify,
+          way:res.data[0].way
+        })
+      })
   },
 
   /**

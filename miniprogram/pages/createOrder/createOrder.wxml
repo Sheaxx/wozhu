@@ -3,13 +3,13 @@
   <image class="background" src="/images/background/createOrder.jpg" mode="widthFix"></image>
   <view class="topBar">
     <view class="title">
-      <image class="icon" src="/images/icon/clock.png" mode="widthFix"></image>
+      <image class="icon" src="/images/icon/clock.svg" mode="widthFix"></image>
       <text>等待确认</text>
     </view>
     <view class="remainingTime">剩余：{{remainingTime}}</view>
   </view>
   <view class="info" bindtap="toAdressList">
-    <image src="/images/icon/location.png" mode="widthFix"></image>
+    <image src="/images/icon/location.svg" mode="widthFix"></image>
     <view class="content" wx:if="{{consigneeName&&telNumber&&region&&detailAddress}}">
       <view class="consigneeName">{{consigneeName}}</view>
       <view class="telNumber">{{telNumber}}</view>
@@ -31,16 +31,16 @@
   </view>
   <view class="classify">
     <text class="itemName">分类</text>
-    <image src="/images/icon/rightArrow.png" mode="widthFix"></image>  
+    <image src="/images/icon/rightArrow.svg" mode="widthFix"></image>  
     <text>{{classify}}</text>
   </view>
   <view class="way">
     <text class="itemName">交接方式</text>
-    <image src="/images/icon/rightArrow.png" mode="widthFix"></image>  
+    <image src="/images/icon/rightArrow.svg" mode="widthFix"></image>  
     <text>{{way}}</text>
   </view>
   <view class="button">
-    <view class="confirm">确认领养</view>
+    <view class="confirm" bindtap="confirmCreate">确认领养</view>
     <view class="cancel" bindtap="cancelCreate">取消领养</view>
   </view>
 </view>

@@ -1,35 +1,16 @@
 {
-  "setting": {},
-  "condition": {
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
         },
-        {
-          "name": "pages/new/new",
-          "pathName": "pages/new/new",
-          "query": "",
-          "scene": null
+        "game": {
+            "list": []
         },
-        {
-          "name": "pages/mine/released/released",
-          "pathName": "pages/mine/released/released",
-          "query": "",
-          "scene": null
+        "gamePlugin": {
+            "list": []
         },
+#####################3 
         {
           "name": "pages/mine/personal/addressList/addressList",
           "pathName": "pages/mine/personal/addressList/addressList",
@@ -45,9 +26,90 @@
         {
           "name": "pages/classify/classify",
           "pathName": "pages/classify/classify",
+          "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/personal/addressList/addressList",
+          "pathName": "pages/mine/personal/addressList/addressList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/order/order",
+          "pathName": "pages/mine/order/order",
+          "scene": null
+%%%%%%%%%%%%%%%%%%%%%%%%%
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "db guide",
+                    "pathName": "pages/databaseGuide/databaseGuide",
+                    "query": ""
+                },
+                {
+                    "name": "pages/new/new",
+                    "pathName": "pages/new/new",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/mine/released/released",
+                    "pathName": "pages/mine/released/released",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/mine/personal/addressList/addressList",
+                    "pathName": "pages/mine/personal/addressList/addressList",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/createOrder/createOrder",
+                    "pathName": "pages/createOrder/createOrder",
+                    "query": "_id=cbddf0af60a7b4bb0a3b8f506ab5f0c3",
+                    "scene": null
+                },
+                {
+                    "name": "pages/msgDetails/msgDetails",
+                    "pathName": "pages/msgDetails/msgDetails",
+                    "query": "_id=cbddf0af60a0f07708f108004df1c022",
+                    "scene": null
+                },
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "isAll = true",
+                    "scene": null
+                },
+                {
+                    "name": "pages/msgDetails/msgDetails",
+                    "pathName": "pages/msgDetails/msgDetails",
+                    "query": "_id=cbddf0af60a7b4bb0a3b8f506ab5f0c3",
+                    "scene": null
+                },
+                {
+                    "name": "pages/wish/wish",
+                    "pathName": "pages/wish/wish",
+                    "query": "_id=cbddf0af60a7b4bb0a3b8f506ab5f0c3",
+                    "scene": null
+                },
+                {
+                    "name": "pages/mine/order/order",
+                    "pathName": "pages/mine/order/order",
+                    "query": "_id=cbddf0af60a7b4bb0a3b8f506ab5f0c3",
+                    "scene": null
+                }
+            ]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         }
-      ]
     }
-  }
 }

@@ -2,7 +2,7 @@
 <view id="search">
   <view class="title">搜索</view>
   <view class="search" >
-    <image mode="widthFix" src="/images/icon/search.png"></image>
+    <image mode="widthFix" src="/images/icon/search.svg"></image>
     <input bindinput="toSearch" type="text" focus confirm-type="search" model:value="{{content}}" placeholder="搜索你想要的内容"/>
   </view>
 </view>

@@ -68,9 +68,10 @@ radio .wx-radio-input {
 }
 .imgItem image {
   width: 100%;
+  margin: 4.5rpx 1rpx;
 }
 .imgNew {
-  border: 1px dashed rgba(0, 0, 0, 0.575);
+  border: 2rpx dashed rgba(0, 0, 0, 0.575);
 }
 button {
   font-size: 32rpx!important;
