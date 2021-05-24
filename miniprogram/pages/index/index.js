@@ -12,17 +12,17 @@ Component({
 
   pageLifetimes: {
     
-    show() {
+    show(event) {
       var _this = this
       if (typeof this.getTabBar === 'function' &&
         this.getTabBar()) {
         this.getTabBar().setData({
           selected: 0
         })
-        
         if(getApp().globalData.isAll == true){
           postList.field({
-            _id:false,
+            _id:true,
+            openId:true,
             title:true,
             imgList:true
           })
@@ -33,7 +33,9 @@ Component({
             for(var i =0;i<res.data.length;i++){
               _this.setData({
                 ["msgList["+i+"].title"] : res.data[i].title,
-                ["msgList["+i+"].image"] : res.data[i].imgList[0]
+                ["msgList["+i+"].image"] : res.data[i].imgList[0],
+                ["msgList["+i+"].openId"] : res.data[i].openId,
+                ["msgList["+i+"]._id"] : res.data[i]._id
               })
             }
             
@@ -43,10 +45,6 @@ Component({
             msgList:getApp().globalData.msgList
           })
         }
-
-        
-        
-
       }
     }
   },
@@ -57,8 +55,10 @@ Component({
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
 
+
     msgList: [],
-    RmsgList:[]//倒序的列表
+    
+
   },
 
   methods: {
@@ -91,8 +91,12 @@ Component({
     },
 
     //跳转到详情页
-    itemClick:function(){
+    itemClick:function(event){
+      var _this = this
+      // console.log(event)
+      // console.log(event.currentTarget.dataset.index)
       wx.navigateTo({
+        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.index[0]._id
         
       })
     },
@@ -132,8 +136,7 @@ Component({
       //     canIUseGetUserProfile: true
       //   })
       // }
-      console.log(getApp().globalData.isAll)
-
+      // console.log(getApp().globalData.isAll)
       // postList.field({
       //   _id:false,
       //   title:true,

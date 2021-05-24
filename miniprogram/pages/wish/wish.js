@@ -1,33 +1,42 @@
 // pages/wish/wish.js
+
+const db = wx.cloud.database()
+const wishes = db.collection('wishes')
+
 Component({
   pageLifetimes: {
     show() {
+      var _this = this
       if (typeof this.getTabBar === 'function' &&
         this.getTabBar()) {
         this.getTabBar().setData({
           selected: 3
         })
       }
+
+      wishes.where({
+        openId:getApp().globalData._id
+      })
+      .get()
+      .then(res => {
+        console.log(res)
+        for(var i = 0;i < res.data.length;i++){
+          _this.setData({
+            ['wishList['+i+'].msgTitle']:res.data[i].msgTitle,
+            ['wishList['+i+'].image']:res.data[i].imgList[0],
+            ['wishList['+i+'].classify']:res.data[i].classify,
+            ['wishList['+i+'].way']:res.data[i].way
+          })
+        }
+        
+      })
     }
   },
   /**
    * 页面的初始数据
    */
   data: {
-    wishList: [
-      {
-        msgTitle: "一个长长长长长长长长长长长长长长长长标题",
-        image: "/images/index/1.jpeg",
-        classify: "流浪动物",
-        way: "自提"
-      },
-      {
-        msgTitle: "一个长长长长长长长长长长长长长长长长标题",
-        image: "/images/index/1.jpeg",
-        classify: "流浪动物",
-        way: "自提"
-      }
-    ],
+    wishList: [],
     startX: 0, //开始坐标
     startY: 0
   },
@@ -119,15 +128,14 @@ Component({
       wx.navigateTo({
         url: '../createOrder/createOrder',
       })
-    }
+    },
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
