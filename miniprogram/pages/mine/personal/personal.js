@@ -8,8 +8,11 @@ var cos = new COS({
 
 
 
+
+
 const db = wx.cloud.database()
 const user = db.collection('User')
+const postList = db.collection('postList')
 
 
 Page({
@@ -128,7 +131,15 @@ Page({
       userName: dataArr[2]
     })
 
-    
+    postList.field({
+        _id:false,
+        openId:true,
+        userName:true
+    })
+    .get()
+    .then(res => {
+      console.log(res.data)
+    })
 
     // cos.getService(function(err,data){
     //   console.log(data&&data.Buckets);

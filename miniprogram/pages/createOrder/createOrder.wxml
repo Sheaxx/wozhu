@@ -40,7 +40,7 @@
     <text>{{way}}</text>
   </view>
   <view class="button">
-    <view class="confirm">确认领养</view>
+    <view class="confirm" bindtap="confirmCreate">确认领养</view>
     <view class="cancel" bindtap="cancelCreate">取消领养</view>
   </view>
 </view>

@@ -6,13 +6,13 @@
     <view id="petTransfer" class="{{currentTab == 2 ? 'tab-active':''}}" bindtap="switchTopTab">宠物转养</view>
   </view>
   <view class="content" wx:if="{{currentTab == 0}}">
-    <msg-list msgList="{{msgList}}"></msg-list>
+    <msg-list bindtap="itemClick" data-index="{{msgList}}" msgList="{{msgList}}"></msg-list>
   </view>
   <view class="content" wx:if="{{currentTab == 1}}">
-    <msg-list msgList="{{msgList}}"></msg-list>
+    <msg-list bindtap="itemClick" data-index="{{msgList}}" msgList="{{msgList}}"></msg-list>
   </view>
   <view class="content" wx:if="{{currentTab == 2}}">
-    <msg-list msgList="{{msgList}}"></msg-list>
+    <msg-list bindtap="itemClick" data-index="{{msgList}}" msgList="{{msgList}}"></msg-list>
   </view>
   <view class="perch"></view>
 </view>

@@ -1,4 +1,6 @@
 // pages/mine/order.js
+const db = wx.cloud.database()
+const adopt = db.collection('adopt')
 Page({
 
   /**
@@ -6,23 +8,7 @@ Page({
    */
   data: {
     currentTab: 0,
-    orderList:[
-      {
-        orderId:"12345678910",
-        orderTime:"2021.5.11",
-        image:"/images/index/1.jpeg",
-        title:"关于ljk要叫我爹这件事hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-        classify:"流浪动物",
-        way:"自提"
-      },
-      {
-        orderId:"12345678910",
-        orderTime:"2021.5.11",
-        image:"/images/index/1.jpeg",
-        title:"关于ljk要叫我爹这件事hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-        classify:"流浪动物",
-        way:"自提"
-      }
+    orderList:[   
     ]
   },
 
@@ -42,7 +28,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var _this = this
+    adopt.where({
+      _openid:getApp().globalData._id
+    })
+    .get()
+    .then(res => {
+      console.log(res.data)
+      
+      for(var i = 0;i < res.data.length;i++){
+        var utc_time = new Date(res.data[i].orderTime)
+      res.data[i].orderTime = utc_time.toLocaleString() 
+        _this.setData({
+          ['orderList['+i+'].orderId']:res.data[i]._id,
+          ['orderList['+i+'].orderTime']:res.data[i].orderTime.replace(/T/g,' ').replace(/\.[\d]{3}Z/,''),
+          ['orderList['+i+'].image']:res.data[i].imgList,
+          ['orderList['+i+'].title']:res.data[i].msgTitle,
+          ['orderList['+i+'].classify']:res.data[i].classify,
+          ['orderList['+i+'].way']:res.data[i].way
+  
+        })
+      }
+      
+    })
   },
 
   /**
