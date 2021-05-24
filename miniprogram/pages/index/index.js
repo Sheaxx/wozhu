@@ -93,11 +93,10 @@ Component({
     //跳转到详情页
     itemClick:function(event){
       var _this = this
-      // console.log(event)
-      // console.log(event.currentTarget.dataset.index)
+      var index = event.datail
+      console.log(event)
       wx.navigateTo({
-        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.index[0]._id
-        
+        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.msgList[index]._id
       })
     },
 

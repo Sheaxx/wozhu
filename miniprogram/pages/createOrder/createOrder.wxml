@@ -26,7 +26,6 @@
         <image src="{{image}}" mode="widthFix"></image>
       </view>
       <view class="msgTitle">{{msgTitle}}</view>
-      <view class="currentLocation">{{currentLocation}}</view>
     </view>
   </view>
   <view class="classify">

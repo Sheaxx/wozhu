@@ -44,9 +44,6 @@ Component({
         _this.getList("宠物转赠")
       }
     },
-
-    //跳转到详情页
-
   
     //返回顶部
     toTop:function(){
@@ -56,12 +53,12 @@ Component({
     },
 
     
-
+    //跳转到详情页
     itemClick:function(event){
 
-      console.log(event)
+      var index = event.datail
       wx.navigateTo({
-        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.index[0]._id
+        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.msgList[index]._id
         
       })
     },

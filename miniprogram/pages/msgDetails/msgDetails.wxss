@@ -37,26 +37,8 @@ swiper image {
   font-size: 30rpx;
   font-weight: 550;
   position: absolute;
-  top: 0;
+  top: 40rpx;
   left: 120rpx;
-}
-.area {
-  position: absolute;
-  top: 50rpx;
-  left: 120rpx;
-  height: 50rpx;
-  width: 80%;
-}
-.areaLogo {
-  float: left;
-  width: 50rpx;
-  line-height: 50rpx;
-}
-.area view {
-  font-size: 28rpx;
-  line-height: 50rpx;
-  margin-left: 30rpx;
-  color: rgb(97, 94, 94);
 }
 .classify, .way {
   width: 92%;
@@ -80,18 +62,19 @@ swiper image {
   display: flex;
   border-radius: 50rpx;
   box-shadow: 0 0 30rpx 1.6rpx rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 .button view {
   flex: 1;
   font-size: 36rpx;
   text-align: center;
 }
-.addWish {
+.addToWishes {
   height: 68rpx;
   line-height: 68rpx;
-  color: #f3e817;
+  color: #ECBC28;
   background: #fff;
-  border: 6rpx solid #f3e817;
+  border: 6rpx solid #ECBC28;
   border-top-left-radius: 50rpx;
   border-bottom-left-radius: 50rpx;
 }
@@ -99,7 +82,7 @@ swiper image {
   height: 80rpx;
   line-height: 80rpx;
   color: #fff;
-  background: #f3e817;
+  background: #ECBC28;
   border-top-right-radius: 50rpx;
   border-bottom-right-radius: 50rpx;
 }
