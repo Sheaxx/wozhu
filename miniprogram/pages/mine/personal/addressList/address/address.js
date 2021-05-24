@@ -14,6 +14,17 @@ Page({
   //保存地址
   saveAddress:function(e){
     let _this = this;
+    let data = _this.data
+    for(var item in data){
+      if(!data[item]){
+        wx.showToast({
+          title: '请将信息填写完整',
+          icon: 'none',
+          duration: 1500
+        })
+        return;
+      }
+    }
     let pages = getCurrentPages();//当前页面
     let prevPage = pages[pages.length-2];//上一页面
     let oldList = prevPage.data.addressList

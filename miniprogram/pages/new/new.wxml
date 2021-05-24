@@ -28,7 +28,7 @@
           data-index="{{index}}" />
       </view>
       <view class="imgItem imgNew" wx:if="{{form.imgList.length<=5}}" bindtap="chooseSource">
-        <image class="uploading" src="/images/icon/uploadImg.png" mode="widthFix" />
+        <image class="uploading" src="/images/icon/uploadImg.svg" mode="widthFix" />
       </view>
     </view>
     <button bindtap="submit">发布</button>

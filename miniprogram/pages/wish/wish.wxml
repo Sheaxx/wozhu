@@ -13,7 +13,7 @@
         <view class="button" bindtap="toCreateOrder">确认领养</view>
       </view>
       <view class="delete" bindtap="delete" data-index="index">
-        <image src="/images/icon/delete.png" mode="widthFix"></image>
+        <image src="/images/icon/delete.svg" mode="widthFix"></image>
       </view>
     </view>
   </view>

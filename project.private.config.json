@@ -45,6 +45,24 @@
         {
           "name": "pages/classify/classify",
           "pathName": "pages/classify/classify",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/personal/addressList/addressList",
+          "pathName": "pages/mine/personal/addressList/addressList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/order/order",
+          "pathName": "pages/mine/order/order",
           "scene": null
         }
       ]

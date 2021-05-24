@@ -2,7 +2,7 @@
   <view class="topbar">
     <image class="logo" src="/images/icon/logo.jpg" mode="widthFix"></image>
     <view class="search" bindtap="toSearch">
-      <image mode="widthFix" src="/images/icon/search.png"></image>
+      <image mode="widthFix" src="/images/icon/search.svg"></image>
       <view>搜索你想要的内容</view>
     </view>
   </view>
@@ -21,16 +21,22 @@
     </swiper>
   </view>
   <view class="classify">
-    <view class="strayAnimal" bindtap="tostrayAnimal">
-      <image src="/images/index/strayAnimal.png" mode="widthFix"></image>
+    <view class="item strayAnimal" bindtap="tostrayAnimal">
+      <view class="image">
+        <image src="/images/icon/strayAnimal.svg" mode="widthFix" />
+      </view>
       <text>流浪宠物</text>
     </view>
-    <view class="petFostering" bindtap="toPetFostering">
-      <image src="/images/index/petFostering.png" mode="widthFix"></image>
+    <view class="item petFostering" bindtap="toPetFostering">
+      <view class="image">
+        <image src="/images/icon/petFostering.svg" mode="widthFix" />
+      </view>
       <text>宠物寄养</text>
     </view>
-    <view class="petTransfer" bindtap="toPetTransfer">
-      <image src="/images/index/PetTransfer.png" mode="widthFix"></image>
+    <view class="item petTransfer" bindtap="toPetTransfer">
+      <view class="image">
+        <image src="/images/icon/petTransfer.svg" mode="widthFix" />
+      </view>
       <text>宠物转赠</text>
     </view>
   </view>

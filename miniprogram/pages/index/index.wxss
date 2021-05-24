@@ -52,12 +52,21 @@ page {
   padding-bottom: 80rpx;
   border-bottom: 2rpx solid rgba(0, 0, 0, 0.288);
 }
-.classify view {
+.item {
   margin: 0 auto;
+  text-align: center;
+}
+.image {
+  width: 80rpx;
+  height: 80rpx;
+  padding: 25rpx;
+  background: #ECBC28;
+  border-radius: 100%;
+  margin-bottom: 10rpx;
 }
 .classify image {
-  width: 100%;
-  margin-bottom: 6rpx;
+  width: 80rpx;
+  /* margin-bottom: 6rpx; */
 }
 .listTitle {
   height: 100rpx;

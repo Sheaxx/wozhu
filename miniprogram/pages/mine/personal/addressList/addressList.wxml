@@ -12,5 +12,5 @@
       <view class="delete" catchtap="delAddress" data-index="{{index}}">删除</view>
     </view>
   </view>
-  <button class="addAddress" bindtap="addAddress">新增地址</button>
+  <button class="addAddress" hover-class="buttonHover" bindtap="addAddress">新增地址</button>
 </view>
