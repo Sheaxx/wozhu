@@ -12,10 +12,6 @@
   <view class="userInfo">
     <image class="userProfile" src="{{userProfile}}" mode="widthFix"></image>
     <text class="userName">{{userName}}</text>
-    <view class="area">
-      <image class="areaLogo" src="/images/icon/area.svg" mode="widthFix"></image>
-      <view>{{area}}</view>
-    </view>
   </view>
   <view class="msgContent">{{msgContent}}</view>
   <view class="classify">

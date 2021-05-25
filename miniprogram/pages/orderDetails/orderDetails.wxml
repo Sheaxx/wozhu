@@ -22,7 +22,6 @@
       <image src="{{image}}" mode="widthFix"></image>
     </view>
     <view class="msgTitle">{{msgTitle}}</view>
-    <view class="currentLocation">{{currentLocation}}</view>
   </view>
   <view class="order">
     <view class="itemTitle">领养单信息</view>
@@ -35,7 +34,7 @@
     <view class="itemName">交接方式</view>
     <view class="itemContent">{{way}}</view>
   </view>
-  <view class="button" wx:if="{{orderState == '已创建'}}">
+  <view class="button" wx:if="{{orderState == '已创建' || orderState == '已送出'}}">
     <view>完成领养</view>
   </view>
 </view>

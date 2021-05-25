@@ -12,7 +12,6 @@ Page({
     detailAddress: "四季山庄四季山庄四季山庄四季山庄四季山庄",
     image: "/images/index/1.jpeg",
     msgTitle: "广州某区某街一只流浪小猫待领养",
-    currentLocation:"广州",
     orderId:"1984518498652318897",
     createOrderTime:"2021-5-11 11:29:00",
     classify: "流浪动物",

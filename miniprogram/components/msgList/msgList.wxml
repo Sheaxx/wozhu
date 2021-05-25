@@ -1,6 +1,6 @@
 <!--components/msgList.wxml-->
 <view class="list">
-  <view class="listMessage" wx:for="{{msgList}}" wx:key="index">
+  <view class="listMessage" wx:for="{{msgList}}" wx:key="index" data-index="{{index}}" bindtap="click">
     <image src="{{item.image}}" mode="widthFix"></image>
     <text>{{item.title}}</text>
   </view>

@@ -17,7 +17,6 @@ Page({
     detailAddress: "",
     image: "/images/index/1.jpeg",
     msgTitle: "广州某区某街一只流浪小猫待领养",
-    currentLocation:"广州",
     classify: "流浪动物",
     way: "自提"
   },

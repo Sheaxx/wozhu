@@ -16,7 +16,7 @@
   width: 670rpx;
   padding-left: 40rpx;
   line-height: 150rpx;
-  margin: 20rpx auto 0 auto;
+  margin: 120rpx auto 0 auto;
   background-image: linear-gradient(to right,#eece1c,#f5dc93);
   color: #fff;
   font-size: 42rpx;
