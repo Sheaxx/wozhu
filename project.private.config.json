@@ -51,6 +51,12 @@
                 {
                     "name": "pages/mine/order/order",
                     "pathName": "pages/mine/order/order",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/wish/wish",
+                    "pathName": "pages/wish/wish",
                     "scene": null
                 }
             ]

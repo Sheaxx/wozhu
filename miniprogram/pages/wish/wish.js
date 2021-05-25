@@ -19,13 +19,13 @@ Component({
       })
       .get()
       .then(res => {
-        console.log(res)
         for(var i = 0;i < res.data.length;i++){
           _this.setData({
             ['wishList['+i+'].msgTitle']:res.data[i].msgTitle,
             ['wishList['+i+'].image']:res.data[i].imgList[0],
             ['wishList['+i+'].classify']:res.data[i].classify,
-            ['wishList['+i+'].way']:res.data[i].way
+            ['wishList['+i+'].way']:res.data[i].way,
+            ['wishList['+i+']._id']:res.data[i]._id
           })
         }
         
@@ -38,7 +38,8 @@ Component({
   data: {
     wishList: [],
     startX: 0, //开始坐标
-    startY: 0
+    startY: 0,
+    index:0
   },
 
   methods: {
@@ -124,9 +125,14 @@ Component({
     },
 
     //确认领养
-    toCreateOrder:function(){
+    toCreateOrder:function(event){
+      var _this = this
+      var index = event.currentTarget.dataset.index
+      _this.setData({
+        index:index
+      })
       wx.navigateTo({
-        url: '../createOrder/createOrder',
+        url: '../createOrder/createOrder?w_id='+_this.data.wishList[_this.data.index]._id,
       })
     },
     

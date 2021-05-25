@@ -53,6 +53,7 @@ Page({
     // })
     wishes.add({
       data:({
+        p_id:_this.data._id,
         classify:_this.data.classify,
         imgList:_this.data.imgList,
         msgContent:_this.data.msgContent,
@@ -98,6 +99,7 @@ Page({
       .then(res => {
         console.log(res.data)
         _this.setData({
+          _id:res.data[0]._id,
           imgList:res.data[0].imgList,
           msgTitle:res.data[0].title,
           msgContent:res.data[0].content,

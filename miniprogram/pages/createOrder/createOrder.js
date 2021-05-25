@@ -3,6 +3,7 @@
 const db = wx.cloud.database()
 const adopt = db.collection('adopt')
 const postList = db.collection('postList')
+const wishes = db.collection('wishes')
 
 Page({
 
@@ -20,7 +21,9 @@ Page({
     image: "/images/index/1.jpeg",
     msgTitle: "广州某区某街一只流浪小猫待领养",
     classify: "流浪动物",
-    way: "自提"
+    way: "自提",
+    _id:'',
+    w_id:''
   },
 
   //选择收货信息
@@ -41,7 +44,7 @@ Page({
   confirmCreate:function(){
     var _this = this
     var info = _this.data.info
-      console.log(info)
+      // console.log(info)
       for (var item in info) {
         if (!info[item]) { 
           wx.showToast({
@@ -52,16 +55,18 @@ Page({
           return;
         }
       }
+      
     adopt.add({
       data:({
         classify:_this.data.classify,
         imgList:_this.data.image,
         msgTitle:_this.data.msgTitle,
-        consigneeName:_this.data.consigneeName,
+        consigneeName:_this.data.info.consigneeName,
         way:_this.data.way,
-        telNumber:_this.data.telNumber,
-        region:_this.data.region,
-        detailAddress:_this.data.detailAddress,
+        telNumber:_this.data.info.telNumber,
+        region:_this.data.info.region,
+        detailAddress:_this.data.info.detailAddress,
+        orderState:'已创建',
         orderTime:new Date()
       })
     })
@@ -71,6 +76,30 @@ Page({
         icon: 'success'
       })
     })
+
+    console.log('aaaaaa w_id:'+_this.data.w_id)
+    if(_this.data.w_id!=''){
+      wishes.where({
+        _id:_this.data.w_id
+      })
+      .remove()
+      .then(res => {
+        console.log('555555555555555')
+        console.log(res)
+      })
+    }
+
+    if(_this.data._id!=''){
+      postList.where({
+        _id:_this.data._id
+      })
+      .remove()
+      .then(res => {
+        console.log('555555555555555')
+        console.log(res)
+      })
+    }
+    
   },
 
   /**
@@ -78,16 +107,21 @@ Page({
    */
   onLoad: function (options) {
     var _this = this
+    
+    if(options._id){
+      
       _this.setData({
         _id:options._id
       })
-      console.log(options._id)
+      console.log('options._id'+options._id)
+        console.log('this.data._id:'+_this.data._id)
+      
+      
       postList.where({
           _id:options._id
       })
       .get()
       .then(res => {
-        console.log(res.data)
         _this.setData({
           image:res.data[0].imgList[0],
           msgTitle:res.data[0].title,
@@ -95,6 +129,32 @@ Page({
           way:res.data[0].way
         })
       })
+    }
+      if(options.w_id){
+        
+        _this.setData({
+          w_id:options.w_id
+        })
+        console.log('options.w_id'+options.w_id)
+        console.log('this.data.w_id:'+_this.data.w_id)
+        wishes.where({
+            _id:options.w_id
+        })
+        .get()
+        .then(res => {
+          _this.setData({
+            image:res.data[0].imgList[0],
+            msgTitle:res.data[0].msgTitle,
+            classify:res.data[0].classify,
+            way:res.data[0].way
+          })
+
+          console.log(_this.data)
+        })
+      }
+    
+      
+
   },
 
   /**
