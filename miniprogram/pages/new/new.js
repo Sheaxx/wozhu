@@ -200,7 +200,6 @@ Component({
       // }
 
       var form = _this.data.form
-      console.log(form)
       for (var item in form) {
         if (!form[item]) { //验证form表单是否填写完整
           wx.showToast({

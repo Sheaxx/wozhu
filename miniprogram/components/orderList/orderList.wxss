@@ -8,7 +8,7 @@
   border-radius: 16rpx;
 }
 .topContent {
-  height: 60rpx;
+  height: 90rpx;
   width: 90%;
   margin: 0 auto;
   padding-top: 25rpx;
@@ -16,11 +16,9 @@
   font-size: 26rpx;
   color: rgba(97, 94, 94, 0.815);
 }
-.orderId {
-  float: left;
-}
 .orderTime {
-  float: right;
+  margin-top: 10rpx;
+  text-align: right;
 }
 .orderId::before {
   content:"";

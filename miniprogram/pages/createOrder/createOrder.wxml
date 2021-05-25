@@ -10,12 +10,12 @@
   </view>
   <view class="info" bindtap="toAdressList">
     <image src="/images/icon/location.svg" mode="widthFix"></image>
-    <view class="content" wx:if="{{consigneeName&&telNumber&&region&&detailAddress}}">
-      <view class="consigneeName">{{consigneeName}}</view>
-      <view class="telNumber">{{telNumber}}</view>
+    <view class="content" wx:if="{{info.consigneeName&&info.telNumber&&info.region&&info.detailAddress}}">
+      <view class="consigneeName">{{info.consigneeName}}</view>
+      <view class="telNumber">{{info.telNumber}}</view>
       <view class="address">
-        <text wx:for="{{region}}" wx:key="index">{{item}}</text>
-        <text>{{detailAddress}}</text>
+        <text wx:for="{{info.region}}" wx:key="index">{{item}}</text>
+        <text>{{info.detailAddress}}</text>
       </view>
     </view>
     <view class="emptyAddress" wx:else>点击选择地址</view>

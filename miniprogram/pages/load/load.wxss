@@ -1,24 +1,35 @@
 /* pages/load/load.wxss */
 /**app.wxss**/
 .container {
-
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	padding: 200rpx 0;
+	padding: 100rpx 0;
 	box-sizing: border-box;
 }
-
+.logo {
+	width: 300rpx;
+}
+.logo image {
+	width: 300rpx;
+	height: 300rpx;
+	border-radius: 100%;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.3);
+}
+.logo view {
+	font-size: 42rpx;
+	text-align: center;
+	margin-top: 40rpx;
+}
 .userinfo {
 	display: flex;
 	flex-direction: column;
 	height: 500rpx;
 	border: none;
 }
-
-.mai {
+/* .mai {
 	width: 80%;
 	height: 100rpx;
 	margin-top: 100rpx;
@@ -30,20 +41,30 @@
 	color: white;
 	font-weight: bold;
 }
-
 .med {
 	color: #8a8a8a;
 	font-size: 40rpx;
 	text-align: center;
 	margin-top: 20rpx;
+} */
+.button {
+	width: 300rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 38rpx;
+	font-weight: 700;
+	text-align: center;
+	background: #ECBC28;
+	color: #fff;
+	border-radius: 40rpx;
+	margin-top: 50rpx;
 }
-
 .txt {
-	width: 92%;
+	width: 90%;
 	color: #8a8a8a;
 	font-size: 32rpx;
 	font-weight: 10rpx;
 	margin-top: 10rpx;
-	margin: auto;
+	text-align: center;
 }
 

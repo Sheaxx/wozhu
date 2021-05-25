@@ -69,10 +69,10 @@ Page({
       let region = _this.data.addressList[index].region;
       let detailAddress = _this.data.addressList[index].detailAddress;
       prevPage.setData({//直接给上移页面赋值
-        consigneeName:consigneeName,
-        telNumber:telNumber,
-        region:region,
-        detailAddress:detailAddress,
+        ['info.consigneeName']:consigneeName,
+        ['info.telNumber']:telNumber,
+        ['info.region']:region,
+        ['info.detailAddress']:detailAddress,
         selAddress:'yes'
       });
       wx.navigateBack({
@@ -88,7 +88,6 @@ Page({
     this.setData({
       fromCreateOrder:options.fromCreateOrder
     })
-    console.log(this.data.fromCreateOrder)
   },
 
   /**
