@@ -8,6 +8,7 @@ Page({
    */
   data: {
     currentTab: 0,
+    index:0,
 
     
       
@@ -28,6 +29,26 @@ Page({
       this.setData({ currentTab: 2 })
     }
   },
+  
+  itemClick:function(event){
+
+      
+      var index = event.detail.index
+      var _this = this
+      console.log('555555555555555')
+      console.log(event)
+      console.log(index)
+      _this.setData({
+        index:index
+      })
+      // console.log(index)
+      // console.log(event.detail.index)
+      wx.navigateTo({
+        url:'../orderDetails/orderDetails?_id='+event.currentTarget.dataset.orderList[_this.data.index]._id
+        
+      })
+  },
+  
 
   /**
    * 生命周期函数--监听页面加载

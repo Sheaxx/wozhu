@@ -18,6 +18,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    click:function(e){
+      let index = e.currentTarget.dataset
+      this.triggerEvent('itemClick', index)
+    }
   }
 })
