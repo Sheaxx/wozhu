@@ -44,7 +44,7 @@ Page({
       // console.log(index)
       // console.log(event.detail.index)
       wx.navigateTo({
-        url:'../orderDetails/orderDetails?_id='+event.currentTarget.dataset.orderList[_this.data.index]._id
+        url:'../orderDetails/orderDetails?_id='+event.currentTarget.dataset.orderlist[_this.data.index].orderId
         
       })
   },

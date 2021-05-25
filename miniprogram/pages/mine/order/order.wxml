@@ -7,7 +7,7 @@
     <view id="finished" class="{{currentTab == 2 ? 'tab-active':''}}" bindtap="switchTopTab">已完成</view>
   </view>
   <view class="content" wx:if="{{currentTab == 0}}">
-    <order-list bindtap="itemClick" orderList="{{orderList}}" data-orderList="{{orderList}}"></order-list>
+    <order-list binditemClick="itemClick" orderList="{{orderList}}" data-orderList="{{orderList}}"></order-list>
     
   </view>
   <view class="content" wx:if="{{currentTab == 1}}">
