@@ -11,10 +11,12 @@ Page({
    */
   data: {
     remainingTime: "29分31秒",
-    consigneeName: "",
-    telNumber: "",
-    region: [],
-    detailAddress: "",
+    info:{
+      consigneeName: "",
+      telNumber: "",
+      region: [],
+      detailAddress: "",
+    },
     image: "/images/index/1.jpeg",
     msgTitle: "广州某区某街一只流浪小猫待领养",
     classify: "流浪动物",
@@ -34,8 +36,22 @@ Page({
       delta: 1,
     })
   },
+
+  //确认领养
   confirmCreate:function(){
     var _this = this
+    var info = _this.data.info
+      console.log(info)
+      for (var item in info) {
+        if (!info[item]) { 
+          wx.showToast({
+            title: '请选择接宠地址',
+            icon: 'none',
+            duration: 1500
+          })
+          return;
+        }
+      }
     adopt.add({
       data:({
         classify:_this.data.classify,
@@ -51,7 +67,7 @@ Page({
     })
     .then(res => {
       wx.showToast({
-        title: '已添加',
+        title: '已完成',
         icon: 'success'
       })
     })
@@ -92,7 +108,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
