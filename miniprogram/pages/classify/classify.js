@@ -19,7 +19,7 @@ Component({
   data: {
     currentTab: 0,
     msgList: [],
-    RmsgList: []
+    index:0
   },
   methods: {
     //顶部导航栏
@@ -56,9 +56,16 @@ Component({
     //跳转到详情页
     itemClick:function(event){
 
-      var index = event.datail
+      
+      var index = event.detail.index
+      var _this = this
+      _this.setData({
+        index:index
+      })
+      // console.log(index)
+      // console.log(event.detail.index)
       wx.navigateTo({
-        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.msgList[index]._id
+        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.msglist[_this.data.index]._id
         
       })
     },

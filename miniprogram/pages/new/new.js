@@ -221,7 +221,8 @@ Component({
             way: _this.data.form.way,
             classify: _this.data.form.classify,
             imgList: _this.data.form.imgList,
-            time: new Date()
+            time: new Date(),
+            userProfile:getApp().globalData.userInfo.avatarUrl
           })
         })
         .then(res => {
