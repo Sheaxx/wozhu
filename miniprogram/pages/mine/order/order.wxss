@@ -16,8 +16,8 @@ page {
 }
 .topBar {
   height: 100rpx;
-  width: 600rpx;
-  padding: 0 75rpx;
+  width: 400rpx;
+  padding: 0 175rpx;
   display: flex;
   line-height: 100rpx;
   position: fixed;
@@ -27,7 +27,7 @@ page {
   font-size: 32rpx;
 }
 .topBar view {
-  width: 33%;
+  width: 200rpx;
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
   position: relative;

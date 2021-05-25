@@ -23,10 +23,8 @@ Page({
     let tab = e.currentTarget.id
     if (tab === 'created') {
       this.setData({ currentTab: 0 })
-    } else if (tab === 'delivered') {
-      this.setData({ currentTab: 1 })
     } else if (tab === 'finished'){
-      this.setData({ currentTab: 2 })
+      this.setData({ currentTab: 1 })
     }
   },
   

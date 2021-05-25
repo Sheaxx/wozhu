@@ -17,7 +17,7 @@
   padding-left: 40rpx;
   line-height: 150rpx;
   margin: 120rpx auto 0 auto;
-  background-image: linear-gradient(to right,#eece1c,#f5dc93);
+  background-image: linear-gradient(to right,#ECBC28,#f5dc93);
   color: #fff;
   font-size: 42rpx;
   font-weight: 600;
@@ -46,6 +46,12 @@
 .itemContent {
   height: 80rpx;
   line-height: 65rpx;
+}
+.orderIdName {
+  float: none;
+}
+.orderId {
+  margin-left: 20rpx;
 }
 .msg {
   height: 300rpx;
@@ -76,12 +82,6 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.currentLocation {
-  float: left;
-  font-size: 28rpx;
-  color: rgb(97, 94, 94);
-  margin: -60rpx 0 0 125px; 
-}
 .button {
   width: 710rpx;
   padding-right: 40rpx;
@@ -89,6 +89,7 @@
 }
 .button view {
   font-size: 32rpx;
+  font-weight: 600;
   width: 200rpx;
   height: 80rpx;
   float: right;

@@ -1,65 +1,71 @@
 {
-    "setting": {},
-    "condition": {
-        "plugin": {
-            "list": []
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
         },
-        "game": {
-            "list": []
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
         },
-        "gamePlugin": {
-            "list": []
+        {
+          "name": "pages/classify/classify",
+          "pathName": "pages/classify/classify",
+          "query": "",
+          "scene": null
         },
-        "miniprogram": {
-            "list": [
-                {
-                    "id": -1,
-                    "name": "db guide",
-                    "pathName": "pages/databaseGuide/databaseGuide",
-                    "query": ""
-                },
-                {
-                    "name": "pages/index/index",
-                    "pathName": "pages/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/classify/classify",
-                    "pathName": "pages/classify/classify",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/index/index",
-                    "pathName": "pages/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/mine/order/order",
-                    "pathName": "pages/mine/order/order",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/createOrder/createOrder",
-                    "pathName": "pages/createOrder/createOrder",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/mine/order/order",
-                    "pathName": "pages/mine/order/order",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/wish/wish",
-                    "pathName": "pages/wish/wish",
-                    "scene": null
-                }
-            ]
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/order/order",
+          "pathName": "pages/mine/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/createOrder/createOrder",
+          "pathName": "pages/createOrder/createOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/order/order",
+          "pathName": "pages/mine/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wish/wish",
+          "pathName": "pages/wish/wish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/orderDetails/orderDetails",
+          "pathName": "pages/orderDetails/orderDetails",
+          "scene": null
         }
+      ]
     }
+  }
 }

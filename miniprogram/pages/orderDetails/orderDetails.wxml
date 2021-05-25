@@ -25,8 +25,8 @@
   </view>
   <view class="order">
     <view class="itemTitle">领养单信息</view>
-    <view class="itemName">订单编号</view>
-    <view class="itemContent">{{orderId}}</view>
+    <view class="itemName orderIdName">订单编号</view>
+    <view class="itemContent orderId">{{orderId}}</view>
     <view class="itemName">创建时间</view>
     <view class="itemContent">{{createOrderTime}}</view>
     <view class="itemName">分类</view>
