@@ -13,23 +13,6 @@ Component({
           selected: 3
         })
       }
-
-      wishes.where({
-        openId:getApp().globalData._id
-      })
-      .get()
-      .then(res => {
-        for(var i = 0;i < res.data.length;i++){
-          _this.setData({
-            ['wishList['+i+'].msgTitle']:res.data[i].msgTitle,
-            ['wishList['+i+'].image']:res.data[i].imgList[0],
-            ['wishList['+i+'].classify']:res.data[i].classify,
-            ['wishList['+i+'].way']:res.data[i].way,
-            ['wishList['+i+']._id']:res.data[i]._id
-          })
-        }
-        
-      })
     }
   },
   /**
@@ -114,6 +97,13 @@ Component({
         success: function (res) {
           if (res.confirm) {
             newList.splice(index, 1);
+            wishes.where({
+              _id:_this.data.wishList[index]._id
+            })
+            .remove()
+            .then(res => {
+              console.log(res)
+            })
           } else if (res.cancel) {
             return false
           }
@@ -132,10 +122,31 @@ Component({
         index:index
       })
       wx.navigateTo({
-        url: '../createOrder/createOrder?w_id='+_this.data.wishList[_this.data.index]._id,
+        url: '../createOrder/createOrder?w_id='+_this.data.wishList[_this.data.index]._id+'&p_id='+_this.data.wishList[_this.data.index].p_id,
       })
     },
     
+
+    onShow:function(){
+      var _this = this
+      wishes.where({
+        openId:getApp().globalData._id
+      })
+      .get()
+      .then(res => {
+        for(var i = 0;i < res.data.length;i++){
+          _this.setData({
+            ['wishList['+i+'].msgTitle']:res.data[i].msgTitle,
+            ['wishList['+i+'].image']:res.data[i].imgList[0],
+            ['wishList['+i+'].classify']:res.data[i].classify,
+            ['wishList['+i+'].way']:res.data[i].way,
+            ['wishList['+i+']._id']:res.data[i]._id,
+            ['wishList['+i+'].p_id']:res.data[i].p_id
+          })
+        }
+        
+      })
+    }
   },
 
   /**
@@ -150,12 +161,7 @@ Component({
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
+  
 
   /**
    * 生命周期函数--监听页面隐藏

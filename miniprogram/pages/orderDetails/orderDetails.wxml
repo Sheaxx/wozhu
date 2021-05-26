@@ -35,6 +35,6 @@
     <view class="itemContent">{{way}}</view>
   </view>
   <view class="button" wx:if="{{orderState == '已创建' || orderState == '已送出'}}">
-    <view>完成领养</view>
+    <view bindtap="finish">完成领养</view>
   </view>
 </view>

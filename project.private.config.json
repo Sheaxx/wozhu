@@ -57,6 +57,24 @@
                 {
                     "name": "pages/wish/wish",
                     "pathName": "pages/wish/wish",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/mine/mine",
+                    "pathName": "pages/mine/mine",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/msgDetails/msgDetails",
+                    "pathName": "pages/msgDetails/msgDetails",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
                     "scene": null
                 }
             ]

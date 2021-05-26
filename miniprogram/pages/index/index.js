@@ -24,7 +24,8 @@ Component({
             _id:true,
             openId:true,
             title:true,
-            imgList:true
+            imgList:true,
+            openId:true
           })
           .get()
           .then(res => {
@@ -35,7 +36,8 @@ Component({
                 ["msgList["+i+"].title"] : res.data[i].title,
                 ["msgList["+i+"].image"] : res.data[i].imgList[0],
                 ["msgList["+i+"].openId"] : res.data[i].openId,
-                ["msgList["+i+"]._id"] : res.data[i]._id
+                ["msgList["+i+"]._id"] : res.data[i]._id,
+                ["msgList["+i+"].openId"] : res.data[i].openId
               })
             }
             
@@ -98,10 +100,10 @@ Component({
       _this.setData({
         index:index
       })
-      // console.log(index)
-      console.log(event.detail.index)
+      console.log(_this.data.index)
+      console.log(event)
       wx.navigateTo({
-        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.msglist[_this.data.index]._id
+        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.msglist[index]._id+'&openId='+event.currentTarget.dataset.msglist[index].openId
         
       })
     },

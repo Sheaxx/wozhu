@@ -65,7 +65,7 @@ Component({
       // console.log(index)
       // console.log(event.detail.index)
       wx.navigateTo({
-        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.msglist[_this.data.index]._id
+        url:'../msgDetails/msgDetails?_id='+event.currentTarget.dataset.msglist[_this.data.index]._id+'&openId='+event.currentTarget.dataset.msglist[_this.data.index].openId
         
       })
     },
@@ -77,9 +77,6 @@ Component({
         msgList: null
       })
       wx.cloud.database().collection('postList').where({
-
-         
-
         classify:e
       })
       .get()

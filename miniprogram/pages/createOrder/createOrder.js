@@ -23,7 +23,9 @@ Page({
     classify: "流浪动物",
     way: "自提",
     _id:'',
-    w_id:''
+    w_id:'',
+    seller_id:'',  //卖家id
+    p_id:'' //postlist的id
   },
 
   //选择收货信息
@@ -55,7 +57,7 @@ Page({
           return;
         }
       }
-      
+      console.log('卖家ID：'+_this.data.seller_id)
     adopt.add({
       data:({
         classify:_this.data.classify,
@@ -67,7 +69,9 @@ Page({
         region:_this.data.info.region,
         detailAddress:_this.data.info.detailAddress,
         orderState:'已创建',
-        orderTime:new Date()
+        orderTime:new Date(),
+        openId:getApp().globalData._id,
+        seller_id:_this.data.seller_id
       })
     })
     .then(res => {
@@ -89,16 +93,14 @@ Page({
       })
     }
 
-    if(_this.data._id!=''){
-      postList.where({
-        _id:_this.data._id
-      })
-      .remove()
-      .then(res => {
-        console.log('555555555555555')
-        console.log(res)
-      })
-    }
+    postList.where({
+      _id:_this.data.p_id
+    })
+    .remove()
+    .then(res => {
+      console.log('555555555555555')
+      console.log(res)
+    })
     
   },
 
@@ -107,7 +109,10 @@ Page({
    */
   onLoad: function (options) {
     var _this = this
-    
+    _this.setData({
+      p_id:options.p_id,
+      seller_id:options.openId    //卖家Id
+    })
     if(options._id){
       
       _this.setData({
@@ -133,7 +138,7 @@ Page({
       if(options.w_id){
         
         _this.setData({
-          w_id:options.w_id
+          w_id:options.w_id //愿望单id
         })
         console.log('options.w_id'+options.w_id)
         console.log('this.data.w_id:'+_this.data.w_id)

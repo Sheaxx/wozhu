@@ -2,7 +2,7 @@
 <view id="wish">
   <view class="wishList">
     <view class="item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}"
-      bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{wishList}}" wx:key="index" bindtap="toCreateOrder">
+      bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{wishList}}" wx:key="index" >
       <view class="content">
         <view class="img">
           <image src="{{item.image}}" mode="widthFix"></image>
@@ -10,8 +10,9 @@
         <view class="msgTitle">{{item.msgTitle}}</view>
         <view class="classify">{{item.classify}}</view>
         <view class="way">{{item.way}}</view>
-       
-        
+        <view class="button">
+          <view catchtap="toCreateOrder">确认领养</view>
+        </view>
       </view>
       <view class="delete" bindtap="delete" data-index="index">
         <image src="/images/icon/delete.svg" mode="widthFix"></image>
